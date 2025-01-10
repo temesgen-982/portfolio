@@ -10,7 +10,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="text-white py-16">
+    <footer className="text-white py-16" id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div>

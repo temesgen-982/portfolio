@@ -1,6 +1,6 @@
 function CTA() {
   return (
-    <section className="py-16">
+    <section className="py-16" id="cta">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl text-white mb-4">Congue imperdiet</h2>
         <p className="text-gray-300 mb-8 max-w-2xl mx-auto">

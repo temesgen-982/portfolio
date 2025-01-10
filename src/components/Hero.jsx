@@ -26,7 +26,7 @@ function Hero() {
   ];
 
   return (
-    <section className="min-h-[90vh] flex items-center justify-center">
+    <section className="h-[85vh] flex items-center justify-center">
       <div className="container mx-auto text-center px-4">
         <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-8 overflow-hidden">
           <img 

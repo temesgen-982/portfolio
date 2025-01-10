@@ -12,10 +12,8 @@ function App() {
     <div className="bg-neutral-950 min-h-screen">
       <div className="px-16">
         <Hero />
-        <div className="sticky top-0 z-50">
-          <Nav />
-        </div>
-        <div className="bg-neutral-900 rounded-lg overflow-hidden">
+        <Nav />
+        <div className="bg-neutral-900 rounded-lg overflow-hidden mt-8">
           <Features />
           <Projects />
           <Stats />

@@ -45,7 +45,7 @@ function Skills() {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16" id="skills">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl text-white text-center mb-12">
           <span className="mr-2">⚡</span>

@@ -1,6 +1,6 @@
 function Stats() {
   return (
-    <section className="py-16">
+    <section className="py-16" id="stats">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl text-white text-center mb-8">Ipsum consequat</h2>
         <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">

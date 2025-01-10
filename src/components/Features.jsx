@@ -4,7 +4,7 @@ import { FaCube } from 'react-icons/fa'
 
 function Features() {
   return (
-    <section className="py-16">
+    <section className="py-16" id="features">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl text-white text-center mb-12">Magna veroeros</h2>
         

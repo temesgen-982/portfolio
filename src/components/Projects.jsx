@@ -71,7 +71,7 @@ function Projects() {
   }
 
   return (
-    <section className="py-16">
+    <section className="py-16" id="projects">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl text-white text-center mb-12">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
