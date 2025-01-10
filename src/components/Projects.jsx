@@ -9,7 +9,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://api.github.com/temesgen-982/repos', {
+        const response = await fetch('https://api.github.com/users/temesgen-982/repos', {
           headers: {
             'Authorization': `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
             'Accept': 'application/vnd.github.v3+json'
@@ -17,7 +17,8 @@ function Projects() {
         })
 
         if (!response.ok) {
-          throw new Error('Failed to fetch projects')
+          const errorData = await response.json();
+          throw new Error(`GitHub API Error: ${response.status} - ${errorData.message}`);
         }
 
         const data = await response.json()
@@ -37,6 +38,7 @@ function Projects() {
 
         setProjects(formattedProjects)
       } catch (err) {
+        console.error('Fetch error details:', err);
         setError(err.message)
       } finally {
         setLoading(false)
