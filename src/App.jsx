@@ -2,7 +2,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Background from './components/Background'
 import Stats from './components/Stats'
-import CTA from './components/CTA'
+import ResumeCTA from './components/ResumeCTA'
 import Footer from './components/Footer'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
@@ -19,7 +19,7 @@ function App() {
           <Projects />
           <Stats />
           <Skills />
-          <CTA />
+          <ResumeCTA />
         </div>
         <Footer />
         <ScrollToTop />

@@ -1,27 +1,31 @@
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
-import { HiDocument } from 'react-icons/hi'
+import { FaFileArrowDown } from 'react-icons/fa6'
 
 function Hero() {
   const socialLinks = [
     { 
       icon: "github", 
       href: "https://github.com/temesgen-982",
-      element: <FaGithub className="w-6 h-6" />
+      element: <FaGithub className="w-6 h-6" />,
+      external: true
     },
     { 
       icon: "linkedin", 
       href: "https://www.linkedin.com/in/temesgen-adane-7a8b96289/",
-      element: <FaLinkedin className="w-6 h-6" />
+      element: <FaLinkedin className="w-6 h-6" />,
+      external: true
     },
     { 
       icon: "instagram",
       href: "https://www.instagram.com/beshow.6767/",
-      element: <FaInstagram className="w-6 h-6" />
+      element: <FaInstagram className="w-6 h-6" />,
+      external: true
     },
     { 
       icon: "resume", 
-      href: "#CTA",
-      element: <HiDocument className="w-6 h-6" />
+      href: "#cta",
+      element: <FaFileArrowDown className="w-6 h-6" />,
+      external: false
     },
   ];
 
@@ -45,8 +49,10 @@ function Hero() {
               key={index}
               href={link.href}
               className="text-gray-400 hover:text-white transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(link.external ? {
+                target: "_blank",
+                rel: "noopener noreferrer"
+              } : {})}
             >
               {link.element}
             </a>
