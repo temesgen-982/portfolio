@@ -1,7 +1,7 @@
 import { 
   FaGithub, 
   FaLinkedin, 
-  FaTwitter, 
+  FaTelegram, 
   FaInstagram, 
   FaEnvelope, 
   FaPhone, 
@@ -24,32 +24,32 @@ function Footer() {
           </div>
           
           <div>
-            <h3 className="text-xl mb-4">Etiam feugiat</h3>
+            <h3 className="text-xl mb-4">Contact Me</h3>
             <div className="space-y-2 text-sm opacity-80">
               <p className="flex items-center gap-2">
                 <FaMapMarkerAlt className="w-4 h-4" />
-                <span>1234 Somewhere Road • Nashville, TN 00000 • USA</span>
+                <span>Addis Ababa • Ethiopia</span>
               </p>
               <p className="flex items-center gap-2">
                 <FaPhone className="w-4 h-4" />
-                <span>(000) 000-0000 x0000</span>
+                <span>+251909709370</span>
               </p>
               <p className="flex items-center gap-2">
                 <FaEnvelope className="w-4 h-4" />
-                <span>information@untitled.tld</span>
+                <span>tedenadane@gmail.com</span>
               </p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-white opacity-80 hover:opacity-100">
-                <FaTwitter className="w-5 h-5" />
+              <a href="https://t.me/beshow" className="text-white opacity-80 hover:opacity-100">
+                <FaTelegram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://github.com/temesgen-982" className="text-white opacity-80 hover:opacity-100">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://www.instagram.com/beshow.6767/" className="text-white opacity-80 hover:opacity-100">
                 <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://www.linkedin.com/in/temesgen-adane-7a8b96289/" className="text-white opacity-80 hover:opacity-100">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>

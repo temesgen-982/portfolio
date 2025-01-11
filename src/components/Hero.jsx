@@ -5,22 +5,22 @@ function Hero() {
   const socialLinks = [
     { 
       icon: "github", 
-      href: "https://github.com/yourusername",
+      href: "https://github.com/temesgen-982",
       element: <FaGithub className="w-6 h-6" />
     },
     { 
       icon: "linkedin", 
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/temesgen-adane-7a8b96289/",
       element: <FaLinkedin className="w-6 h-6" />
     },
     { 
       icon: "instagram",
-      href: "https://instagram.com/yourusername",
+      href: "https://www.instagram.com/beshow.6767/",
       element: <FaInstagram className="w-6 h-6" />
     },
     { 
       icon: "resume", 
-      href: "#",
+      href: "#CTA",
       element: <HiDocument className="w-6 h-6" />
     },
   ];
