@@ -36,8 +36,8 @@ function Hero() {
           />
         </div>
         
-        <h1 className="text-4xl text-white font-bold mb-2">Your Name</h1>
-        <h2 className="text-xl text-gray-300 mb-8">Full-stack Developer | Your Tech Stack</h2>
+        <h1 className="text-4xl text-white font-bold mb-2">Temesgen Adane</h1>
+        <h2 className="text-xl text-gray-300 mb-8">Frontend Developer</h2>
         
         <div className="flex justify-center space-x-4">
           {socialLinks.map((link, index) => (
