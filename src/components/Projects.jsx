@@ -22,6 +22,7 @@ function Projects() {
         }
 
         const data = await response.json()
+        const savedLikes = JSON.parse(localStorage.getItem('projectLikes') || '{}')
         
         const formattedProjects = data
           .filter(repo => !repo.fork && !repo.private)
@@ -32,7 +33,8 @@ function Projects() {
             repoLink: repo.html_url,
             demoLink: repo.homepage || '',
             stars: repo.stargazers_count,
-            forks: repo.forks_count
+            forks: repo.forks_count,
+            likes: savedLikes[repo.name] || 0
           }))
           .sort((a, b) => b.stars - a.stars)
 
@@ -47,6 +49,26 @@ function Projects() {
 
     fetchProjects()
   }, [])
+
+  const handleLike = (projectTitle) => {
+    setProjects(prevProjects => {
+      const newProjects = prevProjects.map(project => {
+        if (project.title === projectTitle) {
+          return { ...project, likes: project.likes + 1 }
+        }
+        return project
+      })
+
+      // Save likes to localStorage
+      const likes = newProjects.reduce((acc, project) => ({
+        ...acc,
+        [project.title]: project.likes
+      }), {})
+      localStorage.setItem('projectLikes', JSON.stringify(likes))
+
+      return newProjects
+    })
+  }
 
   if (loading) {
     return (
@@ -76,7 +98,11 @@ function Projects() {
         <h2 className="text-xl sm:text-2xl dark:text-white text-gray-900 text-center mb-8 sm:mb-12">Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard 
+              key={index} 
+              {...project} 
+              onLike={() => handleLike(project.title)}
+            />
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { FiExternalLink } from 'react-icons/fi'
-import { FaGithub, FaStar, FaCodeBranch } from 'react-icons/fa'
+import { FaGithub, FaStar, FaCodeBranch, FaHeart } from 'react-icons/fa'
 
-function ProjectCard({ title, description, technologies, repoLink, demoLink, stars, forks }) {
+function ProjectCard({ title, description, technologies, repoLink, demoLink, stars, forks, likes, onLike }) {
   return (
     <div className="bg-white dark:bg-neutral-800 rounded-lg p-4 sm:p-6 hover:shadow-lg transition-all duration-300">
       <h3 className="text-lg sm:text-xl dark:text-white text-gray-900 font-semibold mb-2">{title}</h3>
@@ -29,6 +29,13 @@ function ProjectCard({ title, description, technologies, repoLink, demoLink, sta
           <FaCodeBranch className="w-3 h-3 sm:w-4 sm:h-4" />
           {forks}
         </span>
+        <button 
+          onClick={onLike}
+          className="flex items-center gap-1 hover:text-red-500 transition-colors"
+        >
+          <FaHeart className={`w-3 h-3 sm:w-4 sm:h-4 ${likes > 0 ? 'text-red-500' : ''}`} />
+          {likes}
+        </button>
       </div>
       
       {/* Links */}
@@ -47,7 +54,7 @@ function ProjectCard({ title, description, technologies, repoLink, demoLink, sta
             href={demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2"
+            className="dark:text-gray-300 text-gray-600 hover:text-gray-900 dark:hover:text-white text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2"
           >
             <FiExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
             Live Demo
