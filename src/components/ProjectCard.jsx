@@ -1,7 +1,37 @@
+import { useState } from 'react'
 import { FiExternalLink } from 'react-icons/fi'
 import { FaGithub, FaStar, FaCodeBranch, FaHeart } from 'react-icons/fa'
 
-function ProjectCard({ title, description, technologies, repoLink, demoLink, stars, forks, likes, onLike }) {
+function ProjectCard({ title, description, technologies, repoLink, demoLink, stars, forks, initialLikes }) {
+  const [likes, setLikes] = useState(() => {
+    const saved = localStorage.getItem(`project-likes-${title}`);
+    return saved ? parseInt(saved) : (initialLikes || 0);
+  });
+  
+  const [isLiked, setIsLiked] = useState(() => {
+    return localStorage.getItem(`project-liked-${title}`) === 'true';
+  });
+
+  const handleLike = () => {
+    if (!isLiked) {
+      setLikes(prev => {
+        const newLikes = prev + 1;
+        localStorage.setItem(`project-likes-${title}`, newLikes.toString());
+        return newLikes;
+      });
+      setIsLiked(true);
+      localStorage.setItem(`project-liked-${title}`, 'true');
+    } else {
+      setLikes(prev => {
+        const newLikes = prev - 1;
+        localStorage.setItem(`project-likes-${title}`, newLikes.toString());
+        return newLikes;
+      });
+      setIsLiked(false);
+      localStorage.setItem(`project-liked-${title}`, 'false');
+    }
+  };
+
   return (
     <div className="bg-white dark:bg-neutral-800 rounded-lg p-4 sm:p-6 hover:shadow-lg transition-all duration-300">
       <h3 className="text-lg sm:text-xl dark:text-white text-gray-900 font-semibold mb-2">{title}</h3>
@@ -30,10 +60,11 @@ function ProjectCard({ title, description, technologies, repoLink, demoLink, sta
           {forks}
         </span>
         <button 
-          onClick={onLike}
+          onClick={handleLike}
           className="flex items-center gap-1 hover:text-red-500 transition-colors"
+          aria-label={isLiked ? "Unlike project" : "Like project"}
         >
-          <FaHeart className={`w-3 h-3 sm:w-4 sm:h-4 ${likes > 0 ? 'text-red-500' : ''}`} />
+          <FaHeart className={`w-3 h-3 sm:w-4 sm:h-4 ${isLiked ? 'text-red-500' : ''}`} />
           {likes}
         </button>
       </div>

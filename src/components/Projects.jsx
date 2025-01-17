@@ -34,7 +34,7 @@ function Projects() {
             demoLink: repo.homepage || '',
             stars: repo.stargazers_count,
             forks: repo.forks_count,
-            likes: savedLikes[repo.name] || 0
+            initialLikes: savedLikes[repo.name] || 0
           }))
           .sort((a, b) => b.stars - a.stars)
 
@@ -54,7 +54,7 @@ function Projects() {
     setProjects(prevProjects => {
       const newProjects = prevProjects.map(project => {
         if (project.title === projectTitle) {
-          return { ...project, likes: project.likes + 1 }
+          return { ...project, initialLikes: project.initialLikes + 1 }
         }
         return project
       })
@@ -62,7 +62,7 @@ function Projects() {
       // Save likes to localStorage
       const likes = newProjects.reduce((acc, project) => ({
         ...acc,
-        [project.title]: project.likes
+        [project.title]: project.initialLikes
       }), {})
       localStorage.setItem('projectLikes', JSON.stringify(likes))
 
