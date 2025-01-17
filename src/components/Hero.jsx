@@ -23,7 +23,7 @@ function Hero({ className }) {
     },
     { 
       icon: "resume", 
-      href: "#cta",
+      href: "https://drive.google.com/file/d/138K_25gZQEv5x-WH9S_T-KRzdDZEsTzk/view?usp=drive_link",
       element: <FaFileArrowDown className="w-6 h-6" />,
       external: false
     },
