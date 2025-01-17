@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  @apply scroll-pt-12; /* Default mobile padding */
+  @apply md:scroll-pt-16; /* Larger padding on desktop */
+}
