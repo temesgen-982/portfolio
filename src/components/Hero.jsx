@@ -40,15 +40,15 @@ function Hero({ className }) {
           />
         </div>
         
-        <h1 className="text-3xl md:text-4xl text-white font-bold mb-2">Temesgen Adane</h1>
-        <h2 className="text-lg md:text-xl text-gray-300 mb-6 md:mb-8">Frontend Developer</h2>
+        <h1 className="text-3xl md:text-4xl dark:text-white text-gray-900 font-bold mb-2">Temesgen Adane</h1>
+        <h2 className="text-lg md:text-xl dark:text-gray-300 text-gray-600 mb-6 md:mb-8">Frontend Developer</h2>
         
         <div className="flex justify-center space-x-4">
           {socialLinks.map((link, index) => (
             <a
               key={index}
               href={link.href}
-              className="text-gray-400 hover:text-white transition-colors"
+              className="dark:text-gray-400 text-gray-500 dark:hover:text-white hover:text-gray-900 transition-colors"
               {...(link.external ? {
                 target: "_blank",
                 rel: "noopener noreferrer"

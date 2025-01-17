@@ -10,7 +10,7 @@ import Contact from './components/Contact'
 
 function App() {
   return (
-    <div className="bg-neutral-950 min-h-screen">
+    <div className="dark:bg-neutral-950 bg-white min-h-screen">
       <Nav />
       <Layout>
         <Routes>

@@ -32,10 +32,10 @@ function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-neutral-900 hover:bg-neutral-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 border-2 border-gray-500"
+          className="fixed bottom-8 right-8 dark:bg-neutral-900 bg-white hover:bg-gray-100 dark:hover:bg-neutral-800 dark:text-white text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 z-50 dark:border-gray-500 border-gray-300 border-2"
           aria-label="Scroll to top"
         >
-          <FaArrowUp className="w-6 h-6 text-white" />
+          <FaArrowUp className="w-6 h-6" />
         </button>
       )}
     </>

@@ -52,8 +52,8 @@ function Projects() {
     return (
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl text-white text-center mb-12">Projects</h2>
-          <div className="text-white text-center">Loading projects...</div>
+          <h2 className="text-2xl dark:text-white text-gray-900 text-center mb-12">Projects</h2>
+          <div className="dark:text-white text-gray-900 text-center">Loading projects...</div>
         </div>
       </section>
     )
@@ -63,7 +63,7 @@ function Projects() {
     return (
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl text-white text-center mb-12">Projects</h2>
+          <h2 className="text-2xl dark:text-white text-gray-900 text-center mb-12">Projects</h2>
           <div className="text-red-500 text-center">Error: {error}</div>
         </div>
       </section>
@@ -73,7 +73,7 @@ function Projects() {
   return (
     <section className="min-h-screen pt-24" id="projects">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl text-white text-center mb-8 sm:mb-12">Projects</h2>
+        <h2 className="text-xl sm:text-2xl dark:text-white text-gray-900 text-center mb-8 sm:mb-12">Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />

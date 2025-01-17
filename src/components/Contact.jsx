@@ -31,8 +31,8 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xl mb-4">Contact Me</h3>
-            <div className="space-y-2 text-sm opacity-80">
+            <h3 className="text-xl dark:text-white text-gray-900 mb-4">Contact Me</h3>
+            <div className="space-y-2 text-sm dark:text-gray-300 text-gray-600">
               <p className="flex items-center gap-2">
                 <FaMapMarkerAlt className="w-4 h-4" />
                 <span>Addis Ababa • Ethiopia</span>
@@ -47,16 +47,16 @@ function Footer() {
               </p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="https://t.me/beshow" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://t.me/beshow" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
                 <FaTelegram className="w-5 h-5" />
               </a>
-              <a href="https://github.com/temesgen-982" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://github.com/temesgen-982" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/beshow.6767/" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://www.instagram.com/beshow.6767/" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
                 <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/temesgen-adane-7a8b96289/" className="text-white opacity-80 hover:opacity-100">
+              <a href="https://www.linkedin.com/in/temesgen-adane-7a8b96289/" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
                 <FaLinkedin className="w-5 h-5" />
               </a>
             </div>

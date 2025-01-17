@@ -25,7 +25,7 @@ function Testimonials() {
   return (
     <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-6rem)] py-8 overflow-y-auto" id="testimonials">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl text-white text-center mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl dark:text-white text-gray-900 text-center mb-8 sm:mb-12">
           Testimonials
         </h2>
         
@@ -33,10 +33,10 @@ function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition-colors"
+              className="dark:bg-neutral-800 bg-gray-100 p-6 rounded-lg hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors"
             >
-              <FaQuoteLeft className="text-3xl text-gray-500 mb-4" />
-              <p className="text-gray-300 mb-6 text-sm sm:text-base">
+              <FaQuoteLeft className="text-3xl dark:text-gray-500 text-gray-400 mb-4" />
+              <p className="dark:text-gray-300 text-gray-600 mb-6 text-sm sm:text-base">
                 "{testimonial.text}"
               </p>
               <div className="flex items-center">
@@ -48,10 +48,10 @@ function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-white font-medium text-sm sm:text-base">
+                  <h3 className="dark:text-white text-gray-900 font-medium text-sm sm:text-base">
                     {testimonial.name}
                   </h3>
-                  <p className="text-gray-400 text-xs sm:text-sm">
+                  <p className="dark:text-gray-400 text-gray-500 text-xs sm:text-sm">
                     {testimonial.role}
                   </p>
                 </div>
