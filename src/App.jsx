@@ -4,7 +4,7 @@ import Layout from './components/Layout'
 import Hero from './components/Hero'
 import Background from './components/Background'
 import Projects from './components/Projects'
-import Stats from './components/Stats'
+import Testimonials from './components/Testimonials'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/background" element={<Background />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/stats" element={<Stats />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

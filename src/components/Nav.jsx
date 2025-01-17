@@ -31,7 +31,7 @@ function Nav() {
     { to: "/", text: "Home" },
     { to: "/background", text: "Background" },
     { to: "/projects", text: "Projects" },
-    { to: "/stats", text: "Stats" },
+    { to: "/testimonials", text: "Testimonials" },
     { to: "/skills", text: "Skills" },
     { to: "/contact", text: "Contact" }
   ]
