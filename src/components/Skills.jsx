@@ -91,7 +91,7 @@ function Skills() {
   return (
     <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-6rem)] py-8 overflow-y-auto" id="skills">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl text-white text-center mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl dark:text-white text-neutral-900 text-center mb-8 sm:mb-12">
           Technical Skills
         </h2>
         

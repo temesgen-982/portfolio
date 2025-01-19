@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa'
 import emailjs from '@emailjs/browser';
 
-function Footer() {
+function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -89,11 +89,11 @@ function Footer() {
   };
 
   return (
-    <footer className="text-white py-16" id="contact">
+    <section className="text-white py-16" id="contact">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           <div>
-            <h3 className="text-xl mb-4">Get in Touch</h3>
+            <h3 className="text-xl mb-4 dark:text-white text-gray-900">Get in Touch</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
@@ -102,7 +102,7 @@ function Footer() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className={`w-full p-2 rounded bg-neutral-800 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
                     errors.name ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
@@ -117,7 +117,7 @@ function Footer() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className={`w-full p-2 rounded bg-neutral-800 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
                     errors.email ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
@@ -132,7 +132,7 @@ function Footer() {
                   onChange={handleChange}
                   placeholder="Your Message"
                   rows="4"
-                  className={`w-full p-2 rounded bg-neutral-800 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
                     errors.message ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
@@ -150,9 +150,9 @@ function Footer() {
             </form>
           </div>
 
-          <div>
+          <div className="sm:justify-self-center space-y-6">
             <h3 className="text-xl dark:text-white text-gray-900 mb-4">Contact Me</h3>
-            <div className="space-y-2 text-sm dark:text-gray-300 text-gray-600">
+            <div className="space-y-3 text-sm dark:text-gray-300 text-gray-600">
               <p className="flex items-center gap-2">
                 <FaMapMarkerAlt className="w-4 h-4" />
                 <span>Addis Ababa • Ethiopia</span>
@@ -183,8 +183,8 @@ function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </section>
   )
 }
 
-export default Footer
+export default Contact

@@ -43,15 +43,15 @@ const skillsConfig = {
 
 function SkillCategory({ area, proficiencies }) {
   return (
-    <div className="bg-neutral-800 p-4 rounded-lg hover:bg-neutral-700 transition-colors">
-      <h3 className="text-white font-medium mb-4">{area}</h3>
+    <div className="dark:bg-neutral-800 bg-slate-200 border-2 dark:border-none border-black p-4 rounded-lg dark:hover:bg-neutral-700 hover:bg-slate-300 transition-colors">
+      <h3 className="dark:text-white text-black font-medium mb-4">{area}</h3>
       <div className="space-y-3">
         {proficiencies.map((skill, index) => {
           const skillConfig = skillsConfig[skill.name];
           return (
             <div key={index} className="space-y-1">
               <div className="flex justify-between text-sm text-gray-300">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 text-black dark:text-white">
                   {skillConfig && (
                     <skillConfig.icon 
                       className="w-4 h-4" 
@@ -60,9 +60,9 @@ function SkillCategory({ area, proficiencies }) {
                   )}
                   {skill.name}
                 </div>
-                <span>{skill.level}%</span>
+                <span className="dark:text-white text-black">{skill.level}%</span>
               </div>
-              <div className="h-2 bg-neutral-900 rounded-full overflow-hidden">
+              <div className="h-2 dark:bg-neutral-900 bg-slate-100 rounded-full overflow-hidden">
                 <div 
                   className="h-full rounded-full transition-all duration-500 ease-out"
                   style={{ 

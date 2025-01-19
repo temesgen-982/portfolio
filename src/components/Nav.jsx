@@ -53,7 +53,7 @@ function Nav() {
             {/* Desktop Navigation */}
             <div className="hidden sm:block">
               <div className="dark:bg-neutral-800 bg-gray-100 rounded-lg overflow-hidden my-4">
-                <div className="px-6 py-2 flex items-center">
+                <div className="px-6 py-2 flex items-center dark:border-none border-2 border-gray-300">
                   <ul className="flex space-x-8 flex-1 justify-center">
                     {navLinks.map((link, index) => (
                       <li key={index}>

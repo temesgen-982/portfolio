@@ -30,7 +30,7 @@ function Hero({ className }) {
   ];
 
   return (
-    <section className={`h-[calc(100vh-4rem)] sm:h-[calc(100vh-6rem)] flex items-center justify-center ${className}`}>
+    <section className={`pt-[40%] sm:pt-24 flex items-center justify-center ${className}`}>
       <div className="container mx-auto text-center px-4">
         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 mx-auto mb-6 md:mb-8 overflow-hidden">
           <img 
