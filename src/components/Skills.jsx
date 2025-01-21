@@ -6,45 +6,41 @@ function Skills() {
       area: "FrontEnd",
       proficiencies: [
         { name: "React", level: 90 },
-        { name: "Redux", level: 85 },
-        { name: "Angular", level: 80 },
-        { name: "RxJs", level: 75 },
         { name: "SASS", level: 85 },
-        { name: "Webpack", level: 70 }
       ]
     },
-    {
-      area: "BackEnd",
-      proficiencies: [
-        { name: "Go", level: 75 },
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 }
-      ]
-    },
-    {
-      area: "CI/CD",
-      proficiencies: [
-        { name: "CircleCI", level: 75 },
-        { name: "GitHub Actions", level: 80 }
-      ]
-    },
-    {
-      area: "DevOps",
-      proficiencies: [
-        { name: "Docker", level: 85 },
-        { name: "Ansible", level: 70 },
-        { name: "Fastlane", level: 65 },
-        { name: "Nginx", level: 75 },
-        { name: "Makefile", level: 70 }
-      ]
-    },
-    {
-      area: "Bots",
-      proficiencies: [
-        { name: "Botkit", level: 70 },
-        { name: "Rasa", level: 65 }
-      ]
-    },
+    // {
+    //   area: "BackEnd",
+    //   proficiencies: [
+    //     { name: "Go", level: 75 },
+    //     { name: "Node.js", level: 85 },
+    //     { name: "Express", level: 80 }
+    //   ]
+    // },
+    // {
+    //   area: "CI/CD",
+    //   proficiencies: [
+    //     { name: "CircleCI", level: 75 },
+    //     { name: "GitHub Actions", level: 80 }
+    //   ]
+    // },
+    // {
+    //   area: "DevOps",
+    //   proficiencies: [
+    //     { name: "Docker", level: 85 },
+    //     { name: "Ansible", level: 70 },
+    //     { name: "Fastlane", level: 65 },
+    //     { name: "Nginx", level: 75 },
+    //     { name: "Makefile", level: 70 }
+    //   ]
+    // },
+    // {
+    //   area: "Bots",
+    //   proficiencies: [
+    //     { name: "Botkit", level: 70 },
+    //     { name: "Rasa", level: 65 }
+    //   ]
+    // },
     {
       area: "UI Frameworks",
       proficiencies: [
@@ -57,8 +53,8 @@ function Skills() {
       proficiencies: [
         { name: "HTML5", level: 95 },
         { name: "CSS3", level: 90 },
-        { name: "ES7+", level: 85 },
-        { name: "a11y", level: 75 }
+        // { name: "ES7+", level: 85 },
+        // { name: "a11y", level: 75 }
       ]
     },
     {
@@ -72,9 +68,9 @@ function Skills() {
       area: "Misc",
       proficiencies: [
         { name: "Git", level: 90 },
-        { name: "Eslint", level: 85 },
-        { name: "Prettier", level: 85 },
-        { name: "Typescript", level: 80 }
+        // { name: "Eslint", level: 85 },
+        // { name: "Prettier", level: 85 },
+        // { name: "Typescript", level: 80 }
       ]
     },
     {

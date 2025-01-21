@@ -1,5 +1,5 @@
 import { 
-  FaReact, FaNodeJs, FaAngular, FaSass, FaDocker, 
+  FaReact, FaNodeJs, FaSass, 
   FaGithub, FaJava, FaHtml5, FaCss3, FaBootstrap,
   FaGitAlt, FaNpm
 } from 'react-icons/fa'
@@ -21,7 +21,6 @@ const skillsConfig = {
   'Go': { icon: TbBrandGolang, color: '#00ADD8' },
   'Node.js': { icon: FaNodeJs, color: '#339933' },
   'Express': { icon: SiExpress, color: '#000000' },
-  'Docker': { icon: FaDocker, color: '#2496ED' },
   'CircleCI': { icon: SiCircleci, color: '#343434' },
   'GitHub Actions': { icon: SiGithubactions, color: '#2088FF' },
   'Nginx': { icon: SiNginx, color: '#009639' },
