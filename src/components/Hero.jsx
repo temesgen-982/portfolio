@@ -34,9 +34,9 @@ function Hero({ className }) {
       <div className="container mx-auto text-center px-4">
         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 mx-auto mb-6 md:mb-8 overflow-hidden">
           <img 
-            src="/path-to-your-image.jpg" 
+            src="/src/assets/images/potrait.png" 
             alt="Profile"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover bg-transparent"
           />
         </div>
         
