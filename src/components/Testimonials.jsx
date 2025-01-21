@@ -1,4 +1,6 @@
-import { FaQuoteLeft } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import TestimonialCard from './TestimonialCard';
 
 function Testimonials() {
   const testimonials = [
@@ -18,50 +20,100 @@ function Testimonials() {
       name: "Mike Johnson",
       role: "Tech Lead at InnovateTech",
       image: "/path-to-image3.jpg",
-      text: "His expertise in frontend development and ability to work well in a team made him an invaluable asset to our projects."
+      text: "lorem."
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      }, 5000); // Change slide every 5 seconds
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, testimonials.length]);
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+    setIsAutoPlaying(false);
+  };
+
   return (
-    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-6rem)] py-8 overflow-y-auto" id="testimonials">
+    <section className="h-[calc(100vh-4rem)] sm:h-[calc(100vh-6rem)] py-8" id="testimonials">
       <div className="container mx-auto px-4">
         <h2 className="text-xl sm:text-2xl dark:text-white text-gray-900 text-center mb-8 sm:mb-12">
           Testimonials
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+        <div className="max-w-3xl mx-auto relative">
+          {/* Carousel Container */}
+          <div className="overflow-hidden">
             <div 
-              key={index}
-              className="dark:bg-neutral-800 bg-gray-100 p-6 rounded-lg hover:bg-gray-200 dark:hover:bg-neutral-700 transition-colors"
+              className="transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <FaQuoteLeft className="text-3xl dark:text-gray-500 text-gray-400 mb-4" />
-              <p className="dark:text-gray-300 text-gray-600 mb-6 text-sm sm:text-base">
-                "{testimonial.text}"
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-600 overflow-hidden mr-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="dark:text-white text-gray-900 font-medium text-sm sm:text-base">
-                    {testimonial.name}
-                  </h3>
-                  <p className="dark:text-gray-400 text-gray-500 text-xs sm:text-sm">
-                    {testimonial.role}
-                  </p>
-                </div>
+              <div className="flex">
+                {testimonials.map((testimonial, index) => (
+                  <div 
+                    key={index}
+                    className="w-full flex-shrink-0 px-4"
+                  >
+                    <TestimonialCard testimonial={testimonial} />
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={goToPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 dark:bg-neutral-800 bg-white p-2 rounded-full shadow-lg dark:text-white text-gray-900 hover:bg-gray-100 dark:hover:bg-neutral-700"
+            aria-label="Previous testimonial"
+          >
+            <FaChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 dark:bg-neutral-800 bg-white p-2 rounded-full shadow-lg dark:text-white text-gray-900 hover:bg-gray-100 dark:hover:bg-neutral-700"
+            aria-label="Next testimonial"
+          >
+            <FaChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center space-x-2 mt-6">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-blue-500 w-4' 
+                    : 'bg-gray-300 dark:bg-gray-600'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default Testimonials; 
+export default Testimonials;
