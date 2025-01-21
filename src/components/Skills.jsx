@@ -5,8 +5,11 @@ function Skills() {
     {
       area: "FrontEnd",
       proficiencies: [
+        { name: "HTML5", level: 95 },
+        { name: "CSS3", level: 90 },
+        { name: "JavaScript", level: 95 },
         { name: "React", level: 90 },
-        { name: "SASS", level: 85 },
+        { name: "SASS", level: 85 }
       ]
     },
     // {
@@ -48,20 +51,28 @@ function Skills() {
         { name: "Tailwind CSS", level: 85 }
       ]
     },
-    {
-      area: "Web technologies",
-      proficiencies: [
-        { name: "HTML5", level: 95 },
-        { name: "CSS3", level: 90 },
-        // { name: "ES7+", level: 85 },
-        // { name: "a11y", level: 75 }
-      ]
-    },
+    // {
+    //   area: "Web technologies",
+    //   proficiencies: [
+        
+    //     // { name: "ES7+", level: 85 },
+    //     // { name: "a11y", level: 75 }
+    //   ]
+    // },
     {
       area: "Databases",
       proficiencies: [
         { name: "MySQL", level: 80 },
         { name: "SQL Server", level: 75 }
+      ]
+    },
+    {
+      area: "Languages",
+      proficiencies: [
+        { name: "JavaScript", level: 95 },
+        { name: "C#", level: 80 },
+        { name: "C++", level: 85 },
+        { name: "Java", level: 65 }
       ]
     },
     {
@@ -71,15 +82,6 @@ function Skills() {
         // { name: "Eslint", level: 85 },
         // { name: "Prettier", level: 85 },
         // { name: "Typescript", level: 80 }
-      ]
-    },
-    {
-      area: "Languages",
-      proficiencies: [
-        { name: "JavaScript", level: 95 },
-        { name: "C#", level: 80 },
-        { name: "C++", level: 75 },
-        { name: "Java", level: 70 }
       ]
     }
   ];
@@ -91,7 +93,7 @@ function Skills() {
           Technical Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 auto-rows-auto gap-4 sm:gap-6 max-w-6xl mx-auto">
           {skillsData.map((category, index) => (
             <SkillCategory
               key={index}
