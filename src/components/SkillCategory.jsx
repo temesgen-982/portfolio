@@ -15,7 +15,6 @@ import { TbBrandGolang, TbBrandCSharp } from 'react-icons/tb'
 const skillsConfig = {
   'React': { icon: FaReact, color: '#61DAFB' },
   'Redux': { icon: SiRedux, color: '#764ABC' },
-  'Angular': { icon: FaAngular, color: '#DD0031' },
   'SASS': { icon: FaSass, color: '#CC6699' },
   'Webpack': { icon: SiWebpack, color: '#8DD6F9' },
   'Go': { icon: TbBrandGolang, color: '#00ADD8' },
