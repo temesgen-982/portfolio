@@ -7,19 +7,31 @@ function Testimonials() {
     {
       name: "John Doe",
       role: "Senior Developer at TechCorp",
-      image: "/path-to-image1.jpg",
+      image: "/images/user.png",
       text: "Working with Temesgen was a great experience. His attention to detail and problem-solving skills are exceptional."
     },
     {
       name: "Jane Smith",
       role: "Project Manager at WebSolutions",
-      image: "/path-to-image2.jpg",
+      image: "/images/user.png",
       text: "Temesgen consistently delivered high-quality work and was always ready to take on new challenges."
     },
     {
       name: "Mike Johnson",
       role: "Tech Lead at InnovateTech",
-      image: "/path-to-image3.jpg",
+      image: "/images/user.png",
+      text: "lorem."
+    },
+    {
+      name: "Mike Johnson",
+      role: "Tech Lead at InnovateTech",
+      image: "/images/user.png",
+      text: "lorem."
+    },
+    {
+      name: "Mike Johnson",
+      role: "Tech Lead at InnovateTech",
+      image: "/images/user.png",
       text: "lorem."
     }
   ];
