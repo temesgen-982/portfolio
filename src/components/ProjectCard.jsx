@@ -1,96 +1,106 @@
 import { useState } from 'react'
 import { FiExternalLink } from 'react-icons/fi'
-import { FaGithub, FaStar, FaCodeBranch, FaHeart } from 'react-icons/fa'
+import { FaGithub, FaStar, FaCodeBranch, FaHeart, FaClock } from 'react-icons/fa'
 
-function ProjectCard({ title, description, technologies, repoLink, demoLink, stars, forks, initialLikes }) {
-  const [likes, setLikes] = useState(() => {
-    const saved = localStorage.getItem(`project-likes-${title}`);
-    return saved ? parseInt(saved) : (initialLikes || 0);
-  });
-  
-  const [isLiked, setIsLiked] = useState(() => {
-    return localStorage.getItem(`project-liked-${title}`) === 'true';
-  });
+function ProjectCard({ 
+  title, 
+  description, 
+  languages = [], 
+  repoLink, 
+  demoLink, 
+  stars = 0, 
+  forks = 0, 
+  lastUpdated, 
+  initialLikes = 0 
+}) {
+  const [likes, setLikes] = useState(initialLikes)
+  const [isLiked, setIsLiked] = useState(false)
 
   const handleLike = () => {
     if (!isLiked) {
-      setLikes(prev => {
-        const newLikes = prev + 1;
-        localStorage.setItem(`project-likes-${title}`, newLikes.toString());
-        return newLikes;
-      });
-      setIsLiked(true);
-      localStorage.setItem(`project-liked-${title}`, 'true');
+      setLikes(prev => prev + 1)
+      setIsLiked(true)
     } else {
-      setLikes(prev => {
-        const newLikes = prev - 1;
-        localStorage.setItem(`project-likes-${title}`, newLikes.toString());
-        return newLikes;
-      });
-      setIsLiked(false);
-      localStorage.setItem(`project-liked-${title}`, 'false');
+      setLikes(prev => prev - 1)
+      setIsLiked(false)
     }
-  };
+  }
 
   return (
-    <div className="bg-white dark:bg-neutral-800 rounded-lg p-4 sm:p-6 hover:shadow-lg transition-all duration-300">
-      <h3 className="text-lg sm:text-xl dark:text-white text-gray-900 font-semibold mb-2">{title}</h3>
-      <p className="text-sm sm:text-base dark:text-gray-300 text-gray-600 mb-4">{description}</p>
-      
-      {/* Technologies */}
-      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-        {technologies.map((tech, index) => (
-          <span 
-            key={index}
-            className="px-2 sm:px-3 py-1 text-xs dark:bg-neutral-900 bg-gray-200 dark:text-gray-300 text-gray-700 rounded-full"
-          >
-            {tech}
+    <div className="bg-white dark:bg-neutral-800 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border dark:border-neutral-700 border-gray-200">
+      <div className="p-6">
+        <h3 className="text-lg sm:text-xl dark:text-white text-gray-900 font-semibold mb-3">
+          {title}
+        </h3>
+        
+        <p className="text-sm sm:text-base dark:text-gray-300 text-gray-600 mb-4">
+          {description}
+        </p>
+
+        {languages.length > 0 && (
+          <div className="mb-4 text-sm flex flex-wrap items-center gap-2">
+            <span className="dark:text-gray-300 text-gray-600 font-medium">Languages:</span>
+            {languages.map((lang, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 rounded-full dark:bg-neutral-700 bg-gray-200 text-xs"
+              >
+                {lang.name} {lang.percentage}%
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="flex gap-4 mb-4 text-sm">
+          <span className="flex items-center gap-1 dark:text-gray-400 text-gray-500">
+            <FaStar className="w-4 h-4" />
+            {stars}
           </span>
-        ))}
-      </div>
-      
-      {/* Stats */}
-      <div className="flex gap-3 sm:gap-4 mb-3 sm:mb-4 text-xs sm:text-sm dark:text-gray-400 text-gray-500">
-        <span className="flex items-center gap-1">
-          <FaStar className="w-3 h-3 sm:w-4 sm:h-4" />
-          {stars}
-        </span>
-        <span className="flex items-center gap-1">
-          <FaCodeBranch className="w-3 h-3 sm:w-4 sm:h-4" />
-          {forks}
-        </span>
-        <button 
-          onClick={handleLike}
-          className="flex items-center gap-1 hover:text-red-500 transition-colors"
-          aria-label={isLiked ? "Unlike project" : "Like project"}
-        >
-          <FaHeart className={`w-3 h-3 sm:w-4 sm:h-4 ${isLiked ? 'text-red-500' : ''}`} />
-          {likes}
-        </button>
-      </div>
-      
-      {/* Links */}
-      <div className="flex gap-3 sm:gap-4">
-        <a
-          href={repoLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="dark:text-gray-300 text-gray-600 hover:text-gray-900 dark:hover:text-white text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2"
-        >
-          <FaGithub className="w-3 h-3 sm:w-4 sm:h-4" />
-          Repository
-        </a>
-        {demoLink && (
+          <span className="flex items-center gap-1 dark:text-gray-400 text-gray-500">
+            <FaCodeBranch className="w-4 h-4" />
+            {forks}
+          </span>
+          <span className="flex items-center gap-2 text-sm dark:text-gray-400 text-gray-500">
+            <FaClock className="w-4 h-4" />
+            {lastUpdated}
+          </span>
+        </div>
+
+        <hr className="border-gray-200 dark:border-neutral-700 my-4" />
+
+        <div className="flex gap-4">
           <a
-            href={demoLink}
+            href={repoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="dark:text-gray-300 text-gray-600 hover:text-gray-900 dark:hover:text-white text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg dark:bg-neutral-700 bg-gray-200 hover:opacity-80 transition-opacity text-sm"
           >
-            <FiExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-            Live Demo
+            <FaGithub className="w-4 h-4" />
+            Repository
           </a>
-        )}
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors text-sm"
+            >
+              <FiExternalLink className="w-4 h-4" />
+              Live Demo
+            </a>
+          )}
+          <button 
+            onClick={handleLike}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+              isLiked 
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-500' 
+                : 'dark:bg-neutral-700 bg-gray-200 dark:text-gray-400 text-gray-500 hover:text-red-500 dark:hover:text-red-500'
+            }`}
+          >
+            <FaHeart className={`w-4 h-4 ${isLiked ? 'text-red-500' : ''}`} />
+            {likes}
+          </button>
+        </div>
       </div>
     </div>
   )
