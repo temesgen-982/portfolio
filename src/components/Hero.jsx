@@ -1,6 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram, FaTelegram } from 'react-icons/fa'
 import { FaFileArrowDown } from 'react-icons/fa6'
-import portraitImg from '../assets/images/portrait.png'
 
 function Hero({ className }) {
   const socialLinks = [
@@ -33,11 +32,11 @@ function Hero({ className }) {
   return (
     <section className={`pt-[40%] sm:pt-24 flex items-center justify-center ${className}`}>
       <div className="container mx-auto text-center px-4">
-        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 mx-auto mb-6 md:mb-8 overflow-hidden">
+        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 md:mb-8 overflow-hidden border-[.1rem] dark:border-white border-transparent">
           <img 
-            src={portraitImg} 
+            src="/images/portrait.png"
             alt="Profile"
-            className="w-full h-full object-cover bg-transparent"
+            className="w-full h-full object-cover"
           />
         </div>
         
