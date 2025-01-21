@@ -153,31 +153,57 @@ function Contact() {
           <div className="sm:justify-self-center space-y-6">
             <h3 className="text-xl dark:text-white text-gray-900 mb-4">Contact Me</h3>
             <div className="space-y-3 text-sm dark:text-gray-300 text-gray-600">
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors">
                 <FaMapMarkerAlt className="w-4 h-4" />
                 <span>Addis Ababa • Ethiopia</span>
               </p>
-              <p className="flex items-center gap-2">
+              <a 
+                href="tel:+251909709370" 
+                className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
                 <FaPhone className="w-4 h-4" />
                 <span>+251909709370</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <FaEnvelope className="w-4 h-4" />
+              </a>
+              <a 
+                href="mailto:tedenadane@gmail.com"
+                className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+              >
+                <FaEnvelope className="w-4 h-4 text-blue-500" />
                 <span>tedenadane@gmail.com</span>
-              </p>
+              </a>
             </div>
-            <div className="flex space-x-4 mt-4">
-              <a href="https://t.me/beshow" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
-                <FaTelegram className="w-5 h-5" />
+            <div className="flex space-x-4 mt-6">
+              <a 
+                href="https://t.me/beshow" 
+                className="text-[#0088cc] hover:text-[#0088cc]/80 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTelegram className="w-6 h-6" />
               </a>
-              <a href="https://github.com/temesgen-982" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
-                <FaGithub className="w-5 h-5" />
+              <a 
+                href="https://github.com/temesgen-982" 
+                className="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="w-6 h-6" />
               </a>
-              <a href="https://www.instagram.com/beshow.6767/" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
-                <FaInstagram className="w-5 h-5" />
+              <a 
+                href="https://www.instagram.com/beshow.6767/" 
+                className="text-[#E4405F] hover:text-[#E4405F]/80 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram className="w-6 h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/temesgen-adane-7a8b96289/" className="dark:text-white text-gray-700 dark:opacity-80 opacity-70 hover:opacity-100">
-                <FaLinkedin className="w-5 h-5" />
+              <a 
+                href="https://www.linkedin.com/in/temesgen-adane-7a8b96289/" 
+                className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="w-6 h-6" />
               </a>
             </div>
           </div>
