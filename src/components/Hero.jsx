@@ -37,6 +37,7 @@ function Hero({ className }) {
             src="/images/portrait.png"
             alt="Profile"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         
