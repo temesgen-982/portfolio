@@ -8,6 +8,7 @@ function ProjectCard({
   languages = [], 
   repoLink, 
   demoLink, 
+  screenshot, 
   stars = 0, 
   forks = 0, 
   lastUpdated, 
@@ -15,6 +16,8 @@ function ProjectCard({
 }) {
   const [likes, setLikes] = useState(initialLikes)
   const [isLiked, setIsLiked] = useState(false)
+  const [imgError, setImgError] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleLike = () => {
     if (!isLiked) {
@@ -27,8 +30,18 @@ function ProjectCard({
   }
 
   return (
-    <div className="bg-white dark:bg-neutral-800 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border dark:border-neutral-700 border-gray-200">
+    <div className="grid items-end bg-white dark:bg-neutral-800 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 border dark:border-neutral-700 border-gray-200">
       <div className="p-6">
+        {screenshot && !imgError && (
+          <div className="mb-4 rounded-lg overflow-hidden h-[270px]">
+            <img 
+              src={screenshot} 
+              alt={`Screenshot of ${title}`} 
+              className="w-full h-full object-cover object-top"
+              onError={() => setImgError(true)}
+            />
+          </div>
+        )}
         <h3 className="text-lg sm:text-xl dark:text-white text-gray-900 font-semibold mb-3">
           {title}
         </h3>
