@@ -18,6 +18,11 @@ function Contact() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState({
+    show: false,
+    type: '',
+    message: ''
+  });
 
   // Initialize EmailJS
   useEffect(() => {
@@ -59,14 +64,26 @@ function Contact() {
         );
 
         if (result.status === 200) {
-          alert('Message sent successfully!');
+          setNotification({
+            show: true,
+            type: 'success',
+            message: 'Message sent successfully! I will get back to you soon.'
+          });
           setFormData({ name: '', email: '', message: '' });
         }
       } catch (error) {
         console.error('Error submitting form:', error);
-        alert('Failed to send message. Please try again.');
+        setNotification({
+          show: true,
+          type: 'error',
+          message: 'Failed to send message. Please try again later.'
+        });
       } finally {
         setIsSubmitting(false);
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+          setNotification({ show: false, type: '', message: '' });
+        }, 5000);
       }
     } else {
       setErrors(newErrors);
@@ -89,7 +106,32 @@ function Contact() {
   };
 
   return (
-    <section className="text-white py-16" id="contact">
+    <section className="text-white py-16 relative" id="contact">
+      {/* Notification */}
+      {notification.show && (
+        <div
+          className={`fixed top-4 right-4 p-4 rounded-lg shadow-lg max-w-md z-50 transition-all duration-300 ${
+            notification.type === 'success'
+              ? 'bg-green-50 border-l-4 border-green-500 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+              : 'bg-red-50 border-l-4 border-red-500 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+          }`}
+          role="alert"
+        >
+          <div className="flex items-center">
+            {notification.type === 'success' ? (
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              </svg>
+            )}
+            <p className="text-sm font-medium">{notification.message}</p>
+          </div>
+        </div>
+      )}
+
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           <div>
@@ -102,7 +144,7 @@ function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border dark:text-white text-gray-900 placeholder:text-gray-500 dark:placeholder:text-gray-400 ${
                     errors.name ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
@@ -117,7 +159,7 @@ function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email"
-                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border dark:text-white text-gray-900 placeholder:text-gray-500 dark:placeholder:text-gray-400 ${
                     errors.email ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
@@ -134,7 +176,7 @@ function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your Message"
-                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
+                  className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border dark:text-white text-gray-900 placeholder:text-gray-500 dark:placeholder:text-gray-400 ${
                     errors.message ? 'border-red-500' : 'border-neutral-700'
                   }`}
                 />
