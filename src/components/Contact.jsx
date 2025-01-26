@@ -127,11 +127,13 @@ function Contact() {
               </div>
               <div>
                 <textarea
+                  id="message"
                   name="message"
+                  rows="4"
+                  maxLength={500}
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your Message"
-                  rows="4"
                   className={`w-full p-2 rounded dark:bg-neutral-800 bg-gray-200 border ${
                     errors.message ? 'border-red-500' : 'border-neutral-700'
                   }`}
