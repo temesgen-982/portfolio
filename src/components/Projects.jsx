@@ -196,8 +196,10 @@ function Projects() {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl dark:text-white text-gray-900 text-center mb-12">Projects</h2>
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+        <h2 className="text-3xl font-bold dark:text-white text-gray-900 mb-8 text-center">
+          Projects
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} {...project} />
