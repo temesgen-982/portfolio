@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "assets/pen-tool-svgrepo-com.svg",
+    "title": "Design",
+    "desc": "Crafting visuals that communicate clearly and leave a lasting impression"
+  },
+  {
+    "icon": "assets/code-svgrepo-com.svg",
+    "title": "Development",
+    "desc": "Building robust, scalable applications with clean and maintainable code"
+  },
+  {
+    "icon": "assets/terminal-svgrepo-com.svg",
+    "title": "Backend",
+    "desc": "Designing efficient APIs and databases that power seamless experiences"
+  },
+  {
+    "icon": "assets/user-circle-svgrepo-com.svg",
+    "title": "Deployment",
+    "desc": "Shipping projects with full functionality using modern DevOps practices"
+  }
+]
