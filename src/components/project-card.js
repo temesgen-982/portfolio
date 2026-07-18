@@ -1,4 +1,4 @@
-export function projectCard(base) {
+export function projectCard({ base }) {
   return ({ title, desc, image, liveUrl, projectUrl }) => `
 <article class="project-card stack">
   ${liveUrl ? `<a href="${liveUrl}" class="live-link">Live site</a>` : ''}

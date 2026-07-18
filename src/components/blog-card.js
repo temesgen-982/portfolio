@@ -1,4 +1,4 @@
-export function blogCard(base) {
+export function blogCard({ base }) {
   return ({ title, desc, image, date, slug, words, readTime, tags }) => `
 <article class="blog-card cluster">
   <img src="${base}${image}" alt="${title}" class="blog-card-image">

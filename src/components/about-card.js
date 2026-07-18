@@ -1,4 +1,4 @@
-export function aboutCard(base) {
+export function aboutCard({ base }) {
   return ({ icon, title, desc }) => `
 <article class="about-card">
   <img class="icon" src="${base}${icon}" alt="${title} icon">

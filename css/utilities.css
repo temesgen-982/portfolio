@@ -1,0 +1,31 @@
+.hidden {
+  display: none;
+}
+
+.rounded {
+  border-radius: 8px;
+}
+
+.center {
+  align-items: center;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+}
+
+.sr-only,
+.sr-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

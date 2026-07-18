@@ -1,0 +1,29 @@
+header {
+  padding: var(--space-3) var(--space-4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.blocker {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  z-index: 5;
+}
+
+.projects .blocker {
+  background: var(--color-brand-accent-strong);
+}
+
+.skills .blocker,
+.contact .blocker {
+  background: var(--color-bg-surface);
+}
+
+.about .blocker {
+  background: var(--color-bg-surface);
+}

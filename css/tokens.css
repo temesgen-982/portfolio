@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+:root {
+  --font-primary: "Plus Jakarta Sans", sans-serif;
+
+  --color-brand-primary: #D2D4D8;
+  --color-brand-secondary: #ffffff;
+  --color-brand-muted: #994D4D;
+  --color-brand-accent: #4183C4;
+  --color-brand-accent-text: #663333;
+  --color-brand-accent-strong: #1E1F20;
+  --color-brand-accent-soft: #E6B280;
+
+  --color-bg-main: #ffffff;
+  --color-bg-surface: #151718;
+  --color-bg-panel: #663333;
+  --color-bg-overlay: rgba(102, 51, 51, 0.08);
+
+  --color-text-main: #D2D4D8;
+  --color-text-muted: #994D4D;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #663333;
+  --color-border-subtle: #e6d5d5;
+
+  --color-brand-accent-hover: #F0E685;
+  --color-brand-accent-active: #E1D872;
+
+  --color-state-success: #4A7A56;
+  --color-state-error: #B53A3A;
+
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --section-spacing: clamp(2rem, 8vw, 8rem);
+  --header-height: 3.5rem;
+
+  --border: 1px solid var(--color-brand-primary);
+
+  --fs-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
+  --fs-h2: clamp(1.5rem, 2vw + 1rem, 2rem);
+  --fs-h3: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --lh-body: 1.6;
+  --lh-tight: 1.2;
+}

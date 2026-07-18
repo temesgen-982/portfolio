@@ -1,0 +1,30 @@
+.projects {
+  background-color: var(--color-brand-accent-strong);
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-6);
+}
+
+.project-card {
+  position: relative;
+
+  a.live-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-brand-accent-strong);
+    color: var(--color-text-inverse);
+    align-self: start;
+    border-radius: 0 var(--space-4) 0 var(--space-4);
+    padding: var(--space-1) var(--space-2);
+  }
+
+}
+
+.project-image {
+  max-width: 100%;
+  border-radius: var(--space-4);
+}

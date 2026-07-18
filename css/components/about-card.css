@@ -1,0 +1,56 @@
+.about {
+  background-color: var(--color-bg-surface);
+}
+
+.about-header {
+  justify-content: center;
+}
+
+.about-cards {
+  display: grid;
+  gap: var(--space-2);
+
+  .about-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-block: var(--space-2);
+    align-items: center;
+
+    img,
+    h3,
+    p {
+      padding: var(--space-1);
+    }
+
+    /* image padding will eat into the image width and height */
+    img {
+      box-sizing: content-box;
+    }
+
+    p {
+      grid-column-start: 2;
+    }
+
+  }
+}
+
+@media(min-width: 845px) {
+  .about-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+
+    .about-card {
+      padding: 24px;
+      border-right: var(--border);
+      border-bottom: var(--border);
+
+      &:nth-child(2n) {
+        border-right: none;
+      }
+
+      &:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+    }
+  }
+}

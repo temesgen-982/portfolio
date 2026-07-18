@@ -1,6 +1,6 @@
 import { MainLayout } from '../layouts/MainLayout.js';
 
-export default function ContactPage(base) {
+export default function ContactPage({ base }) {
   const content = `
   <section class="contact section">
     <div class="blocker"></div>
@@ -26,5 +26,5 @@ export default function ContactPage(base) {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Contact', active: 'contact', content, base });
+  return MainLayout({ title: 'Contact', active: 'contact', base, content });
 }

@@ -1,0 +1,11 @@
+.skills {
+  align-items: center;
+
+  .skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: var(--space-2);
+
+  }
+
+}

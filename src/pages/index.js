@@ -6,7 +6,7 @@ import projects from '#data/projects.json' with { type: 'json' };
 import aboutCards from '#data/about-cards.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
-export default function IndexPage(base) {
+export default function IndexPage({ base }) {
   const content = `
   <div class="hero center">
     <div class="blocker"></div>
@@ -34,7 +34,7 @@ export default function IndexPage(base) {
         <a href="${base}/work/">view more</a>
       </div>
       <div class="project-cards">
-        ${projects.map(projectCard(base)).join('')}
+        ${projects.map(projectCard({ base })).join('')}
       </div>
     </div>
   </section>
@@ -51,7 +51,7 @@ export default function IndexPage(base) {
         </div>
       </div>
       <div class="about-cards">
-        ${aboutCards.map(aboutCard(base)).join('')}
+        ${aboutCards.map(aboutCard({ base })).join('')}
       </div>
     </div>
   </section>
@@ -61,7 +61,7 @@ export default function IndexPage(base) {
     <div class="container stack">
       <h2>Skills & Tools</h2>
       <div class="skill-cards">
-        ${skills.map(skillCard(base)).join('')}
+        ${skills.map(skillCard({ base })).join('')}
       </div>
     </div>
   </section>
@@ -90,5 +90,5 @@ export default function IndexPage(base) {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Home', active: 'home', content, base });
+  return MainLayout({ title: 'Home', active: 'home', base, content });
 }

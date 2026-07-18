@@ -1,0 +1,38 @@
+h1,
+h2,
+h3 {
+  color: var(--color-text-main);
+  line-height: var(--lh-tight);
+  font-weight: 800;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-main);
+  overflow-x: hidden;
+  background-color: var(--color-bg-surface);
+}
+
+input,
+textarea,
+button {
+  padding: var(--space-2) var(--space-4);
+}
+
+img {
+  max-width: 32px;
+}
