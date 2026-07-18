@@ -2,7 +2,7 @@
   {
     "title": "Getting Started with Modern CSS",
     "desc": "A deep dive into CSS custom properties, container queries, and other modern features.",
-    "image": "assets/sample-image.jpeg",
+    "image": "/assets/sample-image.jpeg",
     "date": "2026-06-15",
     "slug": "modern-css",
     "words": 1200,
@@ -12,7 +12,7 @@
   {
     "title": "Building a Static Site Generator",
     "desc": "How I built my portfolio with zero dependencies using plain Node.js.",
-    "image": "assets/sample-image.jpeg",
+    "image": "/assets/sample-image.jpeg",
     "date": "2026-07-10",
     "slug": "static-site-generator",
     "words": 950,
@@ -22,7 +22,7 @@
   {
     "title": "REST API Design Principles",
     "desc": "Best practices for designing clean and maintainable RESTful APIs.",
-    "image": "assets/sample-image.jpeg",
+    "image": "/assets/sample-image.jpeg",
     "date": "2026-05-22",
     "slug": "rest-api-design",
     "words": 1800,

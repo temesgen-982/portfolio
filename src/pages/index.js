@@ -6,7 +6,7 @@ import projects from '#data/projects.json' with { type: 'json' };
 import aboutCards from '#data/about-cards.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
-export default function IndexPage() {
+export default function IndexPage(base) {
   const content = `
   <div class="hero center">
     <div class="blocker"></div>
@@ -15,13 +15,13 @@ export default function IndexPage() {
       <h1>Temesgen Adane</h1>
       <p>A Full-stack developer crafting digital experiences from concept to reality.</p>
       <div class="button-offset">
-        <a href="/work.html" class="button button--primary">Explore My Work</a>
+        <a href="${base}/work/" class="button button--primary">Explore My Work</a>
       </div>
     </div>
     <div class="hero-social">
-      <a href="mailto:tedenadane@gmail.com" class="social-box"><img src="assets/email-svgrepo-com.svg" alt="Email"></a>
-      <a href="https://github.com" class="social-box"><img src="assets/github-svgrepo-com.svg" alt="GitHub"></a>
-      <a href="https://linkedin.com" class="social-box"><img src="assets/linkedin-svgrepo-com.svg" alt="LinkedIn"></a>
+      <a href="mailto:tedenadane@gmail.com" class="social-box"><img src="${base}/assets/email-svgrepo-com.svg" alt="Email"></a>
+      <a href="https://github.com" class="social-box"><img src="${base}/assets/github-svgrepo-com.svg" alt="GitHub"></a>
+      <a href="https://linkedin.com" class="social-box"><img src="${base}/assets/linkedin-svgrepo-com.svg" alt="LinkedIn"></a>
     </div>
     <div class="hero-side"></div>
   </div>
@@ -31,10 +31,10 @@ export default function IndexPage() {
     <div class="container stack">
       <div class="projects-header cluster">
         <h2>Selected Projects</h2>
-        <a href="/work.html">view more</a>
+        <a href="${base}/work/">view more</a>
       </div>
       <div class="project-cards">
-        ${projects.map(projectCard).join('')}
+        ${projects.map(projectCard(base)).join('')}
       </div>
     </div>
   </section>
@@ -47,11 +47,11 @@ export default function IndexPage() {
         <p>I'm a full-stack developer with a passion for building beautiful, functional, and user-centered experiences.
           I believe in the power of thoughtful system design and clean code to create meaningful impact.</p>
         <div class="button-offset">
-          <a href="/about.html" class="button button--primary">Learn more</a>
+          <a href="${base}/about/" class="button button--primary">Learn more</a>
         </div>
       </div>
       <div class="about-cards">
-        ${aboutCards.map(aboutCard).join('')}
+        ${aboutCards.map(aboutCard(base)).join('')}
       </div>
     </div>
   </section>
@@ -61,7 +61,7 @@ export default function IndexPage() {
     <div class="container stack">
       <h2>Skills & Tools</h2>
       <div class="skill-cards">
-        ${skills.map(skillCard).join('')}
+        ${skills.map(skillCard(base)).join('')}
       </div>
     </div>
   </section>
@@ -90,5 +90,5 @@ export default function IndexPage() {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Home', active: 'home', content });
+  return MainLayout({ title: 'Home', active: 'home', content, base });
 }

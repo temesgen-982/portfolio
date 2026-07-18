@@ -2,26 +2,26 @@
   {
     "title": "Frontend: LIS",
     "desc": "A responsive frontend website for a laboratory.",
-    "image": "assets/sample-image.jpeg",
+    "image": "/assets/sample-image.jpeg",
     "liveUrl": "/",
-    "projectUrl": "/work/lis.html"
+    "projectUrl": "/work/lis/"
   },
   {
     "title": "Backend: REST API",
     "desc": "A RESTful API built with Node.js and Express.",
-    "image": "assets/sample-image.jpeg",
-    "projectUrl": "/work/rest-api.html"
+    "image": "/assets/sample-image.jpeg",
+    "projectUrl": "/work/rest-api/"
   },
   {
     "title": "Full-Stack: E-Commerce",
     "desc": "A full-stack e-commerce platform with payment integration.",
-    "image": "assets/sample-image.jpeg",
-    "projectUrl": "/work/e-commerce.html"
+    "image": "/assets/sample-image.jpeg",
+    "projectUrl": "/work/e-commerce/"
   },
   {
     "title": "Mobile: Task Manager",
     "desc": "A cross-platform mobile app for managing daily tasks.",
-    "image": "assets/sample-image.jpeg",
-    "projectUrl": "/work/task-manager.html"
+    "image": "/assets/sample-image.jpeg",
+    "projectUrl": "/work/task-manager/"
   }
 ]

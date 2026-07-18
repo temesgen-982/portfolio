@@ -1,7 +1,7 @@
-export function header({ active }) {
+export function header({ active, base }) {
   return `
 <header class="cluster">
-  <a href="/index.html">Temesgen Adane</a>
+  <a href="${base}/">Temesgen Adane</a>
 
   <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
@@ -19,11 +19,11 @@ export function header({ active }) {
   <div class="side-panel">
     <nav>
       <ul>
-        <li><a href="/index.html" class="${active === 'home' ? 'active' : ''}">Home</a></li>
-        <li><a href="/work.html" class="${active === 'work' ? 'active' : ''}">Work</a></li>
-        <li><a href="/about.html" class="${active === 'about' ? 'active' : ''}">About</a></li>
-        <li><a href="/blog.html" class="${active === 'blog' ? 'active' : ''}">Blog</a></li>
-        <li><a href="/contact.html" class="${active === 'contact' ? 'active' : ''}">Contact</a></li>
+        <li><a href="${base}/" class="${active === 'home' ? 'active' : ''}">Home</a></li>
+        <li><a href="${base}/work/" class="${active === 'work' ? 'active' : ''}">Work</a></li>
+        <li><a href="${base}/about/" class="${active === 'about' ? 'active' : ''}">About</a></li>
+        <li><a href="${base}/blog/" class="${active === 'blog' ? 'active' : ''}">Blog</a></li>
+        <li><a href="${base}/contact/" class="${active === 'contact' ? 'active' : ''}">Contact</a></li>
       </ul>
     </nav>
   </div>
