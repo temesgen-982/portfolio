@@ -28,8 +28,6 @@ jobs:
 
       - name: Build site
         run: node build.js
-        env:
-          BASE_URL: /portfolio
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
