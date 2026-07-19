@@ -1,4 +1,5 @@
 import { MainLayout } from '../layouts/MainLayout.js';
+import { contactForm } from '../components/contact-form.js';
 
 export default function ContactPage({ base }) {
   const content = `
@@ -11,18 +12,11 @@ export default function ContactPage({ base }) {
         <div>
           <button class="button button--ghost">tedenadane@gmail.com</button>
           <div class="button-offset">
-            <button class="button button--primary"></button>
+            <button class="button button--primary" onclick="navigator.clipboard.writeText('tedenadane@gmail.com').then(() => this.textContent = 'Copied!')">Copy</button>
           </div>
         </div>
       </div>
-      <form action="" class="contact-form">
-        <div>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-        </div>
-        <textarea placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      ${contactForm()}
     </div>
   </section>`;
 
