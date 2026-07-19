@@ -67,7 +67,9 @@ const server = http.createServer((req, res) => {
     const types = {
       '.html': 'text/html', '.css': 'text/css', '.js': 'application/javascript',
       '.svg': 'image/svg+xml', '.jpeg': 'image/jpeg', '.jpg': 'image/jpeg',
-      '.ttf': 'font/ttf', '.json': 'application/json'
+      '.png': 'image/png', '.pdf': 'application/pdf',
+      '.ttf': 'font/ttf', '.woff': 'font/woff', '.woff2': 'font/woff2',
+      '.json': 'application/json'
     };
     res.writeHead(200, { 'Content-Type': types[ext] || 'application/octet-stream' });
 

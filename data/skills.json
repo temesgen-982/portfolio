@@ -7,5 +7,7 @@
   { "name": "Svelte", "icon": "/assets/language-icons/svelte-icon-svgrepo-com.svg" },
   { "name": "NestJS", "icon": "/assets/language-icons/nestjs-svgrepo-com.svg" },
   { "name": "Spring Boot", "icon": "/assets/language-icons/spring-boot-svgrepo-com.svg" },
-  { "name": "Go", "icon": "/assets/language-icons/go-svgrepo-com.svg" }
+  { "name": "Go", "icon": "/assets/language-icons/go-svgrepo-com.svg" },
+  { "name": "PostgreSQL", "icon": "/assets/language-icons/postgresql-svgrepo-com.svg" },
+  { "name": "SQLite", "icon": "/assets/language-icons/sqlite-svgrepo-com.svg" }
 ]
