@@ -4,4 +4,9 @@ footer {
   border-top: var(--border);
   padding: var(--space-2) var(--space-4);
   margin-top: var(--space-6);
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 }

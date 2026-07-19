@@ -1,13 +1,31 @@
+import { getIcon } from './icons.js';
+import socialLinks from '#data/social-links.json' with { type: 'json' };
+
+const tooltipIcons = new Set(['email', 'cv']);
+
 export function footer(base) {
+  const links = socialLinks.filter(l => l.group.includes('footer'));
+
+  const items = links.map(link => {
+    const url = link.icon === 'cv' ? `${base}${link.url}` : link.url;
+    const svg = getIcon(link.icon);
+    if (tooltipIcons.has(link.icon)) {
+      const tipId = `footer-${link.icon}-tip`;
+      return `
+      <div class="tip-anchor tip-above" style="anchor-name: --${tipId}">
+        <a href="${url}"${link.icon === 'cv' ? ' target="_blank" rel="noopener"' : ''}>${svg}</a>
+        <div class="tip-box" style="position-anchor: --${tipId}">${link.name === 'CV' ? 'View CV' : link.url.replace('mailto:', '')}</div>
+      </div>`;
+    }
+    return `      <a href="${url}"${link.icon === 'cv' ? ' target="_blank" rel="noopener"' : ''}>${svg}</a>`;
+  }).join('\n');
+
   return `
 <footer>
   <div class="container cluster">
     <span>Temesgen Adane</span>
-    <div>
-      <a href="mailto:tedenadane@gmail.com"><img src="${base}/assets/email-svgrepo-com.svg" alt="Email"></a>
-      <a href="https://github.com"><img src="${base}/assets/github-svgrepo-com.svg" alt="GitHub"></a>
-      <a href="https://linkedin.com"><img src="${base}/assets/linkedin-svgrepo-com.svg" alt="LinkedIn"></a>
-      <a href="https://t.me/"><img src="${base}/assets/telegram-logo-thin-svgrepo-com.svg" alt="Telegram"></a>
+    <div class="cluster">
+${items}
     </div>
   </div>
 </footer>`;

@@ -36,3 +36,33 @@ button {
 img {
   max-width: 32px;
 }
+
+.tip-anchor {
+  position: relative;
+}
+
+.tip-box {
+  position: fixed;
+  position-area: bottom;
+  margin-top: 8px;
+  border: none;
+  background: var(--color-brand-accent-strong);
+  color: var(--color-text-main);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 4px;
+  font-size: var(--fs-small);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tip-anchor.tip-above > .tip-box {
+  position-area: top;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.tip-anchor:hover > .tip-box {
+  opacity: 1;
+}

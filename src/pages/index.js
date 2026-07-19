@@ -2,6 +2,9 @@ import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import { aboutCard } from '../components/about-card.js';
 import { skillCard } from '../components/skill-card.js';
+import { contactForm } from '../components/contact-form.js';
+import { getIcon, ellipsisIcon } from '../partials/icons.js';
+import socialLinks from '#data/social-links.json' with { type: 'json' };
 import projects from '#data/projects.json' with { type: 'json' };
 import aboutCards from '#data/about-cards.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
@@ -19,12 +22,44 @@ export default function IndexPage({ base }) {
       </div>
     </div>
     <div class="hero-social">
-      <a href="mailto:tedenadane@gmail.com" class="social-box"><img src="${base}/assets/email-svgrepo-com.svg" alt="Email"></a>
-      <a href="https://github.com" class="social-box"><img src="${base}/assets/github-svgrepo-com.svg" alt="GitHub"></a>
-      <a href="https://linkedin.com" class="social-box"><img src="${base}/assets/linkedin-svgrepo-com.svg" alt="LinkedIn"></a>
+      ${socialLinks.filter(l => l.group.includes('hero')).map(link => {
+    const svg = getIcon(link.icon);
+    const url = link.icon === 'cv' ? `${base}${link.url}` : link.url;
+    if (link.icon === 'email') {
+      return `
+      <div class="tip-anchor tip-below" style="anchor-name: --email-tip">
+        <a href="${url}" class="social-box">${svg}</a>
+        <div class="tip-box" style="position-anchor: --email-tip">${link.url.replace('mailto:', '')}</div>
+      </div>`;
+    }
+    if (link.icon === 'cv') {
+      return `
+      <div class="tip-anchor tip-below" style="anchor-name: --cv-tip">
+        <a href="${url}" class="social-box" target="_blank" rel="noopener">${svg}</a>
+        <div class="tip-box" style="position-anchor: --cv-tip">View CV</div>
+      </div>`;
+    }
+    return `      <a href="${url}" class="social-box">${svg}</a>`;
+  }).join('')}
+      <button class="social-box ellipsis-btn" onclick="document.getElementById('moreLinks').showModal()">${ellipsisIcon}</button>
     </div>
     <div class="hero-side"></div>
   </div>
+
+  <dialog id="moreLinks" class="modal">
+    <div class="modal-inner">
+      <h3>Elsewhere...</h3>
+      ${socialLinks.filter(l => l.group.includes('modal')).map(link =>
+    `<a href="${link.url}" target="_blank" rel="noopener">${getIcon(link.icon)} ${link.name}</a>`
+  ).join('\n      ')}
+      <button class="button button--ghost modal-close" onclick="this.closest('dialog').close()">Close</button>
+    </div>
+  </dialog>
+  <script>
+    document.getElementById('moreLinks').addEventListener('click', e => {
+      if (e.target === e.currentTarget) e.target.close();
+    });
+  </script>
 
   <section class="projects section">
     <div class="blocker"></div>
@@ -75,18 +110,11 @@ export default function IndexPage({ base }) {
         <div>
           <button class="button button--ghost">tedenadane@gmail.com</button>
           <div class="button-offset">
-            <button class="button button--primary"></button>
+            <button class="button button--primary" onclick="navigator.clipboard.writeText('tedenadane@gmail.com').then(() => this.textContent = 'Copied!')">Copy</button>
           </div>
         </div>
       </div>
-      <form action="" class="contact-form">
-        <div>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-        </div>
-        <textarea placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      ${contactForm()}
     </div>
   </section>`;
 
