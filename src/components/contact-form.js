@@ -17,36 +17,38 @@ export function contactForm() {
       <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <script>
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const form = e.target;
-          const submitBtn = form.querySelector('button[type="submit"]');
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
-          const payload = {
-            name: form.name.value,
-            email: form.email.value,
-            message: form.message.value,
-            website: form.website.value,
-            turnstileToken: form.querySelector('[name="cf-turnstile-response"]')?.value,
-          };
-          try {
-            const res = await fetch('${WORKER_URL}', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
-            });
-            const result = await res.json();
-            if (result.success) {
-              form.reset();
-              submitBtn.textContent = 'Sent!';
-            } else {
-              submitBtn.textContent = 'Failed — try again';
-              submitBtn.disabled = false;
-            }
-          } catch {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        const payload = {
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value,
+          website: form.website.value,
+          turnstileToken: form.querySelector('[name="cf-turnstile-response"]')?.value,
+        };
+        try {
+          const res = await fetch('https://form-contact-worker.temesgen-982.workers.dev', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          const result = await res.json();
+          if (result.success) {
+            form.reset();
+            submitBtn.textContent = 'Sent!';
+          } else {
             submitBtn.textContent = 'Failed — try again';
             submitBtn.disabled = false;
+            if (window.turnstile) window.turnstile.reset();
           }
-        });
-      </script>`;
+        } catch {
+          submitBtn.textContent = 'Failed — try again';
+          submitBtn.disabled = false;
+          if (window.turnstile) window.turnstile.reset();
+        }
+    });      
+  </script>`;
 }
