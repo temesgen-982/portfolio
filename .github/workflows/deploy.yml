@@ -29,6 +29,9 @@ jobs:
       - name: Build site
         run: node build.js
 
+      - name: Add CNAME
+        run: echo "temesgen.dev.et" > dist/CNAME
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
