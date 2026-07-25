@@ -10,32 +10,17 @@
 
   --font-primary: "Plus Jakarta Sans", sans-serif;
 
-  --color-brand-primary: #D2D4D8;
-  --color-brand-secondary: #ffffff;
-  --color-brand-muted: #969aa1;
-  --color-brand-accent: #4183C4;
-  --color-brand-accent-text: #0f2536;
-  --color-brand-accent-strong: #1e1f20;
-  --color-brand-accent-soft: rgba(65, 131, 196, .2);
+  --color-primary: #D2D4D8;
+  --color-accent: #0987efff;
 
   --color-bg-main: #ffffff;
-  --color-bg-surface: #161718;
-  --color-bg-panel: #2c2e32;
-  --color-bg-overlay: rgba(0, 0, 0, .72);
+  --color-bg-surface: #171717ff;
 
   --color-text-main: #d2d4d8;
   --color-text-muted: #c0c2c7;
-  --color-text-soft: #969aa1;
-  --color-text-inverse: #ffffff;
 
   --color-border: #3f4248;
-  --color-border-strong: #46494f;
-  --color-border-subtle: hsla(240, 4%, 95%, .16);
 
-  --color-brand-accent-hover: #3876b3;
-  --color-brand-accent-active: #2f6296;
-
-  --color-state-success: #4A7A56;
   --color-state-error: #B53A3A;
 
   --shadow-card: 0 1px 2px rgba(0, 0, 0, .4), 0 4px 16px rgba(0, 0, 0, .35);
@@ -52,9 +37,9 @@
   --section-spacing: clamp(2rem, 8vw, 8rem);
   --header-height: 3.5rem;
 
-  --border: 1px solid var(--color-brand-primary);
+  --border: 1px solid var(--color-primary);
 
-  --fs-h1: clamp(2rem, 4vw + 1rem, 3.5rem);
+  --fs-h1: clamp(2rem, 3vw + 1rem, 3rem);
   --fs-h2: clamp(1.5rem, 2vw + 1rem, 2rem);
   --fs-h3: 1.125rem;
   --fs-body: 1rem;

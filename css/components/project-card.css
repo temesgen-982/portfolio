@@ -1,5 +1,5 @@
 .projects {
-  background-color: var(--color-brand-accent-strong);
+  background-color: var(--color-bg-surface);
 }
 
 .project-cards {
@@ -15,8 +15,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--color-brand-accent-strong);
-    color: var(--color-text-inverse);
+    background: var(--color-bg-surface);
+    color: var(--color-text-main);
     align-self: start;
     border-radius: 0 var(--space-4) 0 var(--space-4);
     padding: var(--space-1) var(--space-2);

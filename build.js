@@ -31,7 +31,7 @@ const cssOrder = [
   'css/components/hero.css',
   'css/components/project-card.css',
   'css/components/blog-card.css',
-  'css/components/about-card.css',
+  'css/components/experience.css',
   'css/components/skill-cards.css',
   'css/components/contact.css',
   'css/components/footer.css',

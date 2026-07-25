@@ -14,7 +14,7 @@ export function blogCard() {
     <div class="blog-card-tags cluster">
       ${tags.map(tag => html`<span class="tag">${tag}</span>`).join('')}
     </div>
-    <a href="/blog/${slug}/" class="button button--secondary">read more</a>
+    <a href="/blog/${slug}/" class="button">read more</a>
   </div>
 </article>`;
 }

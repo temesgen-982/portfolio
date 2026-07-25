@@ -23,7 +23,7 @@
   right: 0;
   width: 300px;
   height: 100vh;
-  background-color: var(--color-bg-panel);
+  background-color: var(--color-bg-surface);
   z-index: 9999;
   padding-top: var(--space-8);
 
@@ -42,7 +42,7 @@
 }
 
 .side-panel a {
-  color: var(--color-text-inverse);
+  color: var(--color-text-main);
   text-decoration: none;
   font-size: 20px;
   transition: opacity 0.2s;
@@ -52,12 +52,16 @@
   opacity: 0.7;
 }
 
+.side-panel a.active {
+  color: var(--color-accent);
+}
+
 .menu-checkbox:checked~.side-panel {
   transform: translateX(0);
 }
 
 .menu-checkbox:checked~.menu-button {
-  color: var(--color-brand-secondary);
+  color: var(--color-text-main);
 }
 
 #top,
@@ -84,4 +88,38 @@
 
 .menu-checkbox:checked~.menu-button #center2 {
   transform: rotate(225deg);
+}
+
+@media (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+
+  .side-panel {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding-top: 0;
+    transform: none;
+    transition: none;
+  }
+
+  .side-panel ul {
+    display: flex;
+    gap: var(--space-5);
+    margin: 0;
+  }
+
+  .side-panel li {
+    margin: 0;
+  }
+
+  .side-panel a {
+    font-size: var(--fs-body);
+  }
+
+  .side-panel a.active {
+    color: var(--color-accent);
+  }
 }

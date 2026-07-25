@@ -8,7 +8,7 @@ export function projectCard() {
   <div class="stack">
     <h3>${title}</h3>
     <p>${desc}</p>
-    <a href="${projectUrl}" class="button button--secondary">view project</a>
+    <a href="${projectUrl}" class="button">view project</a>
   </div>
 </article>`;
 }

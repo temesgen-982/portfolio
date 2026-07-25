@@ -1,0 +1,24 @@
+[
+  {
+    "startDate": "2023",
+    "endDate": "2026",
+    "title": "BSc in Information System",
+    "school": "University",
+    "desc": "Focused on software engineering, data structures, algorithms, and web technologies.",
+    "certUrl": ""
+  },
+  {
+    "endDate": "2024",
+    "title": "AWS Certified Developer – Associate",
+    "school": "Amazon Web Services",
+    "desc": "Validated expertise in developing and maintaining AWS-based applications.",
+    "certUrl": "#"
+  },
+  {
+    "endDate": "2023",
+    "title": "Meta Front-End Developer",
+    "school": "Coursera",
+    "desc": "Professional certificate covering React, responsive design, and version control.",
+    "certUrl": "#"
+  }
+]
