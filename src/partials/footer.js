@@ -1,3 +1,4 @@
+import { html } from '../utils/html.js';
 import { getIcon } from './icons.js';
 import socialLinks from '#data/social-links.json' with { type: 'json' };
 
@@ -11,16 +12,16 @@ export function footer(base) {
     const svg = getIcon(link.icon);
     if (tooltipIcons.has(link.icon)) {
       const tipId = `footer-${link.icon}-tip`;
-      return `
+      return html`
       <div class="tip-anchor tip-above" style="anchor-name: --${tipId}">
         <a href="${url}"${link.icon === 'cv' ? ' target="_blank" rel="noopener"' : ''}>${svg}</a>
         <div class="tip-box" style="position-anchor: --${tipId}">${link.name === 'CV' ? 'View CV' : link.url.replace('mailto:', '')}</div>
       </div>`;
     }
-    return `      <a href="${url}"${link.icon === 'cv' ? ' target="_blank" rel="noopener"' : ''}>${svg}</a>`;
+    return html`      <a href="${url}"${link.icon === 'cv' ? ' target="_blank" rel="noopener"' : ''}>${svg}</a>`;
   }).join('\n');
 
-  return `
+  return html`
 <footer>
   <div class="container cluster">
     <span>Temesgen Adane</span>

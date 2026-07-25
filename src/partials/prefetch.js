@@ -1,5 +1,7 @@
+import { html } from '../utils/html.js';
+
 export function prefetch(base) {
-  return `
+  return html`
 <script>
 window.addEventListener('load', () => {
   document.querySelectorAll('nav a[href^="${base}/"]').forEach(link => {

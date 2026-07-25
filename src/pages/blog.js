@@ -1,9 +1,10 @@
+import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { blogCard } from '../components/blog-card.js';
 import blogPosts from '#data/blog-posts.json' with { type: 'json' };
 
 export default function BlogPage({ base }) {
-  const content = `
+  const content = html`
   <section class="projects section">
     <div class="blocker"></div>
     <div class="container stack">

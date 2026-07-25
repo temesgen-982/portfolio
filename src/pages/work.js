@@ -1,9 +1,10 @@
+import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import projects from '#data/projects.json' with { type: 'json' };
 
 export default function WorkPage({ base }) {
-  const content = `
+  const content = html`
   <section class="projects section">
     <div class="blocker"></div>
     <div class="container stack">

@@ -1,9 +1,10 @@
+import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { aboutCard } from '../components/about-card.js';
 import aboutCards from '#data/about-cards.json' with { type: 'json' };
 
 export default function AboutPage({ base }) {
-  const content = `
+  const content = html`
   <section class="about section">
     <div class="blocker"></div>
     <div class="container stack">

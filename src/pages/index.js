@@ -1,3 +1,4 @@
+import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import { aboutCard } from '../components/about-card.js';
@@ -10,7 +11,7 @@ import aboutCards from '#data/about-cards.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
 export default function IndexPage({ base }) {
-  const content = `
+  const content = html`
   <div class="hero center">
     <div class="blocker"></div>
     <div class="blocker"></div>
@@ -26,20 +27,20 @@ export default function IndexPage({ base }) {
     const svg = getIcon(link.icon);
     const url = link.icon === 'cv' ? `${base}${link.url}` : link.url;
     if (link.icon === 'email') {
-      return `
+      return html`
       <div class="tip-anchor tip-below" style="anchor-name: --email-tip">
         <a href="${url}" class="social-box">${svg}</a>
         <div class="tip-box" style="position-anchor: --email-tip">${link.url.replace('mailto:', '')}</div>
       </div>`;
     }
     if (link.icon === 'cv') {
-      return `
+      return html`
       <div class="tip-anchor tip-below" style="anchor-name: --cv-tip">
         <a href="${url}" class="social-box" target="_blank" rel="noopener">${svg}</a>
         <div class="tip-box" style="position-anchor: --cv-tip">View CV</div>
       </div>`;
     }
-    return `      <a href="${url}" class="social-box">${svg}</a>`;
+    return html`      <a href="${url}" class="social-box">${svg}</a>`;
   }).join('')}
       <button class="social-box ellipsis-btn" onclick="document.getElementById('moreLinks').showModal()">${ellipsisIcon}</button>
     </div>
@@ -50,7 +51,7 @@ export default function IndexPage({ base }) {
     <div class="modal-inner">
       <h3>Elsewhere...</h3>
       ${socialLinks.filter(l => l.group.includes('modal')).map(link =>
-    `<a href="${link.url}" target="_blank" rel="noopener">${getIcon(link.icon)} ${link.name}</a>`
+    html`<a href="${link.url}" target="_blank" rel="noopener">${getIcon(link.icon)} ${link.name}</a>`
   ).join('\n      ')}
       <button class="button button--ghost modal-close" onclick="this.closest('dialog').close()">Close</button>
     </div>

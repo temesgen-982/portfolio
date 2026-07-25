@@ -1,7 +1,9 @@
+import { html } from '../utils/html.js';
+
 export function projectCard({ base }) {
-  return ({ title, desc, image, liveUrl, projectUrl }) => `
+  return ({ title, desc, image, liveUrl, projectUrl }) => html`
 <article class="project-card stack">
-  ${liveUrl ? `<a href="${liveUrl}" class="live-link">Live site</a>` : ''}
+  ${liveUrl ? html`<a href="${liveUrl}" class="live-link">Live site</a>` : ''}
   <img src="${base}${image}" alt="${title}" class="project-image">
   <div class="stack">
     <h3>${title}</h3>

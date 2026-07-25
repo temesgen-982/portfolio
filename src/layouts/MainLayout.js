@@ -1,9 +1,10 @@
+import { html } from '../utils/html.js';
 import { header } from '../partials/header.js';
 import { footer } from '../partials/footer.js';
 import { prefetch } from '../partials/prefetch.js';
 
 export function MainLayout({ title, active, content, base }) {
-  return `<!DOCTYPE html>
+  return html`<!DOCTYPE html>
 <html lang="en">
 
 <head>

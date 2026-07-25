@@ -1,5 +1,7 @@
+import { html } from '../utils/html.js';
+
 export function header({ active, base }) {
-  return `
+  return html`
 <header class="cluster">
   <a href="${base}/">Temesgen Adane</a>
 

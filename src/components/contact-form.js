@@ -1,8 +1,10 @@
+import { html } from '../utils/html.js';
+
 const WORKER_URL = 'https://form-contact-worker.temesgen-982.workers.dev';
 const TURNSTILE_SITE_KEY = '0x4AAAAAAD5OFAcmiQ2Cudbd';
 
 export function contactForm() {
-  return `
+  return html`
       <form id="contact-form" class="contact-form">
         <div>
           <input type="text" name="name" placeholder="Name" required>
@@ -49,6 +51,6 @@ export function contactForm() {
           submitBtn.disabled = false;
           if (window.turnstile) window.turnstile.reset();
         }
-    });      
+    });
   </script>`;
 }
