@@ -4,11 +4,11 @@ import socialLinks from '#data/social-links.json' with { type: 'json' };
 
 const tooltipIcons = new Set(['email', 'cv']);
 
-export function footer(base) {
+export function footer() {
   const links = socialLinks.filter(l => l.group.includes('footer'));
 
   const items = links.map(link => {
-    const url = link.icon === 'cv' ? `${base}${link.url}` : link.url;
+    const url = link.url;
     const svg = getIcon(link.icon);
     if (tooltipIcons.has(link.icon)) {
       const tipId = `footer-${link.icon}-tip`;

@@ -3,7 +3,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE_URL = process.env.BASE_URL || '';
 
 if (fs.existsSync('dist')) {
   for (const entry of fs.readdirSync('dist')) {
@@ -19,7 +18,7 @@ for (const file of fs.readdirSync(pagesDir)) {
   const { default: renderPage } = await import(path.join(pagesDir, file));
   const dir = name === 'index' ? 'dist' : `dist/${name}`;
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(`${dir}/index.html`, renderPage({ base: BASE_URL }));
+  fs.writeFileSync(`${dir}/index.html`, renderPage());
 }
 
 const cssOrder = [

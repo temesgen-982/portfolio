@@ -3,7 +3,7 @@ import { header } from '../partials/header.js';
 import { footer } from '../partials/footer.js';
 import { prefetch } from '../partials/prefetch.js';
 
-export function MainLayout({ title, active, content, base }) {
+export function MainLayout({ title, active, content }) {
   return html`<!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +12,14 @@ export function MainLayout({ title, active, content, base }) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title}</title>
 
-  <link rel="stylesheet" href="${base}/css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-  ${header({ active, base })}
+  ${header({ active })}
   ${content}
-  ${footer(base)}
-  ${prefetch(base)}
+  ${footer()}
+  ${prefetch()}
 </body>
 
 </html>`;

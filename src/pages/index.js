@@ -10,7 +10,7 @@ import projects from '#data/projects.json' with { type: 'json' };
 import aboutCards from '#data/about-cards.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
-export default function IndexPage({ base }) {
+export default function IndexPage() {
   const content = html`
   <div class="hero center">
     <div class="blocker"></div>
@@ -19,13 +19,13 @@ export default function IndexPage({ base }) {
       <h1>Temesgen Adane</h1>
       <p>A Full-stack developer crafting digital experiences from concept to reality.</p>
       <div class="button-offset">
-        <a href="${base}/work/" class="button button--primary">Explore My Work</a>
+        <a href="/work/" class="button button--primary">Explore My Work</a>
       </div>
     </div>
     <div class="hero-social">
       ${socialLinks.filter(l => l.group.includes('hero')).map(link => {
     const svg = getIcon(link.icon);
-    const url = link.icon === 'cv' ? `${base}${link.url}` : link.url;
+    const url = link.url;
     if (link.icon === 'email') {
       return html`
       <div class="tip-anchor tip-below" style="anchor-name: --email-tip">
@@ -67,10 +67,10 @@ export default function IndexPage({ base }) {
     <div class="container stack">
       <div class="projects-header cluster">
         <h2>Selected Projects</h2>
-        <a href="${base}/work/">view more</a>
+        <a href="/work/">view more</a>
       </div>
       <div class="project-cards">
-        ${projects.map(projectCard({ base })).join('')}
+        ${projects.map(projectCard()).join('')}
       </div>
     </div>
   </section>
@@ -83,11 +83,11 @@ export default function IndexPage({ base }) {
         <p>I'm a full-stack developer with a passion for building beautiful, functional, and user-centered experiences.
           I believe in the power of thoughtful system design and clean code to create meaningful impact.</p>
         <div class="button-offset">
-          <a href="${base}/about/" class="button button--primary">Learn more</a>
+          <a href="/about/" class="button button--primary">Learn more</a>
         </div>
       </div>
       <div class="about-cards">
-        ${aboutCards.map(aboutCard({ base })).join('')}
+        ${aboutCards.map(aboutCard()).join('')}
       </div>
     </div>
   </section>
@@ -97,7 +97,7 @@ export default function IndexPage({ base }) {
     <div class="container stack">
       <h2>Skills & Tools</h2>
       <div class="skill-cards">
-        ${skills.map(skillCard({ base })).join('')}
+        ${skills.map(skillCard()).join('')}
       </div>
     </div>
   </section>
@@ -119,5 +119,5 @@ export default function IndexPage({ base }) {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Home', active: 'home', base, content });
+  return MainLayout({ title: 'Home', active: 'home', content });
 }
