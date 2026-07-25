@@ -1,20 +1,19 @@
 import { html } from '../utils/html.js';
 
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function formatDate(iso) {
+  const d = new Date(iso);
+  return `${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
 export function blogCard() {
-  return ({ title, desc, image, date, slug, words, readTime, tags }) => html`
-<article class="blog-card cluster">
-  <img src="${image}" alt="${title}" class="blog-card-image">
-  <div class="blog-card-body stack">
-    <div class="blog-card-meta cluster">
-      <time>${date}</time>
-      <span>${readTime}</span>
-    </div>
-    <h3>${title}</h3>
+  return ({ title, desc, date, slug }) => html`
+<article class="blog-card">
+  <time class="blog-card-date">${formatDate(date)}</time>
+  <div class="blog-card-body">
+    <h3><a href="/blog/${slug}/">${title}</a></h3>
     <p>${desc}</p>
-    <div class="blog-card-tags cluster">
-      ${tags.map(tag => html`<span class="tag">${tag}</span>`).join('')}
-    </div>
-    <a href="/blog/${slug}/" class="button">read more</a>
   </div>
 </article>`;
 }

@@ -15,10 +15,34 @@ if (fs.existsSync('dist')) {
 const pagesDir = path.join(__dirname, 'src/pages');
 for (const file of fs.readdirSync(pagesDir)) {
   const name = path.basename(file, '.js');
+  if (name === 'blog-index' || name === 'blog-post') continue;
   const { default: renderPage } = await import(path.join(pagesDir, file));
   const dir = name === 'index' ? 'dist' : `dist/${name}`;
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(`${dir}/index.html`, renderPage());
+}
+
+const postsDir = path.join(__dirname, 'content/blog');
+if (fs.existsSync(postsDir)) {
+  const { parseFrontmatter } = await import('./src/lib/frontmatter.js');
+  const { markdownToHtml } = await import('./src/lib/markdown.js');
+  const { BlogPostPage } = await import('./src/pages/blog-post.js');
+  const { BlogIndexPage } = await import('./src/pages/blog-index.js');
+
+  const posts = fs.readdirSync(postsDir).map(file => {
+    const raw = fs.readFileSync(path.join(postsDir, file), 'utf-8');
+    const { data, content } = parseFrontmatter(raw);
+    return { ...data, slug: file.replace('.md', ''), html: markdownToHtml(content) };
+  });
+
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  for (const post of posts) {
+    fs.mkdirSync(`dist/blog/${post.slug}`, { recursive: true });
+    fs.writeFileSync(`dist/blog/${post.slug}/index.html`, BlogPostPage({ post }));
+  }
+
+  fs.writeFileSync('dist/blog/index.html', BlogIndexPage({ posts }));
 }
 
 const cssOrder = [
@@ -31,6 +55,7 @@ const cssOrder = [
   'css/components/hero.css',
   'css/components/project-card.css',
   'css/components/blog-card.css',
+  'css/components/blog-post.css',
   'css/components/experience.css',
   'css/components/skill-cards.css',
   'css/components/contact.css',
