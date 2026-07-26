@@ -1,0 +1,34 @@
+[
+  {
+    "date": "July 2026",
+    "items": [
+      "Building tools and web experiences with modern JavaScript",
+      "Exploring system design and distributed systems",
+      "Writing about what I learn on my blog"
+    ]
+  },
+  {
+    "date": "May 2026",
+    "items": [
+      "Deep diving into Svelte and SvelteKit",
+      "Refactoring this portfolio with a focus on CSS architecture",
+      "Reading 'Designing Data-Intensive Applications'"
+    ]
+  },
+  {
+    "date": "March 2026",
+    "items": [
+      "Learning Go and building a CLI tool",
+      "Experimenting with CSS container queries and anchor positioning",
+      "Contributing to open source documentation"
+    ]
+  },
+  {
+    "date": "January 2026",
+    "items": [
+      "Shipping a full-stack project with NestJS and React",
+      "Setting up CI/CD pipelines with GitHub Actions",
+      "Writing my first technical blog post"
+    ]
+  }
+]

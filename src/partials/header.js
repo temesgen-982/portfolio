@@ -23,6 +23,7 @@ export function header({ active }) {
       <ul>
         <li><a href="/" class="${active === 'home' ? 'active' : ''}">Home</a></li>
         <li><a href="/work/" class="${active === 'work' ? 'active' : ''}">Work</a></li>
+        <li><a href="/now/" class="${active === 'now' ? 'active' : ''}">Now</a></li>
         <li><a href="/blog/" class="${active === 'blog' ? 'active' : ''}">Blog</a></li>
       </ul>
     </nav>

@@ -43,8 +43,9 @@ img {
 
 .tip-box {
   position: fixed;
-  position-area: bottom;
-  margin-top: 8px;
+  position-area: top;
+  position-try-fallbacks: flip-block;
+  margin-bottom: 8px;
   border: none;
   background: var(--color-bg-surface);
   color: var(--color-text-main);
@@ -55,12 +56,6 @@ img {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s;
-}
-
-.tip-anchor.tip-above > .tip-box {
-  position-area: top;
-  margin-top: 0;
-  margin-bottom: 8px;
 }
 
 .tip-anchor:hover > .tip-box {

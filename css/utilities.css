@@ -16,6 +16,11 @@
   height: var(--header-height);
 }
 
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-accent);
+}
+
 .sr-only,
 .sr-hidden {
   position: absolute;

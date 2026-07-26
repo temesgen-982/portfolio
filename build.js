@@ -80,14 +80,6 @@ fs.writeFileSync('dist/css/main.css', cssOrder.map(f => fs.readFileSync(f, 'utf-
 const assetsDir = path.join(__dirname, 'assets');
 const assetsToCopy = [
   'sample-image.jpeg',
-  'system-settings-svgrepo-com.svg',
-  'bulb-svgrepo-com.svg',
-  'terminal-svgrepo-com.svg',
-  'user-circle-svgrepo-com.svg',
-  'pen-tool-svgrepo-com.svg',
-  'layers-svgrepo-com.svg',
-  'code-svgrepo-com.svg',
-  'fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf',
   'Temesgen-Adane-CV.pdf',
 ];
 
