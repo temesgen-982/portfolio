@@ -57,6 +57,7 @@ const cssOrder = [
   'css/components/blog-card.css',
   'css/components/blog-post.css',
   'css/components/experience.css',
+  'css/components/filters.css',
   'css/components/skill-cards.css',
   'css/components/contact.css',
   'css/components/footer.css',

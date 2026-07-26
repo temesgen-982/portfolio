@@ -4,24 +4,32 @@
     "desc": "A responsive frontend website for a laboratory.",
     "image": "/assets/sample-image.jpeg",
     "liveUrl": "/",
-    "projectUrl": "/work/lis/"
+    "projectUrl": "/work/lis/",
+    "category": "Frontend",
+    "tags": ["HTML5", "CSS3", "JavaScript"]
   },
   {
     "title": "Backend: REST API",
     "desc": "A RESTful API built with Node.js and Express.",
     "image": "/assets/sample-image.jpeg",
-    "projectUrl": "/work/rest-api/"
+    "projectUrl": "/work/rest-api/",
+    "category": "Backend",
+    "tags": ["JavaScript", "NestJS", "PostgreSQL"]
   },
   {
     "title": "Full-Stack: E-Commerce",
     "desc": "A full-stack e-commerce platform with payment integration.",
     "image": "/assets/sample-image.jpeg",
-    "projectUrl": "/work/e-commerce/"
+    "projectUrl": "/work/e-commerce/",
+    "category": "Full-Stack",
+    "tags": ["React", "TypeScript", "Spring Boot", "PostgreSQL"]
   },
   {
     "title": "Mobile: Task Manager",
     "desc": "A cross-platform mobile app for managing daily tasks.",
     "image": "/assets/sample-image.jpeg",
-    "projectUrl": "/work/task-manager/"
+    "projectUrl": "/work/task-manager/",
+    "category": "Mobile",
+    "tags": ["Svelte", "JavaScript", "SQLite"]
   }
 ]

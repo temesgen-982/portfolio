@@ -28,3 +28,7 @@
   max-width: 100%;
   border-radius: var(--space-4);
 }
+
+.project-card.filtered-out {
+  display: none;
+}

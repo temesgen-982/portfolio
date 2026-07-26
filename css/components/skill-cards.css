@@ -6,6 +6,15 @@
     grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
     gap: var(--space-2);
 
+    .skill-link {
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.15s;
+    }
+
+    .skill-link:hover {
+      opacity: 0.7;
+    }
   }
 
 }
