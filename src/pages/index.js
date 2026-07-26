@@ -16,8 +16,8 @@ export default function IndexPage() {
     <div class="blocker"></div>
     <div class="blocker"></div>
     <div class="hero-header stack">
-      <h1>Hi<span class="text-outline">!</span> I'm <span class="accent-header">Temesgen.</span> a full-stack developer from Ethiopia</h1>
-      <p>I believe in technologies that do useful things.</p>
+      <h1>Hi<span class="text-outline">!</span> I'm <span class="accent-header">Temesgen.</span></h1>
+      <p>A full-stack developer from Ethiopia.</p>
       <div class="button-offset">
         <a href="/work/" class="button">Explore My Work</a>
       </div>

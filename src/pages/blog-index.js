@@ -8,7 +8,7 @@ export function BlogIndexPage({ posts }) {
     <div class="blocker"></div>
     <div class="container stack">
       <h2>Blog</h2>
-      <p class="blog-intro">I usually write most of the blogs to clarify things for myself and to understand things better.</p>
+      <p class="blog-intro">I usually write most of the blogs to clarify things for myself.</p>
       <div class="blog-cards stack">
         ${posts.map(blogCard()).join('')}
       </div>
