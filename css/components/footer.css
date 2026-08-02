@@ -20,20 +20,10 @@ footer {
   }
 
   .cluster {
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: flex-end;
     gap: var(--space-4);
-  }
-
-  .stack {
-    align-items: flex-end;
-    margin-left: auto;
-  }
-
-  span {
-    font-weight: 800;
-    font-size: var(--fs-h2);
-    color: var(--color-primary);
   }
 
   a {

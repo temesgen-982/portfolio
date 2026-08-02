@@ -1,13 +1,13 @@
 [
-  { "name": "HTML5", "icon": "/assets/language-icons/html-5-svgrepo-com.svg" },
-  { "name": "CSS3", "icon": "/assets/language-icons/css-3-svgrepo-com.svg" },
-  { "name": "JavaScript", "icon": "/assets/language-icons/javascript-svgrepo-com.svg" },
-  { "name": "TypeScript", "icon": "/assets/language-icons/typescript-icon-svgrepo-com.svg" },
-  { "name": "React", "icon": "/assets/language-icons/react-javascript-js-framework-facebook-svgrepo-com.svg" },
-  { "name": "Svelte", "icon": "/assets/language-icons/svelte-icon-svgrepo-com.svg" },
-  { "name": "NestJS", "icon": "/assets/language-icons/nestjs-svgrepo-com.svg" },
-  { "name": "Spring Boot", "icon": "/assets/language-icons/spring-boot-svgrepo-com.svg" },
-  { "name": "Go", "icon": "/assets/language-icons/go-svgrepo-com.svg" },
-  { "name": "PostgreSQL", "icon": "/assets/language-icons/postgresql-svgrepo-com.svg" },
-  { "name": "SQLite", "icon": "/assets/language-icons/sqlite-svgrepo-com.svg" }
+  { "name": "HTML5", "icon": "/assets/language-icons/html-5-svgrepo-com.svg", "color": "#E34F26" },
+  { "name": "CSS3", "icon": "/assets/language-icons/css-3-svgrepo-com.svg", "color": "#1572B6" },
+  { "name": "JavaScript", "icon": "/assets/language-icons/javascript-svgrepo-com.svg", "color": "#F7DF1E" },
+  { "name": "TypeScript", "icon": "/assets/language-icons/typescript-icon-svgrepo-com.svg", "color": "#3178C6" },
+  { "name": "React", "icon": "/assets/language-icons/react-javascript-js-framework-facebook-svgrepo-com.svg", "color": "#61DAFB" },
+  { "name": "Svelte", "icon": "/assets/language-icons/svelte-icon-svgrepo-com.svg", "color": "#FF3E00" },
+  { "name": "NestJS", "icon": "/assets/language-icons/nestjs-svgrepo-com.svg", "color": "#E0234E" },
+  { "name": "Spring Boot", "icon": "/assets/language-icons/spring-boot-svgrepo-com.svg", "color": "#6DB33F" },
+  { "name": "Go", "icon": "/assets/language-icons/go-svgrepo-com.svg", "color": "#00ADD8" },
+  { "name": "PostgreSQL", "icon": "/assets/language-icons/postgresql-svgrepo-com.svg", "color": "#336791" },
+  { "name": "SQLite", "icon": "/assets/language-icons/sqlite-svgrepo-com.svg", "color": "#0F80CC" }
 ]

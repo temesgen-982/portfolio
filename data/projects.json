@@ -1,35 +1,81 @@
 [
   {
-    "title": "Frontend: LIS",
-    "desc": "A responsive frontend website for a laboratory.",
-    "image": "/assets/sample-image.jpeg",
+    "title": "LIS",
+    "desc": "A laboratory information system (LIS).",
+    "image": "/assets/projects/lis.png",
     "liveUrl": "/",
     "projectUrl": "/work/lis/",
     "category": "Frontend",
-    "tags": ["HTML5", "CSS3", "JavaScript"]
+    "tags": [
+      "React",
+      "MUI",
+      "SpringBoot",
+      "PostgreSQL"
+    ],
+    "skills": [
+      "React",
+      "Spring Boot"
+    ],
+    "theme": "blue",
+    "updated": "Jun 7, 2025"
   },
   {
-    "title": "Backend: REST API",
-    "desc": "A RESTful API built with Node.js and Express.",
-    "image": "/assets/sample-image.jpeg",
+    "title": "Abbabal API",
+    "desc": "An API that provides more than 7000+ Amharic proverbs",
+    "image": "/assets/projects/abbabal.png",
+    "liveUrl": "/",
     "projectUrl": "/work/rest-api/",
     "category": "Backend",
-    "tags": ["JavaScript", "NestJS", "PostgreSQL"]
+    "tags": [
+      "Typescript",
+      "Svelte",
+      "NestJS",
+      "Capacitor",
+      "SQLite"
+    ],
+    "skills": [
+      "Svelte",
+      "NestJS"
+    ],
+    "theme": "orange",
+    "updated": "Feb 3, 2025"
   },
   {
-    "title": "Full-Stack: E-Commerce",
-    "desc": "A full-stack e-commerce platform with payment integration.",
-    "image": "/assets/sample-image.jpeg",
+    "title": "Consensus",
+    "desc": "A football predictions aggregator.",
+    "image": "/assets/projects/consensus.png",
+    "liveUrl": "/",
     "projectUrl": "/work/e-commerce/",
     "category": "Full-Stack",
-    "tags": ["React", "TypeScript", "Spring Boot", "PostgreSQL"]
+    "tags": [
+      "Svelte",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "skills": [
+      "Svelte",
+      "TypeScript"
+    ],
+    "theme": "yellow",
+    "updated": "Jan 12, 2025"
   },
   {
-    "title": "Mobile: Task Manager",
-    "desc": "A cross-platform mobile app for managing daily tasks.",
-    "image": "/assets/sample-image.jpeg",
+    "title": "Teen Magazine",
+    "desc": "A full-stack website for a digital magazine.",
+    "image": "/assets/projects/sample-image.jpeg",
+    "liveUrl": "/",
     "projectUrl": "/work/task-manager/",
     "category": "Mobile",
-    "tags": ["Svelte", "JavaScript", "SQLite"]
+    "tags": [
+      "Svelte",
+      "TypeScript",
+      "PostgreSQL"
+    ],
+    "skills": [
+      "Svelte",
+      "TypeScript"
+    ],
+    "theme": "orange",
+    "updated": "Nov 20, 2024"
   }
 ]

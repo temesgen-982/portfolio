@@ -80,7 +80,6 @@ fs.writeFileSync('dist/css/main.css', cssOrder.map(f => fs.readFileSync(f, 'utf-
 
 const assetsDir = path.join(__dirname, 'assets');
 const assetsToCopy = [
-  'sample-image.jpeg',
   'image.webp',
   'Temesgen-Adane-CV.pdf',
 ];
@@ -90,6 +89,11 @@ for (const file of assetsToCopy) {
   const dest = path.join('dist/assets', file);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.copyFileSync(src, dest);
+}
+
+const projectsDir = path.join(assetsDir, 'projects');
+if (fs.existsSync(projectsDir)) {
+  fs.cpSync(projectsDir, 'dist/assets/projects', { recursive: true });
 }
 
 const langDir = path.join(assetsDir, 'language-icons');
