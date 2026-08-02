@@ -81,6 +81,7 @@ fs.writeFileSync('dist/css/main.css', cssOrder.map(f => fs.readFileSync(f, 'utf-
 const assetsDir = path.join(__dirname, 'assets');
 const assetsToCopy = [
   'sample-image.jpeg',
+  'image.webp',
   'Temesgen-Adane-CV.pdf',
 ];
 

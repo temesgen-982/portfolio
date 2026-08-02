@@ -18,12 +18,18 @@ h3 {
   font-size: var(--fs-h3);
 }
 
+html {
+  background-color: var(--color-bg-surface);
+}
+
 body {
   font-family: var(--font-primary);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--color-text-main);
   overflow-x: hidden;
+  min-height: 100vh;
+  margin-bottom: var(--footer-height);
   background-color: var(--color-bg-surface);
 }
 

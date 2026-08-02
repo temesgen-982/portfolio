@@ -1,3 +1,7 @@
+.contact {
+  padding-block-end: var(--section-spacing);
+}
+
 .contact-header {
   div {
     display: flex;
