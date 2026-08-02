@@ -1,26 +1,14 @@
 [
   {
-    "period": "2024 — Present",
-    "title": "Full-Stack Developer",
-    "company": "Freelance",
-    "desc": "Building modern web applications with React, Svelte, and Node.js. Delivering end-to-end solutions from design to deployment."
+    "period": "Dec 2025 — Present",
+    "title": "Software Engineer (Remote Contract)",
+    "company": "Private Client",
+    "desc": "Building a Laboratory Information System with React, Material UI, and SpringBoot."
   },
   {
-    "period": "2023 — 2024",
-    "title": "Backend Developer",
-    "company": "Tech Company",
-    "desc": "Designed and maintained RESTful APIs using NestJS and Spring Boot. Optimized database queries and improved system performance."
-  },
-  {
-    "period": "2022 — 2023",
-    "title": "Junior Developer",
-    "company": "Startup",
-    "desc": "Developed frontend interfaces and contributed to backend services. Worked across the full stack in a fast-paced agile team."
-  },
-  {
-    "period": "2021 — 2022",
-    "title": "CS Graduate",
-    "company": "University",
-    "desc": "Completed a degree in Computer Science with a focus on software engineering and web technologies."
+    "period": "Nov - Dec 2025",
+    "title": "Junior Web Developer (Internship)",
+    "company": "Gasha Digital Technologies",
+    "desc": "Collaborated to develop a crowdfunding platform using Next.js."
   }
 ]

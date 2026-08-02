@@ -3,22 +3,22 @@
     "startDate": "2023",
     "endDate": "2026",
     "title": "BSc in Information System",
-    "school": "University",
-    "desc": "Focused on software engineering, data structures, algorithms, and web technologies.",
+    "school": "Addis Ababa University",
+    "desc": "Relevant Coursework: Systems Analysis and Design, Database Systems, DSA, Computer Networks",
     "certUrl": ""
   },
   {
-    "endDate": "2024",
-    "title": "AWS Certified Developer – Associate",
-    "school": "Amazon Web Services",
-    "desc": "Validated expertise in developing and maintaining AWS-based applications.",
+    "endDate": "2026",
+    "title": "SpringBoot",
+    "school": "FrontendMasters",
+    "desc": "Validated expertise in developing and maintaining SpringBoot applications.",
     "certUrl": "#"
   },
   {
-    "endDate": "2023",
-    "title": "Meta Front-End Developer",
-    "school": "Coursera",
-    "desc": "Professional certificate covering React, responsive design, and version control.",
+    "endDate": "2026",
+    "title": "Vanilla Web",
+    "school": "FrontendMasters",
+    "desc": "Professional certificate in building and structuring modern vanilla projects.",
     "certUrl": "#"
   }
 ]
