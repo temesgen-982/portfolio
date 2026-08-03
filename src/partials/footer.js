@@ -12,6 +12,7 @@ export function footer() {
   return html`
 <footer>
   <div class="container">
+      <p class="footer-text">Footer what? 😂</p>
       <div class="cluster">
 ${items}
     </div>

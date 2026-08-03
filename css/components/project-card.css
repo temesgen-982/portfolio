@@ -2,6 +2,36 @@
   background-color: var(--color-bg-surface);
 }
 
+.projects-footer {
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    border-radius: var(--space-1);
+    text-decoration: none;
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+    &::after {
+      content: "→";
+    }
+
+    &:hover {
+      transform: translateX(2px);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+}
+
 .project-cards {
   display: flex;
   flex-direction: column;
@@ -13,6 +43,7 @@
   --card-bg: #1d1d21;
   --card-border: #2a2a31;
   --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --muted-accent: color-mix(in srgb, var(--theme-accent, #2b7fff) 55%, var(--card-bg));
 
   background-color: var(--card-bg);
   border-radius: var(--space-2);
@@ -24,12 +55,25 @@
   position: relative;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  border-left-width: 4px;
 }
 
-.project-card.theme-orange { --theme-accent: #f25322; border-left-color: var(--theme-accent); }
-.project-card.theme-blue { --theme-accent: #2b7fff; border-left-color: var(--theme-accent); }
-.project-card.theme-yellow { --theme-accent: #f5b700; border-left-color: var(--theme-accent); }
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--muted-accent) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.project-card.theme-orange { --theme-accent: #f25322; }
+.project-card.theme-blue { --theme-accent: #2b7fff; }
+.project-card.theme-yellow { --theme-accent: #f5b700; }
 
 .card-preview {
   width: 280px;

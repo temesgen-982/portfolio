@@ -3,8 +3,7 @@ import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import { skillCard } from '../components/skill-card.js';
 import { contactForm } from '../components/contact-form.js';
-import { getIcon, ellipsisIcon } from '../partials/icons.js';
-import socialLinks from '#data/social-links.json' with { type: 'json' };
+import { getIcon, ellipsisIcon } from '../partials/icons.js'; import socialLinks from '#data/social-links.json' with { type: 'json' };
 import projects from '#data/projects.json' with { type: 'json' };
 import experience from '#data/experience.json' with { type: 'json' };
 import education from '#data/education.json' with { type: 'json' };
@@ -60,12 +59,14 @@ export default function IndexPage() {
 
   <section class="projects section">
     <div class="container stack">
-      <div class="projects-header cluster">
+      <div class="projects-header">
         <h2>Selected Projects</h2>
-        <a href="/work/">view more</a>
       </div>
       <div class="project-cards">
         ${projects.map(projectCard()).join('')}
+      </div>
+      <div class="projects-footer">
+        <a href="/work/">view more projects</a>
       </div>
     </div>
   </section>
@@ -112,7 +113,8 @@ export default function IndexPage() {
 
   <section class="skills section">
     <div class="container stack">
-      <h2>Skills & Tools <span style="font-size: var(--fs-small); font-weight: 400; color: var(--color-accent);">(click to view projects)</span></h2>
+      <h2>Skills & Tools</h2>
+      <p class="skills-intro">The tools I use to bring ideas to life. You can click to view projects.</p>
       <div class="skill-cards">
         ${skills.map(skillCard()).join('')}
       </div>
@@ -124,16 +126,65 @@ export default function IndexPage() {
       <div class="contact-header stack">
         <h2>Let's work together</h2>
         <p>I'm always open to discussing new projects and ideas.</p>
-        <div>
-          <button class="button">tedenadane@gmail.com</button>
-          <div class="button-offset">
-            <button class="button" onclick="navigator.clipboard.writeText('tedenadane@gmail.com').then(() => this.textContent = 'Copied!')">Copy</button>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-list">
+          <a href="mailto:tedenadane@gmail.com" class="contact-item">
+            <div class="contact-left">
+              <div class="icon-badge">${getIcon('email')}</div>
+              <div class="contact-info">
+                <span class="contact-label">Email</span>
+                <span class="contact-detail">tedenadane@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <button class="copy-btn" type="button" data-copy="tedenadane@gmail.com" aria-label="Copy email">${getIcon('copy')}</button>
+              ${getIcon('external')}
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/temesgen-adane/" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-left">
+              <div class="icon-badge">${getIcon('linkedin')}</div>
+              <div class="contact-info">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-detail">linkedin.com/in/temesgen-adane</span>
+              </div>
+            </div>
+            <div class="contact-actions">
+              ${getIcon('external')}
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-left">
+              <div class="icon-badge">${getIcon('location')}</div>
+              <div class="contact-info">
+                <span class="contact-label">Location</span>
+                <span class="contact-detail">Hawassa, Ethiopia</span>
+              </div>
+            </div>
           </div>
         </div>
+        ${contactForm()}
       </div>
-      ${contactForm()}
     </div>
-  </section>`;
+  </section>
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async e => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy);
+          btn.classList.add('copied');
+          btn.setAttribute('aria-label', 'Copied!');
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.setAttribute('aria-label', 'Copy email');
+          }, 1500);
+        } catch { /* clipboard unavailable */ }
+      });
+    });
+  </script>`;
 
   return MainLayout({ title: 'Home', active: 'home', content });
 }

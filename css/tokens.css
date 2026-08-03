@@ -27,7 +27,7 @@
   --space-7: 3rem;
   --space-8: 4rem;
 
-  --section-spacing: clamp(2rem, 8vw, 8rem);
+  --section-spacing: clamp(2rem, 5vw, 5rem);
   --header-height: 3.5rem;
   --footer-height: calc(100vw / 2.222);
 

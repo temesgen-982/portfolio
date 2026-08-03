@@ -1,4 +1,5 @@
 import { html } from '../utils/html.js';
+import { sendIcon } from '../partials/icons.js';
 
 const WORKER_URL = 'https://form-contact-worker.temesgen-982.workers.dev';
 const TURNSTILE_SITE_KEY = '0x4AAAAAAD5OFAcmiQ2Cudbd';
@@ -14,16 +15,20 @@ export function contactForm() {
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
         <textarea name="message" placeholder="Message" rows="5" required></textarea>
         <div class="cf-turnstile" data-sitekey="${TURNSTILE_SITE_KEY}"></div>
-        <button type="submit">Send Message</button>
+        <button type="submit" class="submit-btn">${sendIcon} Send Message</button>
       </form>
       <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <script>
+        const sendIcon = ${JSON.stringify(sendIcon)};
+        function setBtnLabel(btn, label) {
+          btn.innerHTML = sendIcon + ' ' + label;
+        }
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
+        setBtnLabel(submitBtn, 'Sending...');
         const payload = {
           name: form.name.value,
           email: form.email.value,
@@ -40,14 +45,14 @@ export function contactForm() {
           const result = await res.json();
           if (result.success) {
             form.reset();
-            submitBtn.textContent = 'Sent!';
+            setBtnLabel(submitBtn, 'Sent!');
           } else {
-            submitBtn.textContent = 'Failed — try again';
+            setBtnLabel(submitBtn, 'Failed — try again');
             submitBtn.disabled = false;
             if (window.turnstile) window.turnstile.reset();
           }
         } catch {
-          submitBtn.textContent = 'Failed — try again';
+          setBtnLabel(submitBtn, 'Failed — try again');
           submitBtn.disabled = false;
           if (window.turnstile) window.turnstile.reset();
         }
