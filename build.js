@@ -59,6 +59,7 @@ const cssOrder = [
   'css/components/experience.css',
   'css/components/filters.css',
   'css/components/skill-cards.css',
+  'css/components/github-heatmap.css',
   'css/components/contact.css',
   'css/components/footer.css',
   'css/components/side-panel.css',

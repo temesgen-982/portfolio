@@ -1,4 +1,6 @@
 .hero {
+  --social-stack-height: 280px;
+  --heatmap-height: calc(7 * 22px + 6 * var(--space-2));
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
@@ -87,6 +89,14 @@
 
     .hero-side {
       display: block;
+      position: absolute;
+      top: 50%;
+      left: 87.5%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-side .github-heatmap {
+      margin-top: calc((var(--heatmap-height) - var(--social-stack-height)) / 2);
     }
   }
 }

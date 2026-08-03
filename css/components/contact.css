@@ -1,7 +1,3 @@
-.contact {
-  padding-block-end: var(--section-spacing);
-}
-
 .contact-grid {
   display: grid;
   gap: var(--space-6);

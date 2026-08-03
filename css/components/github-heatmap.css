@@ -1,0 +1,79 @@
+.github-heatmap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.mobile-heatmap {
+  display: flex;
+  padding-block-end: var(--section-spacing);
+}
+
+@media (min-width: 845px) {
+  .mobile-heatmap {
+    display: none;
+  }
+}
+
+.heatmap-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text-muted);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, auto);
+  gap: var(--space-2);
+}
+
+.heatmap-cell {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--color-border);
+  position: relative;
+}
+
+.heatmap-cell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: var(--color-accent);
+}
+
+.heatmap-cell[data-level="0"]::after {
+  opacity: 0;
+}
+
+.heatmap-cell[data-level="1"]::after {
+  opacity: 0.3;
+}
+
+.heatmap-cell[data-level="2"]::after {
+  opacity: 0.6;
+}
+
+.heatmap-cell[data-level="3"]::after {
+  opacity: 1;
+}
+
+.heatmap-cell[data-level="4"]::after {
+  opacity: 1;
+}
+
+.heatmap-cell--empty {
+  background: transparent;
+}

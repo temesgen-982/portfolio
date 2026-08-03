@@ -23,12 +23,6 @@ footer {
     gap: var(--space-2);
   }
 
-  .footer-text {
-    font-weight: 800;
-    font-size: var(--fs-h3);
-    color: var(--color-primary);
-  }
-
   .cluster {
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -47,8 +41,8 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
+@media (min-width: 641px) {
   :root {
-    --footer-height: clamp(8rem, 24vh, 12rem);
+    --footer-height: calc(100vw / 2.222);
   }
 }

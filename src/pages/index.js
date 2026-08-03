@@ -3,6 +3,7 @@ import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import { skillCard } from '../components/skill-card.js';
 import { contactForm } from '../components/contact-form.js';
+import { githubHeatmap } from '../components/github-heatmap.js';
 import { getIcon, ellipsisIcon } from '../partials/icons.js'; import socialLinks from '#data/social-links.json' with { type: 'json' };
 import projects from '#data/projects.json' with { type: 'json' };
 import experience from '#data/experience.json' with { type: 'json' };
@@ -37,7 +38,9 @@ export default function IndexPage() {
         <div class="tip-box" style="position-anchor: --tip-more">Elsewhere</div>
       </div>
     </div>
-    <div class="hero-side"></div>
+    <div class="hero-side">
+      ${githubHeatmap(5)}
+    </div>
   </div>
 
   <dialog id="moreLinks" class="modal">
@@ -59,8 +62,11 @@ export default function IndexPage() {
 
   <section class="projects section">
     <div class="container stack">
+      <div class="mobile-heatmap">
+        ${githubHeatmap(10)}
+      </div>
       <div class="projects-header">
-        <h2>Selected Projects</h2>
+        <h2>Projects</h2>
       </div>
       <div class="project-cards">
         ${projects.map(projectCard()).join('')}
@@ -71,42 +77,80 @@ export default function IndexPage() {
     </div>
   </section>
 
-  <section class="experience section">
+  <section class="about section">
     <div class="container stack">
-      <div class="about-header stack">
-        <h2>About</h2>
-        <p>I'm a full-stack developer with a passion for building beautiful, functional, and user-centered experiences.
-          I believe in the power of thoughtful system design and clean code to create meaningful impact.</p>
-      </div>
-      <div class="experience-header stack">
-        <h2>Experience</h2>
-      </div>
-      <div class="timeline">
-        ${experience.map(job => html`
-        <div class="timeline-item">
-          <div class="timeline-period">${job.period}</div>
-          <h3 class="timeline-title">${job.title}</h3>
-          <div class="timeline-company">${job.company}</div>
-          <p class="timeline-desc">${job.desc}</p>
-        </div>`).join('')}
+      <h2 class="section-title">About</h2>
+      <div class="bio">
+        <p class="bio-text">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>
+        <a href="/assets/Temesgen-Adane-CV.pdf" class="download-btn" target="_blank" rel="noopener">${getIcon('download')} Download CV</a>
       </div>
     </div>
   </section>
 
   <section class="experience section">
-    <div class="container stack">
-      <div class="experience-header stack">
-        <h2>Education & Certificates</h2>
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="header-badge">${getIcon('work')}</div>
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="timeline">
+          ${experience.map(job => html`
+          <div class="timeline-item">
+            <div class="timeline-date">${job.period}</div>
+            <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">${job.title}</h3>
+              <div class="timeline-company">${job.company}</div>
+              <p class="timeline-desc">${job.desc}</p>
+            </div>
+          </div>`).join('')}
+        </div>
       </div>
-      <div class="timeline">
-        ${education.map(edu => html`
-        <div class="timeline-item">
-          <div class="timeline-period">${edu.startDate && edu.endDate && edu.startDate !== edu.endDate ? `${edu.startDate} — ${edu.endDate}` : edu.startDate || edu.endDate || ''}</div>
-          <h3 class="timeline-title">${edu.title}</h3>
-          <div class="timeline-company">${edu.school}</div>
-          <p class="timeline-desc">${edu.desc}</p>
-          ${edu.certUrl ? html`<a href="${edu.certUrl}" class="timeline-cert" target="_blank" rel="noopener">View Certificate →</a>` : ''}
-        </div>`).join('')}
+    </div>
+  </section>
+
+  <section class="education section">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="header-badge">${getIcon('grad')}</div>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="timeline">
+          ${education.filter(edu => !edu.certUrl).map(edu => html`
+          <div class="timeline-item">
+            <div class="timeline-date">${edu.startDate && edu.endDate && edu.startDate !== edu.endDate ? `${edu.startDate} — ${edu.endDate}` : edu.startDate || edu.endDate || ''}</div>
+            <div class="timeline-marker"><div class="timeline-dot"></div><div class="timeline-line"></div></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">${edu.title}</h3>
+              <div class="timeline-company">${edu.school}</div>
+              <p class="timeline-desc">${edu.desc}</p>
+            </div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="certificates section">
+    <div class="container">
+      <div class="section-card">
+        <div class="section-header">
+          <div class="header-badge">${getIcon('award')}</div>
+          <h2 class="section-title">Certificates</h2>
+        </div>
+        <div class="certificates-grid">
+          ${education.filter(edu => edu.certUrl).map(edu => html`
+          <a href="${edu.certUrl}" class="cert-card" target="_blank" rel="noopener">
+            <div class="cert-info">
+              <span class="cert-title">${edu.title}</span>
+              <span class="cert-issuer">${edu.school}</span>
+              <span class="cert-date">${edu.endDate || edu.startDate || ''}</span>
+            </div>
+            ${getIcon('external')}
+          </a>`).join('')}
+        </div>
       </div>
     </div>
   </section>
@@ -121,7 +165,7 @@ export default function IndexPage() {
     </div>
   </section>
 
-  <section class="contact">
+  <section class="contact section">
     <div class="container stack">
       <div class="contact-header stack">
         <h2>Let's work together</h2>
