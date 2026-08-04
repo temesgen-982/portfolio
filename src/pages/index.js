@@ -89,7 +89,6 @@ export default function IndexPage() {
 
   <section class="experience section">
     <div class="container">
-      <div class="section-card">
         <div class="section-header">
           <div class="header-badge">${getIcon('work')}</div>
           <h2 class="section-title">Work Experience</h2>
@@ -107,12 +106,10 @@ export default function IndexPage() {
           </div>`).join('')}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="education section">
     <div class="container">
-      <div class="section-card">
         <div class="section-header">
           <div class="header-badge">${getIcon('grad')}</div>
           <h2 class="section-title">Education</h2>
@@ -130,12 +127,10 @@ export default function IndexPage() {
           </div>`).join('')}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="certificates section">
     <div class="container">
-      <div class="section-card">
         <div class="section-header">
           <div class="header-badge">${getIcon('award')}</div>
           <h2 class="section-title">Certificates</h2>
@@ -152,8 +147,7 @@ export default function IndexPage() {
           </a>`).join('')}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="skills section">
     <div class="container stack">
