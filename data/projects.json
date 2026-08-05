@@ -2,7 +2,7 @@
   {
     "title": "LIS",
     "desc": "A laboratory information system (LIS).",
-    "image": "/assets/projects/lis.png",
+    "image": "/assets/projects/lis.webp",
     "liveUrl": "/",
     "projectUrl": "/work/lis/",
     "category": "Frontend",
@@ -22,7 +22,7 @@
   {
     "title": "Abbabal API",
     "desc": "An API that provides more than 7000+ Amharic proverbs",
-    "image": "/assets/projects/abbabal.png",
+    "image": "/assets/projects/abbabal.webp",
     "liveUrl": "/",
     "projectUrl": "/work/rest-api/",
     "category": "Backend",
@@ -43,7 +43,7 @@
   {
     "title": "Consensus",
     "desc": "A football predictions aggregator.",
-    "image": "/assets/projects/consensus.png",
+    "image": "/assets/projects/consensus.webp",
     "liveUrl": "/",
     "projectUrl": "/work/e-commerce/",
     "category": "Full-Stack",
@@ -62,7 +62,7 @@
   {
     "title": "Teen Magazine",
     "desc": "A full-stack website for a digital magazine.",
-    "image": "/assets/projects/sample-image.jpeg",
+    "image": "/assets/projects/teen-magazine.webp",
     "liveUrl": "/",
     "projectUrl": "/work/task-manager/",
     "category": "Mobile",

@@ -3,7 +3,7 @@ import { MainLayout } from '../layouts/MainLayout.js';
 import nowEntries from '#data/now.json' with { type: 'json' };
 
 export default function NowPage() {
-  const [current, ...past] = nowEntries;
+  const [current] = nowEntries;
 
   const content = html`
   <section class="section">
@@ -16,18 +16,6 @@ export default function NowPage() {
       <p><em>Last updated ${current.date}</em></p>
 
       <hr>
-
-      <h3>Past entries</h3>
-      <div class="stack">
-        ${past.map(entry => html`
-          <details>
-            <summary>${entry.date}</summary>
-            <ul>
-              ${entry.items.map(item => html`<li>${item}</li>`).join('')}
-            </ul>
-          </details>
-        `).join('')}
-      </div>
     </div>
   </section>`;
 

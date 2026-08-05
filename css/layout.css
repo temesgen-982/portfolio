@@ -7,6 +7,7 @@
   padding-block: var(--section-spacing);
 }
 
+
 .stack {
   display: flex;
   flex-direction: column;

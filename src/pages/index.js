@@ -20,21 +20,19 @@ export default function IndexPage() {
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-main">
-        <span class="badge"><span class="dot"></span>Open to new projects</span>
-        <h1>Hi! I'm <span class="accent">Temesgen.</span></h1>
-        <p class="sub">A full-stack developer from Ethiopia, building fast, thoughtful products end to end.</p>
+        <h1>Hi! I'm Temesgen.</h1>
+        <p class="sub">A Full Stack developer from Ethiopia, with real-world experience building large scale applications.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/work/">Explore my work</a>
-          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+          <a class="btn btn-primary" href="/work/">Download CV</a>
         </div>
+      </div>
+      <div class="hero-side">
         <div class="hero-social">
           ${socialLinks.filter(l => l.group.includes('hero')).map(link =>
     html`<a class="social-box" href="${link.url}" title="${link.name}" ${link.icon === 'cv' ? 'target="_blank" rel="noopener"' : ''}>${getIcon(link.icon)}</a>`
   ).join('')}
         </div>
-      </div>
-      <div class="hero-side">
-        ${githubHeatmap(16)}
+        ${githubHeatmap(15)}
       </div>
     </div>
   </section>
@@ -51,7 +49,7 @@ export default function IndexPage() {
 
   <section class="about section">
     <div class="container about-row">
-      <div class="about-photo" aria-hidden="true">Portrait</div>
+      <img class="about-photo" src="/assets/portrait.webp" alt="Temesgen Adane" width="480" height="640">
       <div>
         <h2 class="section-title">About</h2>
         <p class="bio-text">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>

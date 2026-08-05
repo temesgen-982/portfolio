@@ -1,37 +1,15 @@
 .hero {
-  padding: var(--space-8) 0;
+  padding: var(--space-9) 0;
 }
 
 .hero-inner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 3rem;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .hero-main {
-  flex: 1 1 26rem;
   min-width: 0;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-  color: #8FBEFA;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 20px;
-  margin-bottom: 1.25rem;
-}
-
-.badge .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #4ADE80;
 }
 
 .hero h1 {
@@ -41,10 +19,6 @@
   letter-spacing: -0.01em;
   margin-bottom: .75rem;
   text-transform: none;
-}
-
-.hero h1 .accent {
-  color: var(--color-accent);
 }
 
 .hero .sub {
@@ -62,9 +36,10 @@
 
 .hero-social {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-top: 1.75rem;
+  padding-block: var(--space-1);
 }
 
 .social-box {
@@ -91,13 +66,18 @@
 }
 
 .hero-side {
-  flex: 0 0 auto;
-  margin-inline: auto;
+  display: flex;
+  gap: 1rem;
 }
 
 @media (min-width: 720px) {
+  .hero-inner {
+    flex-direction: row;
+  }
+
   .hero-side {
     margin-inline: 0;
     margin-left: auto;
+    gap: 2rem;
   }
 }

@@ -15,22 +15,12 @@
 }
 
 .btn-primary {
-  background: var(--color-accent);
-  color: #0B0D10;
-  border: 1px solid transparent;
-}
-
-.btn-primary:hover {
-  filter: brightness(1.12);
-}
-
-.btn-secondary {
   background: transparent;
   color: var(--color-text-main);
   border: 1px solid var(--color-border-strong);
 }
 
-.btn-secondary:hover {
+.btn-primary:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }

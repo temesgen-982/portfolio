@@ -4,7 +4,7 @@
   --font-primary: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --color-primary: #EDEEF0;
-  --color-accent: #4E9BF0;
+  --color-accent: #4DF093;
 
   --color-bg-main: #121213;
   --color-bg-surface: #1B1C1E;
@@ -29,6 +29,7 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
+  --space-9: 5rem;
 
   --section-spacing: clamp(2rem, 5vw, 3rem);
   --header-height: 3.5rem;
