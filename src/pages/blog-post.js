@@ -11,7 +11,6 @@ function formatDate(iso) {
 export function BlogPostPage({ post }) {
   const content = html`
   <section class="projects section">
-    <div class="blocker"></div>
     <div class="container flow">
       <a href="/blog/" class="back-link">&larr; back to blog</a>
       <time class="post-date">${formatDate(post.date)}</time>

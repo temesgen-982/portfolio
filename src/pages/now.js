@@ -7,7 +7,6 @@ export default function NowPage() {
 
   const content = html`
   <section class="section">
-    <div class="blocker"></div>
     <div class="container stack">
       <h2>Now</h2>
       <p>This is what I'm focused on right now. Inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener" style="text-decoration: underline">nownownow.com</a>.</p>

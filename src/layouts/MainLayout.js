@@ -17,7 +17,9 @@ export function MainLayout({ title, active, content }) {
 
 <body>
   ${header({ active })}
-  ${content}
+  <main>
+    ${content}
+  </main>
   ${footer()}
   ${prefetch()}
 </body>

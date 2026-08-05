@@ -22,21 +22,12 @@ for (const file of fs.readdirSync(pagesDir)) {
   fs.writeFileSync(`${dir}/index.html`, renderPage());
 }
 
-const postsDir = path.join(__dirname, 'content/blog');
-if (fs.existsSync(postsDir)) {
-  const { parseFrontmatter } = await import('./src/lib/frontmatter.js');
-  const { markdownToHtml } = await import('./src/lib/markdown.js');
-  const { BlogPostPage } = await import('./src/pages/blog-post.js');
-  const { BlogIndexPage } = await import('./src/pages/blog-index.js');
+const { loadPosts } = await import('./src/lib/posts.js');
+const { BlogPostPage } = await import('./src/pages/blog-post.js');
+const { BlogIndexPage } = await import('./src/pages/blog-index.js');
 
-  const posts = fs.readdirSync(postsDir).map(file => {
-    const raw = fs.readFileSync(path.join(postsDir, file), 'utf-8');
-    const { data, content } = parseFrontmatter(raw);
-    return { ...data, slug: file.replace('.md', ''), html: markdownToHtml(content) };
-  });
-
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
+const posts = loadPosts();
+if (posts.length > 0) {
   for (const post of posts) {
     fs.mkdirSync(`dist/blog/${post.slug}`, { recursive: true });
     fs.writeFileSync(`dist/blog/${post.slug}/index.html`, BlogPostPage({ post }));
@@ -62,7 +53,6 @@ const cssOrder = [
   'css/components/github-heatmap.css',
   'css/components/contact.css',
   'css/components/footer.css',
-  'css/components/side-panel.css',
   'css/utilities.css',
 ];
 
@@ -81,7 +71,6 @@ fs.writeFileSync('dist/css/main.css', cssOrder.map(f => fs.readFileSync(f, 'utf-
 
 const assetsDir = path.join(__dirname, 'assets');
 const assetsToCopy = [
-  'image.webp',
   'Temesgen-Adane-CV.pdf',
 ];
 

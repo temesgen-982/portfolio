@@ -14,17 +14,15 @@ for (const p of projects) {
 export function skillCard() {
   return ({ name, icon }) => {
     const count = countBySkill.get(normalize(name)) ?? 0;
-    const label = count === 1 ? '1 Project' : `${count} Projects`;
+    const label = count === 0 ? 'No projects yet' : count === 1 ? '1 project' : `${count} projects`;
     return html`
-<a href="/work/?tag=${name}" class="tech-card">
-  <div class="card-left">
-    <div class="tech-icon">
-      <img src="${icon}" alt="${name}">
-    </div>
-    <div class="tech-info">
-      <span class="tech-name">${name}</span>
-      <span class="tech-count">${label}</span>
-    </div>
+<a href="/work/?tag=${name}" class="skill-item ${count === 0 ? 'inactive' : ''}">
+  <div class="skill-icon">
+    <img src="${icon}" alt="${name}">
+  </div>
+  <div class="skill-info">
+    <span class="skill-name">${name}</span>
+    <span class="skill-count">${label}</span>
   </div>
 </a>`;
   };

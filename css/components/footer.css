@@ -1,48 +1,25 @@
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: var(--footer-height);
-  z-index: -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-accent);
-  background-image: url('/assets/image.webp');
-  background-size: cover;
-  background-position: top;
-  color: var(--color-bg-surface);
-
-  .container {
-    width: min(75rem, calc(100% - 2rem));
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-2);
-  }
-
-  .cluster {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-content: flex-end;
-    gap: var(--space-4);
-  }
-
-  a {
-    color: var(--color-primary);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-  }
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
+  border-top: 1px solid var(--color-border);
+  padding: 1.75rem 0;
+  margin-top: var(--space-8);
 }
 
-@media (min-width: 641px) {
-  :root {
-    --footer-height: calc(100vw / 2.222);
-  }
+footer .container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+footer a {
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+footer svg {
+  width: 18px;
+  height: 18px;
 }

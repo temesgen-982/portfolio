@@ -1,6 +1,6 @@
-A static portfolio site built with zero dependencies. 
+A static portfolio site built with zero dependencies.
 
-Plain Node.js composes template strings at build time — no frameworks, no bundlers, no npm install.
+Plain Node.js composes template strings at build time — no frameworks, no bundlers, no npm install. Blog posts are plain Markdown.
 
 ## Quick Start
 
@@ -9,69 +9,56 @@ npm run dev      # dev server with live reload on http://localhost:8080
 npm run build    # output to dist/
 ```
 
-## File Structure
-
-```
-portfolio/
-  build.js              ← build script, concatenates CSS and generates HTML
-  dev-server.js         ← dev server with live reload
-  package.json          ← just type + scripts, no dependencies
-  css/
-    tokens.css          ← design tokens, font-face
-    reset.css           ← normalize
-    base.css            ← typography, body defaults
-    layout.css          ← .container, .stack, .cluster
-    buttons.css         ← shared button styles
-    utilities.css       ← .sr-only, .center, etc.
-    components/         ← component-scoped styles
-  assets/               ← fonts, icons, images — copied as-is
-  data/                 ← content as JSON
-  src/
-    layouts/            ← MainLayout (head, header, footer)
-    partials/           ← header, footer, prefetch
-    components/         ← card components (project, blog, about, skill)
-    pages/              ← each file becomes a clean URL
-  dist/                 ← generated, gitignored
-```
-
 ## How It Works
 
-Each page in `src/pages/` is a function that receives `{ base }` and returns HTML via `MainLayout`:
+Each page in `src/pages/` exports a default function that returns HTML via `MainLayout`. Pages take no arguments:
 
 ```js
 import { MainLayout } from '../layouts/MainLayout.js';
-import { projectCard } from '../components/project-card.js';
 import projects from '#data/projects.json' with { type: 'json' };
 
-export default function WorkPage({ base }) {
+export default function WorkPage() {
   const content = `
     <div class="project-cards">
-      ${projects.map(projectCard({ base })).join('')}
+      ${projects.map(projectCard()).join('')}
     </div>`;
-  return MainLayout({ title: 'Work', active: 'work', base, content });
+  return MainLayout({ title: 'Work', active: 'work', content });
 }
 ```
 
-`build.js` loops over every file in `src/pages/`, calls it with `{ base }`, and writes the result to `dist/<name>/index.html`. CSS is concatenated from `cssOrder` into `dist/css/main.css`. Assets are copied untouched.
+`build.js` loops over every file in `src/pages/`, calls it, and writes the result to `dist/<name>/index.html`. Blog posts in `content/blog/*.md` are parsed into HTML and written to `dist/blog/<slug>/index.html`, with an index at `dist/blog/index.html`. CSS is concatenated from `cssOrder` into `dist/css/main.css`.
 
 ## Clean URLs
 
 Pages output as `dist/<name>/index.html`, so URLs are `/work/`, `/about/`, etc. — no `.html` extensions.
 
-## Base Path
+## Deployment & Automation
 
-For GitHub Pages project pages (deployed under `/<repo>/`), set `BASE_URL` on build:
+Two GitHub Actions workflows live in `.github/workflows/`:
 
-```bash
-BASE_URL=/portfolio node build.js
+- **`deploy.yml`** — builds the site and deploys to GitHub Pages on every push to `main`. It runs `node build.js`, adds a `CNAME` file, and uploads `dist/` as the deployment artifact.
+- **`scrape-heatmap.yml`** — runs daily (and on demand) to refresh the GitHub contribution data used by the heatmap on the homepage. It runs `scripts/scrape-heatmap.js`, which writes `data/github-heatmap.json` and commits it. If the scrape fails, it opens a GitHub issue.
+
+## Blog
+
+Drop a Markdown file with YAML frontmatter into `content/blog/`:
+
+```md
+---
+title: My Post
+date: 2026-01-15
+tags: [blog]
+---
+
+The post body, written in Markdown.
 ```
 
-Local builds use `BASE_URL=''` (root). The deploy workflow sets this automatically.
+`build.js` renders each post to `dist/blog/<slug>/index.html` and refreshes `dist/blog/index.html`, sorted by date.
 
 ## Adding a Page
 
 1. Create `src/pages/newpage.js`
-2. Export a default function that receives `{ base }` and returns `MainLayout({ ... })`
+2. Export a default function that returns `MainLayout({ title, active, content })`
 3. Run `npm run build`
 4. `dist/newpage/index.html` appears
 

@@ -1,17 +1,45 @@
 header {
-  padding: var(--space-3) var(--space-4);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: transparent;
-}
-
-.blocker {
   position: sticky;
   top: 0;
-  height: var(--header-height);
-  z-index: 5;
-  background: var(--color-bg-surface);
+  z-index: 10;
+  padding: 1.5rem 0;
+  background: color-mix(in srgb, var(--color-bg-main) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-text-main);
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+header nav a {
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+}
+
+header nav a:hover {
+  color: var(--color-text-main);
+}
+
+header nav a.active {
+  color: var(--color-accent);
+  font-weight: 600;
 }

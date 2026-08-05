@@ -12,7 +12,6 @@ export default function WorkPage() {
 
   const content = html`
   <section class="projects section">
-    <div class="blocker"></div>
     <div class="container stack">
       <h2>Work</h2>
       <p>A selection of projects I've built.</p>

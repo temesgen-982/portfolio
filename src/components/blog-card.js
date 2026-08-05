@@ -2,7 +2,7 @@ import { html } from '../utils/html.js';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function formatDate(iso) {
+export function formatDate(iso) {
   const d = new Date(iso);
   return `${months[d.getMonth()]} ${d.getFullYear()}`;
 }
