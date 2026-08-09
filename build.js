@@ -15,7 +15,7 @@ if (fs.existsSync('dist')) {
 const pagesDir = path.join(__dirname, 'src/pages');
 for (const file of fs.readdirSync(pagesDir)) {
   const name = path.basename(file, '.js');
-  if (name === 'blog-index' || name === 'blog-post') continue;
+  if (name === 'blog-index' || name === 'blog-post' || name === 'project') continue;
   const { default: renderPage } = await import(path.join(pagesDir, file));
   const dir = name === 'index' ? 'dist' : `dist/${name}`;
   fs.mkdirSync(dir, { recursive: true });
@@ -36,9 +36,17 @@ if (posts.length > 0) {
   fs.writeFileSync('dist/blog/index.html', BlogIndexPage({ posts }));
 }
 
+const projects = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/projects.json'), 'utf-8'));
+const { ProjectPage } = await import('./src/pages/project.js');
+for (const project of projects) {
+  fs.mkdirSync(`dist/work/${project.slug}`, { recursive: true });
+  fs.writeFileSync(`dist/work/${project.slug}/index.html`, ProjectPage({ project }));
+}
+
 const { SITE_URL } = await import('./src/layouts/MainLayout.js');
 const siteUrls = ['/', '/work/', '/blog/', '/now/']
-  .concat(posts.map(p => `/blog/${p.slug}/`));
+  .concat(posts.map(p => `/blog/${p.slug}/`))
+  .concat(projects.map(p => `/work/${p.slug}/`));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${siteUrls.map(u => `  <url><loc>${SITE_URL}${u}</loc></url>`).join('\n')}
@@ -56,6 +64,7 @@ const cssOrder = [
   'css/components/header.css',
   'css/components/hero.css',
   'css/components/project-card.css',
+  'css/components/project.css',
   'css/components/blog-card.css',
   'css/components/blog-post.css',
   'css/components/experience.css',

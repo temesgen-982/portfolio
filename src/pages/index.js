@@ -57,9 +57,9 @@ export default function IndexPage() {
     <div class="container stack">
       <h2 class="section-title">Projects</h2>
       <div class="project-cards">
-        ${projects.map(projectCard()).join('')}
+        ${projects.slice(0, 4).map(projectCard()).join('')}
       </div>
-      <a class="view-more" href="/work/">View more projects &rarr;</a>
+      <a class="view-more" href="/work/">All projects [${String(projects.length).padStart(2, '0')}] ${getIcon('external')}</a>
     </div>
   </section>
 
