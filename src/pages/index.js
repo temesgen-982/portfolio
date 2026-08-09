@@ -39,7 +39,7 @@ export default function IndexPage() {
         <h1>Hi! I'm Temesgen.</h1>
         <p class="sub">A Full Stack developer from Ethiopia, with real-world experience building large scale applications.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-primary" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">${getIcon('download')} Download CV</a>
         </div>
       </div>
       <div class="hero-side">
