@@ -39,13 +39,13 @@ export default function IndexPage() {
         <h1>Hi! I'm Temesgen.</h1>
         <p class="sub">A Full Stack developer from Ethiopia, with real-world experience building large scale applications.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="/work/">Download CV</a>
+          <a class="btn btn-primary" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
       <div class="hero-side">
         <div class="hero-social">
           ${socialLinks.filter(l => l.group.includes('hero')).map(link =>
-    html`<a class="social-box" href="${link.url}" title="${link.name}" ${link.icon === 'cv' ? 'target="_blank" rel="noopener"' : ''}>${getIcon(link.icon)}</a>`
+    html`<a class="social-box" href="${link.url}" title="${link.name}" ${link.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${getIcon(link.icon)}</a>`
   ).join('')}
         </div>
         ${githubHeatmap(12)}

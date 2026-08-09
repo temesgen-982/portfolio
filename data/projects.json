@@ -62,7 +62,7 @@
     "title": "YouTube Notes",
     "desc": "Take timestamped notes while watching YouTube videos.",
     "image": "/assets/projects/noteyt.webp",
-    "liveurl": "https://noteyt.vercel.app/",
+    "liveUrl": "https://noteyt.vercel.app/",
     "projectUrl": "/",
     "skills": [
       "React"

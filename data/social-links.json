@@ -1,8 +1,8 @@
 [
   { "name": "Email",   "url": "mailto:tedenadane@gmail.com",  "icon": "email",        "group": ["hero", "footer"] },
   { "name": "GitHub",  "url": "https://github.com/temesgen-982", "icon": "github",     "group": ["hero", "footer"] },
-  { "name": "CV",      "url": "/assets/Temesgen-Adane-CV.pdf", "icon": "cv",          "group": ["hero", "footer"] },
-  { "name": "LinkedIn","url": "https://www.linkedin.com/in/temesgen-adane/", "icon": "linkedin", "group": ["footer", "modal"] },
+  { "name": "CV",      "url": "/assets/Temesgen-Adane-CV.pdf", "icon": "cv",          "group": ["footer"] },
+  { "name": "LinkedIn","url": "https://www.linkedin.com/in/temesgen-adane/", "icon": "linkedin", "group": ["hero", "footer", "modal"] },
   { "name": "Telegram","url": "https://t.me/beshow",           "icon": "telegram",    "group": ["footer", "modal"] },
   { "name": "CodePen", "url": "https://codepen.io/Temesgen-Adane", "icon": "codepen", "group": ["modal"] },
   { "name": "Dev.to",  "url": "https://dev.to/temesgen_adane", "icon": "devto",       "group": ["modal"] },
