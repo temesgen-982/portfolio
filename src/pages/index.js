@@ -1,5 +1,5 @@
 import { html } from '../utils/html.js';
-import { MainLayout } from '../layouts/MainLayout.js';
+import { MainLayout, SITE_URL } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
 import { skillCard } from '../components/skill-card.js';
 import { contactForm } from '../components/contact-form.js';
@@ -15,6 +15,22 @@ import skills from '#data/skills.json' with { type: 'json' };
 
 export default function IndexPage() {
   const posts = loadPosts();
+
+  const personJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Temesgen Adane',
+    url: SITE_URL,
+    image: `${SITE_URL}/assets/portrait.webp`,
+    jobTitle: 'Full Stack Developer',
+    email: 'mailto:tedenadane@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Hawassa',
+      addressCountry: 'ET',
+    },
+    sameAs: socialLinks.map(l => l.url).filter(u => u.startsWith('http')),
+  }).replace(/</g, '\\u003c');
 
   const content = html`
   <section class="hero">
@@ -32,7 +48,7 @@ export default function IndexPage() {
     html`<a class="social-box" href="${link.url}" title="${link.name}" ${link.icon === 'cv' ? 'target="_blank" rel="noopener"' : ''}>${getIcon(link.icon)}</a>`
   ).join('')}
         </div>
-        ${githubHeatmap(15)}
+        ${githubHeatmap(12)}
       </div>
     </div>
   </section>
@@ -123,7 +139,7 @@ export default function IndexPage() {
   <section class="skills section">
     <div class="container stack">
       <h2 class="section-title">Skills &amp; tools</h2>
-      <p class="skills-note">The tools I use to bring ideas to life. Skills with projects are clickable.</p>
+      <p class="skills-note">The tools I use to bring ideas to life.</p>
       <div class="skills-grid">
         ${skills.map(skillCard()).join('')}
       </div>
@@ -213,5 +229,12 @@ export default function IndexPage() {
     });
   </script>`;
 
-  return MainLayout({ title: 'Home', active: 'home', content });
+  return MainLayout({
+    title: 'Home',
+    active: 'home',
+    content,
+    description: 'Temesgen Adane — a full stack developer from Ethiopia building fast, scalable web applications.',
+    path: '/',
+    jsonLd: personJsonLd,
+  });
 }
