@@ -19,5 +19,11 @@ export default function NowPage() {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Now', active: 'now', content });
+  return MainLayout({
+    title: 'Now',
+    active: 'now',
+    content,
+    description: 'What I\'m focused on right now.',
+    path: '/now/',
+  });
 }

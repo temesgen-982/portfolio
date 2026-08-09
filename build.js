@@ -36,6 +36,17 @@ if (posts.length > 0) {
   fs.writeFileSync('dist/blog/index.html', BlogIndexPage({ posts }));
 }
 
+const { SITE_URL } = await import('./src/layouts/MainLayout.js');
+const siteUrls = ['/', '/work/', '/blog/', '/now/']
+  .concat(posts.map(p => `/blog/${p.slug}/`));
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${siteUrls.map(u => `  <url><loc>${SITE_URL}${u}</loc></url>`).join('\n')}
+</urlset>
+`;
+fs.writeFileSync('dist/sitemap.xml', sitemap);
+fs.writeFileSync('dist/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+
 const cssOrder = [
   'css/tokens.css',
   'css/reset.css',

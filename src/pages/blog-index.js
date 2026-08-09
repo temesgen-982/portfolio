@@ -14,5 +14,11 @@ export function BlogIndexPage({ posts }) {
     </div>
   </section>`;
 
-  return MainLayout({ title: 'Blog', active: 'blog', content });
+  return MainLayout({
+    title: 'Blog',
+    active: 'blog',
+    content,
+    description: 'Notes on things I\'ve been building or learning as a full stack developer.',
+    path: '/blog/',
+  });
 }

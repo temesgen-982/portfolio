@@ -6,58 +6,43 @@
     "liveUrl": "/",
     "projectUrl": "/work/lis/",
     "category": "Frontend",
-    "tags": [
-      "React",
-      "MUI",
-      "SpringBoot",
-      "PostgreSQL"
-    ],
     "skills": [
       "React",
-      "Spring Boot"
+      "MUI",
+      "Spring Boot",
+      "PostgreSQL"
     ],
-    "theme": "blue",
-    "updated": "Jun 7, 2025"
+    "updated": "Aug 8, 2026"
   },
   {
     "title": "Abbabal API",
     "desc": "An API that provides more than 7000+ Amharic proverbs",
     "image": "/assets/projects/abbabal.webp",
-    "liveUrl": "/",
-    "projectUrl": "/work/rest-api/",
+    "liveUrl": "https://abbabal-api-web.vercel.app/",
+    "projectUrl": "https://github.com/temesgen-982/abbabal-api",
     "category": "Backend",
-    "tags": [
-      "Typescript",
+    "skills": [
+      "TypeScript",
       "Svelte",
       "NestJS",
       "Capacitor",
       "SQLite"
     ],
-    "skills": [
-      "Svelte",
-      "NestJS"
-    ],
-    "theme": "orange",
-    "updated": "Feb 3, 2025"
+    "updated": "Aug 8, 2026"
   },
   {
     "title": "Consensus",
     "desc": "A football predictions aggregator.",
     "image": "/assets/projects/consensus.webp",
-    "liveUrl": "/",
-    "projectUrl": "/work/e-commerce/",
+    "liveUrl": "",
+    "projectUrl": "/",
     "category": "Full-Stack",
-    "tags": [
+    "skills": [
       "Svelte",
       "TypeScript",
       "PostgreSQL"
     ],
-    "skills": [
-      "Svelte",
-      "TypeScript"
-    ],
-    "theme": "yellow",
-    "updated": "Jan 12, 2025"
+    "updated": "Jan 12, 2026"
   },
   {
     "title": "Teen Magazine",
@@ -66,16 +51,22 @@
     "liveUrl": "/",
     "projectUrl": "/work/task-manager/",
     "category": "Mobile",
-    "tags": [
+    "skills": [
       "Svelte",
       "TypeScript",
       "PostgreSQL"
     ],
+    "updated": "Nov 20, 2025"
+  },
+  {
+    "title": "YouTube Notes",
+    "desc": "Take timestamped notes while watching YouTube videos.",
+    "image": "/assets/projects/noteyt.webp",
+    "liveurl": "https://noteyt.vercel.app/",
+    "projectUrl": "/",
     "skills": [
-      "Svelte",
-      "TypeScript"
+      "React"
     ],
-    "theme": "orange",
-    "updated": "Nov 20, 2024"
+    "updated": "Feb 06, 2026"
   }
 ]

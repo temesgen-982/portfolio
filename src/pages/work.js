@@ -7,7 +7,7 @@ import skills from '#data/skills.json' with { type: 'json' };
 export default function WorkPage() {
   const categories = [...new Set(projects.map(p => p.category))];
   const tagSet = new Set();
-  for (const p of projects) p.tags.forEach(t => tagSet.add(t));
+  for (const p of projects) p.skills.forEach(t => tagSet.add(t));
   const tags = skills.map(s => s.name).filter(t => tagSet.has(t));
 
   const content = html`
@@ -36,7 +36,7 @@ export default function WorkPage() {
       <div class="project-cards">
         ${projects.map(p => {
           const card = projectCard()(p);
-          return card.replace('<article', `<article data-category="${p.category}" data-tags="${p.tags.join(',')}"`);
+          return card.replace('<article', `<article data-category="${p.category}" data-skills="${p.skills.join(',')}"`);
         }).join('')}
       </div>
     </div>
@@ -49,7 +49,7 @@ export default function WorkPage() {
 
       document.querySelectorAll('.project-card').forEach(card => {
         const matchCategory = category === 'all' || card.dataset.category === category;
-        const matchTag = tag === 'all' || card.dataset.tags.split(',').includes(tag);
+        const matchTag = tag === 'all' || card.dataset.skills.split(',').includes(tag);
         card.classList.toggle('filtered-out', !(matchCategory && matchTag));
       });
     }
@@ -76,5 +76,11 @@ export default function WorkPage() {
     if (categoryParam || tagParam) filterProjects();
   </script>`;
 
-  return MainLayout({ title: 'Work', active: 'work', content });
+  return MainLayout({
+    title: 'Work',
+    active: 'work',
+    content,
+    description: 'A selection of projects I\'ve built — web apps, APIs, and tools for real-world problems.',
+    path: '/work/',
+  });
 }
