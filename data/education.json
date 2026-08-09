@@ -9,16 +9,16 @@
   },
   {
     "endDate": "2026",
-    "title": "SpringBoot",
+    "title": "Javascript Design Patterns for Web Apps",
     "school": "FrontendMasters",
-    "desc": "Validated expertise in developing and maintaining SpringBoot applications.",
-    "certUrl": "#"
+    "desc": "Building robust, efficient web applications using pure JavaScript without relying on external libraries or frameworks.",
+    "certUrl": "https://static.frontendmasters.com/ud/c/71bd02d8ad/KUlAahgAEE/js-design-patterns-masterdev.pdf"
   },
   {
     "endDate": "2026",
-    "title": "Vanilla Web",
+    "title": "Vanilla JS: You Might Not Need a Framework",
     "school": "FrontendMasters",
-    "desc": "Professional certificate in building and structuring modern vanilla projects.",
-    "certUrl": "#"
+    "desc": "Gaining speed and simplicity in writing web apps by taking a 'vanilla' approach!",
+    "certUrl": "https://static.frontendmasters.com/ud/c/71bd02d8ad/wQwRoiyplO/vanilla-js-apps-masterdev.pdf"
   }
 ]
