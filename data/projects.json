@@ -34,7 +34,7 @@
     "title": "Consensus",
     "desc": "A football predictions aggregator.",
     "image": "/assets/projects/consensus.webp",
-    "liveUrl": "",
+    "liveUrl": "https://consensus-predictor.vercel.app",
     "projectUrl": "/",
     "category": "Full-Stack",
     "skills": [
@@ -48,7 +48,7 @@
     "title": "Teen Magazine",
     "desc": "A full-stack website for a digital magazine.",
     "image": "/assets/projects/teen-magazine.webp",
-    "liveUrl": "/",
+    "liveUrl": "https://teen-magazine.vercel.app",
     "projectUrl": "/work/task-manager/",
     "category": "Mobile",
     "skills": [
