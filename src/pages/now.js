@@ -1,6 +1,7 @@
 import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { nowPlaying } from '../components/now-playing.js';
+import { locationIcon } from '../partials/icons.js';
 import nowEntries from '#data/now.json' with { type: 'json' };
 
 export default function NowPage() {
@@ -18,7 +19,19 @@ export default function NowPage() {
 
       <hr>
 
-      ${nowPlaying()}
+      <div class="now-cards">
+        ${nowPlaying()}
+        <div class="location-card">
+          <div class="location-card__title">
+            <span class="location-card__icon">${locationIcon}</span>
+            <span>Location</span>
+          </div>
+          <div class="location-card__body">
+            <span class="location-card__city">Hawassa, <br> Ethiopia</span>
+            <span class="location-card__tz">EAT (UTC+3)</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>`;
 
