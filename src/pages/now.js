@@ -18,8 +18,6 @@ export default function NowPage() {
 
       <hr>
 
-      <h3>Music</h3>
-      <p>What I've been listening to lately.</p>
       ${nowPlaying()}
     </div>
   </section>`;
