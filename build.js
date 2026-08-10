@@ -71,6 +71,7 @@ const cssOrder = [
   'css/components/filters.css',
   'css/components/skill-cards.css',
   'css/components/github-heatmap.css',
+  'css/components/now-playing.css',
   'css/components/contact.css',
   'css/components/footer.css',
   'css/utilities.css',

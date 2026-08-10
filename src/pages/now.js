@@ -1,5 +1,6 @@
 import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
+import { nowPlaying } from '../components/now-playing.js';
 import nowEntries from '#data/now.json' with { type: 'json' };
 
 export default function NowPage() {
@@ -16,6 +17,10 @@ export default function NowPage() {
       <p><em>Last updated ${current.date}</em></p>
 
       <hr>
+
+      <h3>Music</h3>
+      <p>What I've been listening to lately.</p>
+      ${nowPlaying()}
     </div>
   </section>`;
 

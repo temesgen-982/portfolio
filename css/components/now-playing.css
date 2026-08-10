@@ -1,0 +1,112 @@
+.now-playing {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+
+.now-playing__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.now-playing__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-text-faint);
+  flex-shrink: 0;
+}
+
+.now-playing__dot.is-playing {
+  background: var(--color-accent);
+  animation: now-playing-pulse 2s infinite;
+}
+
+@keyframes now-playing-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(77, 240, 147, .5); }
+  70% { box-shadow: 0 0 0 8px rgba(77, 240, 147, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(77, 240, 147, 0); }
+}
+
+.now-playing__link {
+  margin-left: auto;
+  color: var(--color-text-faint);
+  text-decoration: none;
+}
+
+.now-playing__link:hover {
+  color: var(--color-accent);
+}
+
+.now-playing__body {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.now-playing__art {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--color-bg-surface-2);
+  flex-shrink: 0;
+}
+
+.now-playing__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.now-playing__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.now-playing__artist {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.now-playing__links {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.now-playing__links a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  transition: color .15s ease;
+}
+
+.now-playing__links a:hover {
+  color: var(--color-accent);
+}
+
+.now-playing__links svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
