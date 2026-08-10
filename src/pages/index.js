@@ -1,7 +1,6 @@
 import { html } from '../utils/html.js';
 import { MainLayout, SITE_URL } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
-import { skillCard } from '../components/skill-card.js';
 import { contactForm } from '../components/contact-form.js';
 import { githubHeatmap } from '../components/github-heatmap.js';
 import { formatDate } from '../components/blog-card.js';
@@ -11,7 +10,6 @@ import socialLinks from '#data/social-links.json' with { type: 'json' };
 import projects from '#data/projects.json' with { type: 'json' };
 import experience from '#data/experience.json' with { type: 'json' };
 import education from '#data/education.json' with { type: 'json' };
-import skills from '#data/skills.json' with { type: 'json' };
 
 export default function IndexPage() {
   const posts = loadPosts();
@@ -139,10 +137,7 @@ export default function IndexPage() {
   <section class="skills section">
     <div class="container stack">
       <h2 class="section-title">Skills &amp; tools</h2>
-      <p class="skills-note">The tools I use to bring ideas to life.</p>
-      <div class="skills-grid">
-        ${skills.map(skillCard()).join('')}
-      </div>
+      <p class="skills-note">I build with React, Svelte, Spring Boot, PostgreSQL and more — <a href="/work/">see them in action</a>.</p>
     </div>
   </section>
 

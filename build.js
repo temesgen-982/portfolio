@@ -69,7 +69,7 @@ const cssOrder = [
   'css/components/blog-post.css',
   'css/components/experience.css',
   'css/components/filters.css',
-  'css/components/skill-cards.css',
+  'css/components/skills.css',
   'css/components/github-heatmap.css',
   'css/components/now-playing.css',
   'css/components/location-card.css',

@@ -1,0 +1,16 @@
+.skills-note {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.skills-note a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skills-note a:hover {
+  text-decoration: underline;
+}

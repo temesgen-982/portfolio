@@ -14,7 +14,6 @@
     ],
     "liveUrl": "/",
     "projectUrl": "/work/lis/",
-    "category": "Frontend",
     "skills": [
       "React",
       "MUI",
@@ -37,7 +36,6 @@
     ],
     "liveUrl": "https://abbabal-api-web.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/abbabal-api",
-    "category": "Backend",
     "skills": [
       "TypeScript",
       "Svelte",
@@ -61,7 +59,6 @@
     ],
     "liveUrl": "https://consensus-predictor.vercel.app",
     "projectUrl": "/",
-    "category": "Full-Stack",
     "skills": [
       "Svelte",
       "TypeScript",
@@ -83,7 +80,6 @@
     ],
     "liveUrl": "https://teen-magazine.vercel.app",
     "projectUrl": "/work/task-manager/",
-    "category": "Mobile",
     "skills": [
       "Svelte",
       "TypeScript",
@@ -122,7 +118,6 @@
     "highlights": [],
     "liveUrl": "https://product-list-with-cart-delta-ten.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/product-list-with-cart",
-    "category": "",
     "skills": [
       "Svelte", 
       "Chapa"
@@ -141,10 +136,9 @@
     "highlights": [],
     "liveUrl": "https://temesgen-982.github.io/lupstudios-landing-page/",
     "projectUrl": "https://github.com/temesgen-982/lupstudios-landing-page",
-    "category": "",
     "skills": [
-      "HTML", 
-      "CSS"
+      "HTML5", 
+      "CSS3"
     ],
     "updated": "Aug 9, 2026"
   },
@@ -160,10 +154,9 @@
     "highlights": [],
     "liveUrl": "https://temesgen-982.github.io/news-homepage/",
     "projectUrl": "https://github.com/temesgen-982/news-homepage",
-    "category": "",
     "skills": [
-      "HTML", 
-      "CSS", 
+      "HTML5", 
+      "CSS3", 
       "Bootstrap"
     ],
     "updated": "Aug 9, 2026"
@@ -180,10 +173,9 @@
     "highlights": [],
     "liveUrl": "https://temesgen-982.github.io/newsletter-sign-up-with/",
     "projectUrl": "https://github.com/temesgen-982/newsletter-sign-up-with",
-    "category": "",
     "skills": [
-      "HTML", 
-      "CSS"
+      "HTML5", 
+      "CSS3"
     ],
     "updated": "Aug 9, 2026"
   },
@@ -199,7 +191,6 @@
     "highlights": [],
     "liveUrl": "https://rest-countries-api-lyart-eight.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/rest-countries-api",
-    "category": "",
     "skills": ["Svelte"],
     "updated": "Aug 9, 2026"
   },
@@ -215,10 +206,9 @@
     "highlights": [],
     "liveUrl": "https://temesgen-982.github.io/room-homepage/",
     "projectUrl": "https://github.com/temesgen-982/room-homepage",
-    "category": "",
     "skills": [
-      "HTML", 
-      "CSS"
+      "HTML5", 
+      "CSS3"
     ],
     "updated": "Aug 9, 2026"
   },
@@ -234,10 +224,9 @@
     "highlights": [],
     "liveUrl": "https://temesgen-982.github.io/time-tracking-dashboard/",
     "projectUrl": "https://github.com/temesgen-982/time-tracking-dashboard",
-    "category": "",
     "skills": [
-      "HTML", 
-      "CSS"
+      "HTML5", 
+      "CSS3"
     ],
     "updated": "Aug 9, 2026"
   }
