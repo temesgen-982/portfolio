@@ -109,7 +109,7 @@
   {
     "title": "Chapa Product List",
     "slug": "chapa-product-list",
-    "desc": "TBD",
+    "desc": "An add-to-cart product list powered by Chapa payments.",
     "summary": "A product list with cart.",
     "image": "/assets/projects/chapa-product-list.webp",
     "gallery": [
@@ -127,7 +127,7 @@
   {
     "title": "Loopstudios Landing Page",
     "slug": "loopstudios-landing-page",
-    "desc": "TBD",
+    "desc": "A landing page for Loopstudios' immersive VR experiences.",
     "summary": "A landing page for Loopstudios.",
     "image": "/assets/projects/loopstudios-landing-page.webp",
     "gallery": [
@@ -138,14 +138,14 @@
     "projectUrl": "https://github.com/temesgen-982/lupstudios-landing-page",
     "skills": [
       "HTML5", 
-      "CSS3"
+      "SCSS"
     ],
     "updated": "Aug 9, 2026"
   },
   {
     "title": "News Homepage",
     "slug": "news-homepage",
-    "desc": "TBD",
+    "desc": "A news homepage with featured stories and a highlight sidebar.",
     "summary": "A news homepage layout.",
     "image": "/assets/projects/news-homepage.webp",
     "gallery": [
@@ -164,7 +164,7 @@
   {
     "title": "Newsletter Sign-Up",
     "slug": "newsletter-sign-up",
-    "desc": "TBD",
+    "desc": "A newsletter sign-up form with email validation and a success state.",
     "summary": "A newsletter sign-up form with validation.",
     "image": "/assets/projects/newsletter-sign-up.webp",
     "gallery": [
@@ -182,7 +182,7 @@
   {
     "title": "Rest Countries API",
     "slug": "rest-countries-api",
-    "desc": "TBD",
+    "desc": "Search and filter countries with details from the REST Countries API.",
     "summary": "Browse and search countries from the REST Countries API.",
     "image": "/assets/projects/rest-countries-api.webp",
     "gallery": [
@@ -191,13 +191,16 @@
     "highlights": [],
     "liveUrl": "https://rest-countries-api-lyart-eight.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/rest-countries-api",
-    "skills": ["Svelte"],
+    "skills": [
+      "Svelte", 
+      "TypeScript"
+    ],
     "updated": "Aug 9, 2026"
   },
   {
     "title": "Room Homepage",
     "slug": "room-homepage",
-    "desc": "TBD",
+    "desc": "A furniture brand homepage with an interactive hero slider.",
     "summary": "A homepage for a furniture brand.",
     "image": "/assets/projects/room-homepage.webp",
     "gallery": [
@@ -208,14 +211,14 @@
     "projectUrl": "https://github.com/temesgen-982/room-homepage",
     "skills": [
       "HTML5", 
-      "CSS3"
+      "SCSS"
     ],
     "updated": "Aug 9, 2026"
   },
   {
     "title": "Time Tracking Dashboard",
     "slug": "time-tracking-dashboard",
-    "desc": "TBD",
+    "desc": "A dashboard for tracking time across daily, weekly, and monthly views.",
     "summary": "A dashboard for tracking time across activities.",
     "image": "/assets/projects/time-tracking-dashboard.webp",
     "gallery": [

@@ -1,6 +1,7 @@
 [
   { "name": "HTML5", "icon": "/assets/language-icons/html-5-svgrepo-com.svg", "color": "#E34F26" },
   { "name": "CSS3", "icon": "/assets/language-icons/css-3-svgrepo-com.svg", "color": "#1572B6" },
+  { "name": "SCSS", "icon": "/assets/language-icons/scss-svgrepo-com.svg", "color": "#CD6799" },
   { "name": "JavaScript", "icon": "/assets/language-icons/javascript-svgrepo-com.svg", "color": "#F7DF1E" },
   { "name": "TypeScript", "icon": "/assets/language-icons/typescript-icon-svgrepo-com.svg", "color": "#3178C6" },
   { "name": "React", "icon": "/assets/language-icons/react-javascript-js-framework-facebook-svgrepo-com.svg", "color": "#61DAFB" },
