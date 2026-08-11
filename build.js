@@ -76,6 +76,7 @@ const cssOrder = [
   'css/components/gallery.css',
   'css/components/contact.css',
   'css/components/footer.css',
+  'css/components/view-transition.css',
   'css/utilities.css',
 ];
 

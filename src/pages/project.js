@@ -50,9 +50,9 @@ export function ProjectPage({ project }) {
       ${href ? `<a href="${href}" target="_blank" rel="noopener" class="btn btn-primary project-visit">${getIcon('external')} Visit live site</a>` : ''}
     </aside>
     <main class="project-media">
-      ${gallery.map(img => html`
+      ${gallery.map((img, i) => html`
       <div class="media-card">
-        <img src="${img}" alt="${project.title}" loading="lazy">
+        <img src="${img}" alt="${project.title}" loading="lazy" ${i === 0 ? `style="view-transition-name: pt-${project.slug}"` : ''}>
       </div>`).join('')}
       ${highlights.length ? html`
       <div class="project-highlights">
