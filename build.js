@@ -73,6 +73,7 @@ const cssOrder = [
   'css/components/github-heatmap.css',
   'css/components/now-playing.css',
   'css/components/location-card.css',
+  'css/components/gallery.css',
   'css/components/contact.css',
   'css/components/footer.css',
   'css/utilities.css',
@@ -107,6 +108,11 @@ for (const file of assetsToCopy) {
 const projectsDir = path.join(assetsDir, 'projects');
 if (fs.existsSync(projectsDir)) {
   fs.cpSync(projectsDir, 'dist/assets/projects', { recursive: true });
+}
+
+const galleryDir = path.join(assetsDir, 'gallery');
+if (fs.existsSync(galleryDir)) {
+  fs.cpSync(galleryDir, 'dist/assets/gallery', { recursive: true });
 }
 
 const langDir = path.join(assetsDir, 'language-icons');

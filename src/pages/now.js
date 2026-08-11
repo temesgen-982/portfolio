@@ -3,6 +3,7 @@ import { MainLayout } from '../layouts/MainLayout.js';
 import { nowPlaying } from '../components/now-playing.js';
 import { locationIcon } from '../partials/icons.js';
 import nowEntries from '#data/now.json' with { type: 'json' };
+import gallery from '#data/gallery.json' with { type: 'json' };
 
 export default function NowPage() {
   const [current] = nowEntries;
@@ -31,6 +32,23 @@ export default function NowPage() {
             <span class="location-card__tz">EAT (UTC+3)</span>
           </div>
         </div>
+      </div>
+
+      <h3 class="gallery-heading">From the gallery...</h3>
+      <p>Photos from 2026.</p>
+      <div class="gallery">
+        ${gallery.map(photo => `
+          <figure class="gallery__item">
+            <img
+              src="/assets/gallery/${photo.src}"
+              alt="${photo.caption || (photo.date ? `Photo from ${photo.date}` : 'Photo')}"
+              loading="lazy"
+              decoding="async">
+            <figcaption class="gallery__meta">
+              ${photo.date ? `<span class="gallery__date">${photo.date}</span>` : ''}
+              ${photo.caption ? `<span class="gallery__caption">${photo.caption}</span>` : ''}
+            </figcaption>
+          </figure>`).join('')}
       </div>
     </div>
   </section>`;
