@@ -28,8 +28,11 @@ export default function NowPage() {
             <span>Location</span>
           </div>
           <div class="location-card__body">
-            <span class="location-card__city">Hawassa, <br> Ethiopia</span>
-            <span class="location-card__tz">EAT (UTC+3)</span>
+            <div class="location-card__details">
+              <span class="location-card__city">Hawassa, <br> Ethiopia</span>
+              <span class="location-card__tz">EAT (UTC+3)</span>
+            </div>
+            <span class="location-card__clock" id="local-clock" aria-label="Local time in Hawassa">--:--</span>
           </div>
         </div>
       </div>
@@ -51,7 +54,22 @@ export default function NowPage() {
           </figure>`).join('')}
       </div>
     </div>
-  </section>`;
+  </section>
+
+  <script>
+    const clockEl = document.getElementById('local-clock');
+    const fmt = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Africa/Addis_Ababa',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    });
+    function tick() {
+      if (clockEl) clockEl.textContent = fmt.format(new Date());
+    }
+    tick();
+    setInterval(tick, 10000);
+  </script>`;
 
   return MainLayout({
     title: 'Now',

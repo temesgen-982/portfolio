@@ -6,8 +6,8 @@
 }
 
 .location-card {
-  aspect-ratio: 1;
-  flex: 0 0 auto;
+  flex: 1 1 260px;
+  min-width: 0;
   background:
     radial-gradient(circle at top right, rgba(77, 240, 147, .08), transparent 60%),
     var(--color-bg-surface);
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--space-1);
+  gap: var(--space-4);
   font-size: var(--fs-small);
   color: var(--color-text-muted);
   padding: var(--space-3) var(--space-4);
@@ -47,9 +47,27 @@
 
 .location-card__body {
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.location-card__details {
+  display: flex;
   flex-direction: column;
-  justify-content: end;
-  text-align: right;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.location-card__clock {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .location-card__city {
@@ -61,8 +79,7 @@
 }
 
 .location-card__tz {
-  align-self: flex-end;
-  margin-top: var(--space-2);
+  align-self: flex-start;
   padding: 2px 8px;
   border-radius: 999px;
   background: var(--color-bg-surface-2);
@@ -70,4 +87,19 @@
   font-size: 11px;
   letter-spacing: .04em;
   text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .now-cards {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .location-card {
+    width: 100%;
+  }
+
+  .location-card__body {
+    align-items: center;
+  }
 }
