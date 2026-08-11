@@ -56,34 +56,6 @@
   margin: 0 0 1.25rem;
 }
 
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-  border-radius: 8px;
-  padding: 9px 16px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.15s ease;
-}
-
-.download-btn:hover {
-  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-}
-
-.download-btn svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .timeline {
   position: relative;
   display: flex;

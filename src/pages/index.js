@@ -67,7 +67,7 @@ export default function IndexPage() {
       <div>
         <h2 class="section-title">About</h2>
         <p class="bio-text">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>
-        <a href="/assets/Temesgen-Adane-CV.pdf" class="download-btn" target="_blank" rel="noopener">${getIcon('download')} Download CV</a>
+        <a href="mailto:tedenadane@gmail.com" class="btn btn-primary">${getIcon('email')} Get in touch</a>
       </div>
     </div>
   </section>
@@ -93,6 +93,7 @@ export default function IndexPage() {
           </div>
         </div>`).join('')}
       </div>
+      <a class="view-more" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">Full experience in my CV ${getIcon('external')}</a>
     </div>
   </section>
 
