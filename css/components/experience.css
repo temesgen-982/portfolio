@@ -65,11 +65,13 @@
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 130px 24px 1fr;
+  grid-template-columns: 20px 1fr;
   gap: 0 1.25rem;
 }
 
 .timeline-date {
+  grid-column: 1 / -1;
+  order: -1;
   color: var(--color-text-faint);
   font-size: 13px;
   padding-top: 2px;
@@ -201,15 +203,13 @@
     flex-direction: row;
     align-items: center;
   }
-}
 
-@media (max-width: 640px) {
   .timeline-item {
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 130px 24px 1fr;
   }
 
   .timeline-date {
-    grid-column: 1 / -1;
-    order: -1;
+    grid-column: auto;
+    order: 0;
   }
 }

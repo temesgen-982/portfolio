@@ -150,7 +150,7 @@ a.contact-item:hover .contact-label {
 
 .contact-form > div:not(.cf-turnstile) {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: .75rem;
 }
 
@@ -221,8 +221,8 @@ a.contact-item:hover .contact-label {
   stroke-linejoin: round;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
   .contact-form > div:not(.cf-turnstile) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
