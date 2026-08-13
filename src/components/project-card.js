@@ -21,8 +21,8 @@ export function projectCard() {
   <div class="project-preview">
     <img src="${image}" alt="${title}" class="project-img" loading="lazy" style="view-transition-name: pt-${slug}">
     <div class="project-actions">
-      ${href ? `<a href="${href}" target="_blank" rel="noopener" class="project-action" aria-label="Open ${title}" title="Live site"><span>Live</span>${getIcon('external')}</a>` : ''}
-      ${slug ? `<a href="/work/${slug}/" class="project-action" aria-label="More about ${title}" title="More"><span>More</span>${getIcon('arrowRight')}</a>` : ''}
+      ${href ? `<a href="${href}" target="_blank" rel="noopener" class="project-action" aria-label="Open ${title}" title="Live site">${getIcon('external')}<span>Live</span></a>` : ''}
+      ${slug ? `<a href="/work/${slug}/" class="project-action" aria-label="More about ${title}" title="More">${getIcon('arrowRight')}<span>More</span></a>` : ''}
     </div>
   </div>
   <div class="project-info">
