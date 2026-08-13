@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "sha": "9a31f9b",
+      "message": "initial commit",
+      "date": "2024-12-22T15:43:49Z",
+      "url": "https://github.com/temesgen-982/news-homepage/commit/9a31f9b04a4ac799fbb2d663981a208c624c1645",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

@@ -1,0 +1,166 @@
+{
+  "rows": [
+    {
+      "sha": "cece893",
+      "message": "Merge pull request #14 from temesgen-982/refactor/scale-down",
+      "date": "2026-08-09T11:36:49Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/cece8931617f5f8b8680200df9dd28059226555f",
+      "isMerge": true,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        },
+        {
+          "lane": 1,
+          "isMergeParent": true
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "26a900f",
+      "message": "ci(process): run proverb processing 3x daily",
+      "date": "2026-08-09T11:32:49Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/26a900f60078566d34b8383634d9a68973dc83cb",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    },
+    {
+      "sha": "979d8c6",
+      "message": "fix(scripts): bootstrap proverbs schema and repair typecheck errors",
+      "date": "2026-08-09T11:32:38Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/979d8c69df5e00ab21b44865df315ea874d5db49",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    },
+    {
+      "sha": "d92e3ff",
+      "message": "feat(versioning): unify product version and wire Android build to it",
+      "date": "2026-08-09T11:32:22Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/d92e3ffb907eef7dc0f42c49b5694df654d177fb",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    },
+    {
+      "sha": "8d9d5c7",
+      "message": "Merge pull request #13 from temesgen-982/refactor/scale-down",
+      "date": "2026-08-09T08:07:54Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/8d9d5c7ffa2d8e8a4975c0515563335329f46937",
+      "isMerge": true,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        1
+      ],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        },
+        {
+          "lane": 1,
+          "isMergeParent": true
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "b787865",
+      "message": "feat(license): add MIT/CC BY dual licensing, remove unused drizzle tooling",
+      "date": "2026-08-09T07:54:48Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/b787865d0d58c54aec8d248c01a1eeeb9000c683",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    },
+    {
+      "sha": "2d5db24",
+      "message": "chore(mobile): add capacitor android scripts",
+      "date": "2026-07-31T01:37:00Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/2d5db24f23cdb202daabbc28eb2b79eba2e92b39",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    },
+    {
+      "sha": "17d85be",
+      "message": "chore(deps): add wuchale and capacitor-assets tooling",
+      "date": "2026-08-09T07:00:46Z",
+      "url": "https://github.com/temesgen-982/abbabal-api/commit/17d85bee102153946dcaee3718611ccdce146cc5",
+      "isMerge": false,
+      "lane": 1,
+      "hasIncoming": true,
+      "passThroughLanes": [
+        0
+      ],
+      "parentLanes": [
+        {
+          "lane": 1,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4A7A56"
+    }
+  ],
+  "width": 48,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "sha": "320e36f",
+      "message": "edit README file",
+      "date": "2025-06-28T20:46:59Z",
+      "url": "https://github.com/temesgen-982/lupstudios-landing-page/commit/320e36f0f6fce392eecf39da1569bc1ed6af64ff",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "31b88c8",
+      "message": "edit spacing styles",
+      "date": "2025-06-28T20:43:12Z",
+      "url": "https://github.com/temesgen-982/lupstudios-landing-page/commit/31b88c82353a7a89c1efe9d24c49d6be9ce23138",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "dd2f24a",
+      "message": "add fonts",
+      "date": "2025-06-28T20:38:25Z",
+      "url": "https://github.com/temesgen-982/lupstudios-landing-page/commit/dd2f24a86f6fedd186478a935b9fc192dd16cef4",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "0e7dc15",
+      "message": "add responsive styles for large screens",
+      "date": "2025-06-28T20:21:34Z",
+      "url": "https://github.com/temesgen-982/lupstudios-landing-page/commit/0e7dc150ec606bb6ea0eb910bfa51195f6e27972",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "58d5865",
+      "message": "initial commmit",
+      "date": "2025-06-28T19:04:43Z",
+      "url": "https://github.com/temesgen-982/lupstudios-landing-page/commit/58d58655cc48c06d0eddbfe2f4e44ab82c213f3b",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

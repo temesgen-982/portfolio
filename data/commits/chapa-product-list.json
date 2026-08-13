@@ -1,0 +1,144 @@
+{
+  "rows": [
+    {
+      "sha": "c517476",
+      "message": "feat(cart): update components to consume centralized reactive state",
+      "date": "2025-12-31T06:21:56Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/c5174767c519c574c4a54bedd065112a55c847ad",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "52326d3",
+      "message": "refactor(cart): centralize cart state and reactive getters in cart-state.svelte.ts",
+      "date": "2025-12-31T06:21:45Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/52326d3101ae4ab2ad55d69800530535c5cae145",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "ec05d66",
+      "message": "feat(chapa): use UUID for transaction reference",
+      "date": "2025-12-31T06:21:39Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/ec05d66227f8b1cbc17fc82ed2aeb5b2f31065bc",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "5985d4e",
+      "message": "fix: transaction verification",
+      "date": "2025-12-30T13:26:11Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/5985d4e40052ee39c85cb23342ec63d71f441e99",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "f205aba",
+      "message": "add icons",
+      "date": "2025-12-30T13:25:53Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/f205abada577666de053fe04766bb11839811142",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "06717ab",
+      "message": "add screenshots",
+      "date": "2025-12-30T13:25:22Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/06717ab37dbf750a2ffe606ecf92ceac9ea655e6",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "69d9de5",
+      "message": "update README",
+      "date": "2025-12-30T13:24:54Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/69d9de5028de476eb5b482cb96f72fa53a8ef238",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "e3fa3a7",
+      "message": "fix: retrieve payment instead of chapa_status",
+      "date": "2025-12-12T05:32:35Z",
+      "url": "https://github.com/temesgen-982/product-list-with-cart--chapa-payment/commit/e3fa3a7e27e987415fd66caf758264dad2136c25",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

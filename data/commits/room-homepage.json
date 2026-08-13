@@ -1,0 +1,71 @@
+{
+  "rows": [
+    {
+      "sha": "4e32d50",
+      "message": "add the specified font",
+      "date": "2025-06-30T12:23:32Z",
+      "url": "https://github.com/temesgen-982/room-homepage/commit/4e32d503a1c598c66a5f79873c903434b5d159ea",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "f90015f",
+      "message": "fix desktop carousel navigation",
+      "date": "2025-06-30T12:18:53Z",
+      "url": "https://github.com/temesgen-982/room-homepage/commit/f90015fb1581a91daadde0f3daefd73226c1db51",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "7aae204",
+      "message": "add responsive styles for larger devices",
+      "date": "2025-06-30T12:13:03Z",
+      "url": "https://github.com/temesgen-982/room-homepage/commit/7aae2048cf7242e0a9b047a3fbff2efcd8851fdb",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "8aa722e",
+      "message": "initial commit",
+      "date": "2025-06-30T08:12:00Z",
+      "url": "https://github.com/temesgen-982/room-homepage/commit/8aa722e44048d5e1b117f36599d27823ec59ef5a",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

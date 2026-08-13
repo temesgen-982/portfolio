@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "sha": "48df44e",
+      "message": "started using <source> tags instead of using javascript",
+      "date": "2024-09-11T14:52:46Z",
+      "url": "https://github.com/temesgen-982/newsletter-sign-up-with/commit/48df44e402a2b34489870c9474486b5c0ef00f33",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "dc8a976",
+      "message": "Fixed the font family for the input and button",
+      "date": "2024-09-10T22:39:25Z",
+      "url": "https://github.com/temesgen-982/newsletter-sign-up-with/commit/dc8a976fa913409f0c12e37654e6bd2f4a500333",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "847b20c",
+      "message": "removed automatic validation",
+      "date": "2024-09-10T22:38:56Z",
+      "url": "https://github.com/temesgen-982/newsletter-sign-up-with/commit/847b20cc98fbe071371b464fec1ae8fb70a24cc4",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "b24f673",
+      "message": "Made a small change",
+      "date": "2024-09-10T06:25:22Z",
+      "url": "https://github.com/temesgen-982/newsletter-sign-up-with/commit/b24f67364c73f9a68152fe548ca262908f1bd7b9",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "187922b",
+      "message": "initial commit",
+      "date": "2024-09-09T20:05:36Z",
+      "url": "https://github.com/temesgen-982/newsletter-sign-up-with/commit/187922baca0de27658ec3d89817d76e105545c81",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}

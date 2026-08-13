@@ -1,0 +1,144 @@
+{
+  "rows": [
+    {
+      "sha": "1fb3612",
+      "message": "style: layout change",
+      "date": "2025-12-22T09:34:22Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/1fb36123f4b7d613b1391169e716348a2d2b7fe7",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": false,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "9bd3ed9",
+      "message": "style: layout change",
+      "date": "2025-12-22T09:04:45Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/9bd3ed99365a4ca6b7e8af4d594f41988cb39ee4",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "822ef7c",
+      "message": "style: layout changes",
+      "date": "2025-12-22T08:58:26Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/822ef7c3794280b3c9e33233bc6357195ce1261b",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "1a7bba9",
+      "message": "update README.md",
+      "date": "2025-12-22T08:56:28Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/1a7bba9ddd0c74e5695ab4d4e5d2fc69d52e22b6",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "1226762",
+      "message": "style: layout change",
+      "date": "2025-12-22T08:52:02Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/1226762d5a15e3059d1a1af3dc401e1a48297da2",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "d96bbd7",
+      "message": "style: layout change",
+      "date": "2025-12-22T08:43:15Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/d96bbd74c7fbe3eccd467cf6f438bfa770899144",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "95e4952",
+      "message": "style: layout change",
+      "date": "2025-12-22T08:33:38Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/95e495233144ff9b0e46187eb96db69babdf583c",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    },
+    {
+      "sha": "74e7b13",
+      "message": "feat: admin-dashboard",
+      "date": "2025-12-22T08:27:06Z",
+      "url": "https://github.com/temesgen-982/teen-magazine/commit/74e7b133616ef64d521d94a66c4dbf57d369bff9",
+      "isMerge": false,
+      "lane": 0,
+      "hasIncoming": true,
+      "passThroughLanes": [],
+      "parentLanes": [
+        {
+          "lane": 0,
+          "isMergeParent": false
+        }
+      ],
+      "color": "#4183c4"
+    }
+  ],
+  "width": 32,
+  "rowHeight": 32,
+  "laneWidth": 16,
+  "pad": 8
+}
