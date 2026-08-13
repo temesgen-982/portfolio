@@ -26,13 +26,19 @@
     "title": "Abbabal API",
     "slug": "abbabal-api",
     "desc": "An API that provides more than 3000+ Amharic proverbs",
-    "summary": "An API that provides more than 7000+ Amharic proverbs.",
+    "summary": "An API that provides more than 3000+ Amharic proverbs.",
     "image": "/assets/projects/abbabal.webp",
     "gallery": [
       "/assets/projects/abbabal.webp"
     ],
+    "stats": [
+      {
+        "value": "3000+",
+        "label": "Amharic proverbs"
+      }
+    ],
     "highlights": [
-      "7000+ Amharic proverbs served via API"
+      "3000+ Amharic proverbs served via API"
     ],
     "liveUrl": "https://abbabal-api-web.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/abbabal-api",
@@ -43,7 +49,7 @@
       "Capacitor",
       "SQLite"
     ],
-    "updated": "Aug 8, 2026"
+    "updated": "Aug 9, 2026"
   },
   {
     "title": "Consensus",
@@ -79,13 +85,13 @@
       "Full-stack website for a digital magazine"
     ],
     "liveUrl": "https://teen-magazine.vercel.app",
-    "projectUrl": "/work/task-manager/",
+    "projectUrl": "https://github.com/temesgen-982/teen-magazine",
     "skills": [
       "Svelte",
       "TypeScript",
       "PostgreSQL"
     ],
-    "updated": "Nov 20, 2025"
+    "updated": "Dec 22, 2025"
   },
   {
     "title": "YouTube Notes",
@@ -119,10 +125,10 @@
     "liveUrl": "https://product-list-with-cart-delta-ten.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/product-list-with-cart",
     "skills": [
-      "Svelte", 
+      "Svelte",
       "Chapa"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Dec 31, 2025"
   },
   {
     "title": "Loopstudios Landing Page",
@@ -137,10 +143,10 @@
     "liveUrl": "https://temesgen-982.github.io/lupstudios-landing-page/",
     "projectUrl": "https://github.com/temesgen-982/lupstudios-landing-page",
     "skills": [
-      "HTML5", 
+      "HTML5",
       "SCSS"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Jun 28, 2025"
   },
   {
     "title": "News Homepage",
@@ -155,11 +161,11 @@
     "liveUrl": "https://temesgen-982.github.io/news-homepage/",
     "projectUrl": "https://github.com/temesgen-982/news-homepage",
     "skills": [
-      "HTML5", 
-      "CSS3", 
+      "HTML5",
+      "CSS3",
       "Bootstrap"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Dec 22, 2024"
   },
   {
     "title": "Newsletter Sign-Up",
@@ -174,10 +180,10 @@
     "liveUrl": "https://temesgen-982.github.io/newsletter-sign-up-with/",
     "projectUrl": "https://github.com/temesgen-982/newsletter-sign-up-with",
     "skills": [
-      "HTML5", 
+      "HTML5",
       "CSS3"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Sep 11, 2024"
   },
   {
     "title": "Rest Countries API",
@@ -192,10 +198,10 @@
     "liveUrl": "https://rest-countries-api-lyart-eight.vercel.app/",
     "projectUrl": "https://github.com/temesgen-982/rest-countries-api",
     "skills": [
-      "Svelte", 
+      "Svelte",
       "TypeScript"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Jul 19, 2025"
   },
   {
     "title": "Room Homepage",
@@ -210,10 +216,10 @@
     "liveUrl": "https://temesgen-982.github.io/room-homepage/",
     "projectUrl": "https://github.com/temesgen-982/room-homepage",
     "skills": [
-      "HTML5", 
+      "HTML5",
       "SCSS"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Jun 30, 2025"
   },
   {
     "title": "Time Tracking Dashboard",
@@ -228,9 +234,9 @@
     "liveUrl": "https://temesgen-982.github.io/time-tracking-dashboard/",
     "projectUrl": "https://github.com/temesgen-982/time-tracking-dashboard",
     "skills": [
-      "HTML5", 
+      "HTML5",
       "CSS3"
     ],
-    "updated": "Aug 9, 2026"
+    "updated": "Sep 13, 2024"
   }
 ]
