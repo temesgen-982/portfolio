@@ -17,9 +17,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/refresh.js
+      - name: Scrape commit history
+        run: node scripts/scrape-commits.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Scrape heatmap
+        run: node scripts/scrape-heatmap.js
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
