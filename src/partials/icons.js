@@ -100,7 +100,23 @@ export const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
 </svg>`;
 
-const icons = { emailIcon, githubIcon, linkedinIcon, telegramIcon, cvIcon, codepenIcon, devtoIcon, frontendMentorIcon, locationIcon, externalIcon, copyIcon, sendIcon, downloadIcon, workIcon, gradIcon, awardIcon, arrowRightIcon, youtubeIcon, spotifyIcon, sunIcon, moonIcon };
+export const folderIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
+  <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+</svg>`;
+
+export const codeIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+</svg>`;
+
+export const penIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+</svg>`;
+
+export const contactBookIcon = `<svg viewBox="0 0 24 24" fill="currentColor">
+  <path d="M4 21a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v18zm8-13.5a2 2 0 1 1-2 2 2 2 0 0 1 2-2zm-3.789 8.715a4 4 0 0 1 7.578 0A.993.993 0 0 1 14.83 17.5H9.18a1 1 0 0 1-.969-1.285z"/>
+</svg>`;
+
+const icons = { emailIcon, githubIcon, linkedinIcon, telegramIcon, cvIcon, codepenIcon, devtoIcon, frontendMentorIcon, locationIcon, externalIcon, copyIcon, sendIcon, downloadIcon, workIcon, gradIcon, awardIcon, arrowRightIcon, youtubeIcon, spotifyIcon, sunIcon, moonIcon, folderIcon, codeIcon, penIcon, contactBookIcon };
 
 export function getIcon(name) {
   return icons[`${name}Icon`] ?? '';

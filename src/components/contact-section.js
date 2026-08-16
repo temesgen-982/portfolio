@@ -7,7 +7,10 @@ export function contactSection() {
   <section id="contact" class="contact section">
     <div class="container stack">
       <div class="contact-header stack">
-        <h2 class="section-title">Let's work together</h2>
+        <div class="section-header">
+          <div class="header-badge">${getIcon('contactBook')}</div>
+          <h2 class="section-title">Let's work together</h2>
+        </div>
         <p>I'm always open to discussing new projects and ideas.</p>
       </div>
       <div class="contact-grid">

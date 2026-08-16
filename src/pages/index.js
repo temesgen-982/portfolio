@@ -101,7 +101,10 @@ export default function IndexPage() {
 
   <section class="projects section">
     <div class="container stack">
-      <h2 class="section-title">Projects</h2>
+      <div class="section-header">
+        <div class="header-badge">${getIcon('folder')}</div>
+        <h2 class="section-title">Projects</h2>
+      </div>
       <div class="project-cards">
         ${projects.slice(0, 4).map(projectCard()).join('')}
       </div>
@@ -131,7 +134,10 @@ export default function IndexPage() {
 
   <section class="skills section">
     <div class="container stack">
-      <h2 class="section-title">Skills &amp; tools</h2>
+      <div class="section-header">
+        <div class="header-badge">${getIcon('code')}</div>
+        <h2 class="section-title">Skills &amp; tools</h2>
+      </div>
       <p class="skills-note">I build with these every day — <a href="/work/">see them in action</a>.</p>
       <div class="skill-chips">
         ${skills.map(skill => html`
@@ -155,7 +161,10 @@ export default function IndexPage() {
 
   <section class="writing section">
     <div class="container stack">
-      <h2 class="section-title">Writing</h2>
+      <div class="section-header">
+        <div class="header-badge">${getIcon('pen')}</div>
+        <h2 class="section-title">Writing</h2>
+      </div>
       <p class="blog-sub">A few notes on things I've been building or learning.</p>
       <div class="blog-list">
         ${posts.map(post => html`
