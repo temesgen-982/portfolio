@@ -5,6 +5,7 @@ import { html } from '../utils/html.js';
 import { MainLayout, SITE_URL } from '../layouts/MainLayout.js';
 import { getIcon } from '../partials/icons.js';
 import { projectCard } from '../components/project-card.js';
+import { contactSection } from '../components/contact-section.js';
 import projects from '#data/projects.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
@@ -200,6 +201,8 @@ export function ProjectPage({ project }) {
       </div>
     </div>
   </section>` : ''}
+
+  ${contactSection()}
 
   <script>
     const lbImages = Array.from(document.querySelectorAll('.project-media img[data-lightbox]'));

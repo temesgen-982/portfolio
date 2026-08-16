@@ -12,7 +12,7 @@ export function blogCard() {
 <article class="blog-card">
   <time class="blog-card-date">${formatDate(date)}</time>
   <div class="blog-card-body">
-    <h3><a href="/blog/${slug}/">${title}</a></h3>
+    <h3 style="view-transition-name: blog-title-${slug}"><a href="/blog/${slug}/">${title}</a></h3>
     <p>${desc}</p>
   </div>
 </article>`;

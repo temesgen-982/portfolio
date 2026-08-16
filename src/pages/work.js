@@ -1,6 +1,7 @@
 import { html } from '../utils/html.js';
 import { MainLayout } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
+import { contactSection } from '../components/contact-section.js';
 import projects from '#data/projects.json' with { type: 'json' };
 import skills from '#data/skills.json' with { type: 'json' };
 
@@ -27,7 +28,7 @@ export default function WorkPage() {
   const content = html`
   <section class="projects section">
     <div class="container stack">
-      <h2>Work</h2>
+      <h1>Work</h1>
       <p>A selection of projects I've built. Filterable by skill.</p>
 
       <div class="work-filter">
@@ -55,6 +56,8 @@ export default function WorkPage() {
       <p class="filter-empty" id="filter-empty" hidden>No projects match those filters.</p>
     </div>
   </section>
+
+  ${contactSection()}
 
   <script>
     const headerEl = document.querySelector('header');

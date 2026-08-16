@@ -1,7 +1,7 @@
 import { html } from '../utils/html.js';
 import { MainLayout, SITE_URL } from '../layouts/MainLayout.js';
 import { projectCard } from '../components/project-card.js';
-import { contactForm } from '../components/contact-form.js';
+import { contactSection } from '../components/contact-section.js';
 import { githubHeatmap } from '../components/github-heatmap.js';
 import { formatDate } from '../components/blog-card.js';
 import { getIcon } from '../partials/icons.js';
@@ -10,6 +10,7 @@ import socialLinks from '#data/social-links.json' with { type: 'json' };
 import projects from '#data/projects.json' with { type: 'json' };
 import experience from '#data/experience.json' with { type: 'json' };
 import education from '#data/education.json' with { type: 'json' };
+import skills from '#data/skills.json' with { type: 'json' };
 
 export default function IndexPage() {
   const posts = loadPosts();
@@ -30,44 +31,32 @@ export default function IndexPage() {
     sameAs: socialLinks.map(l => l.url).filter(u => u.startsWith('http')),
   }).replace(/</g, '\\u003c');
 
+  const heroSocials = [
+    { name: 'Telegram', url: 'https://t.me/beshow', icon: 'telegram' },
+    { name: 'GitHub', url: 'https://github.com/temesgen-982', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/temesgen-adane/', icon: 'linkedin' },
+  ];
+
   const content = html`
   <section class="hero">
     <div class="container hero-inner">
+      <div class="hero-portrait">
+        <img src="/assets/portrait.webp" alt="Temesgen Adane" width="192" height="192" loading="eager" fetchpriority="high">
+      </div>
       <div class="hero-main">
-        <h1>Hi! I'm Temesgen.</h1>
-        <p class="sub">A Full Stack developer from Ethiopia, with real-world experience building large scale applications.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">${getIcon('download')} Download CV</a>
-        </div>
-      </div>
-      <div class="hero-side">
-        <div class="hero-social">
-          ${socialLinks.filter(l => l.group.includes('hero')).map(link =>
-    html`<a class="social-box" href="${link.url}" title="${link.name}" ${link.url.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${getIcon(link.icon)}</a>`
+        <h1>Temesgen Adane</h1>
+        <p class="hero-title">Full Stack Developer</p>
+        <p class="hero-bio">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>
+        <p class="hero-location">${getIcon('location')} Ethiopia (UTC+3)</p>
+        <div class="hero-actions">
+          <div class="hero-socials">
+            ${heroSocials.map(link =>
+    html`<a class="social-pill" href="${link.url}" title="${link.name}" target="_blank" rel="noopener">${getIcon(link.icon)}</a>`
   ).join('')}
+          </div>
+          <a class="btn btn-primary" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">${getIcon('download')} Resume</a>
+          <a class="btn btn-primary" href="mailto:tedenadane@gmail.com">${getIcon('email')} Email</a>
         </div>
-        ${githubHeatmap(12)}
-      </div>
-    </div>
-  </section>
-
-  <section class="projects section">
-    <div class="container stack">
-      <h2 class="section-title">Projects</h2>
-      <div class="project-cards">
-        ${projects.slice(0, 4).map(projectCard()).join('')}
-      </div>
-      <a class="view-more" href="/work/">All projects [${String(projects.length).padStart(2, '0')}] ${getIcon('external')}</a>
-    </div>
-  </section>
-
-  <section class="about section">
-    <div class="container about-row">
-      <img class="about-photo" src="/assets/portrait.webp" alt="Temesgen Adane" width="480" height="640">
-      <div>
-        <h2 class="section-title">About</h2>
-        <p class="bio-text">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>
-        <a href="mailto:tedenadane@gmail.com" class="btn btn-primary">${getIcon('email')} Get in touch</a>
       </div>
     </div>
   </section>
@@ -93,7 +82,7 @@ export default function IndexPage() {
           </div>
         </div>`).join('')}
       </div>
-      <a class="view-more" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">Full experience in my CV ${getIcon('external')}</a>
+      <a class="view-more" href="/assets/Temesgen-Adane-CV.pdf" target="_blank" rel="noopener">View my full resume ${getIcon('external')}</a>
     </div>
   </section>
 
@@ -112,6 +101,16 @@ export default function IndexPage() {
           <p class="timeline-desc">${edu.desc}</p>
         </div>
       </div>`).join('')}
+    </div>
+  </section>
+
+  <section class="projects section">
+    <div class="container stack">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-cards">
+        ${projects.slice(0, 4).map(projectCard()).join('')}
+      </div>
+      <a class="view-more" href="/work/">All projects [${String(projects.length).padStart(2, '0')}] ${getIcon('external')}</a>
     </div>
   </section>
 
@@ -138,7 +137,24 @@ export default function IndexPage() {
   <section class="skills section">
     <div class="container stack">
       <h2 class="section-title">Skills &amp; tools</h2>
-      <p class="skills-note">I build with React, Svelte, Spring Boot, PostgreSQL and more — <a href="/work/">see them in action</a>.</p>
+      <p class="skills-note">I build with these every day — <a href="/work/">see them in action</a>.</p>
+      <div class="skill-chips">
+        ${skills.map(skill => html`
+        <div class="skill-chip">
+          <img src="${skill.icon}" alt="" width="16" height="16" loading="lazy">
+          <span>${skill.name}</span>
+        </div>`).join('')}
+      </div>
+    </div>
+  </section>
+
+  <section class="github section">
+    <div class="container stack">
+      <div class="section-header">
+        <div class="header-badge">${getIcon('github')}</div>
+        <h2 class="section-title">GitHub</h2>
+      </div>
+      ${githubHeatmap()}
     </div>
   </section>
 
@@ -160,70 +176,7 @@ export default function IndexPage() {
     </div>
   </section>
 
-  <section id="contact" class="contact section">
-    <div class="container stack">
-      <div class="contact-header stack">
-        <h2 class="section-title">Let's work together</h2>
-        <p>I'm always open to discussing new projects and ideas.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-list">
-          <a href="mailto:tedenadane@gmail.com" class="contact-item">
-            <div class="contact-left">
-              <div class="icon-badge">${getIcon('email')}</div>
-              <div class="contact-info">
-                <span class="contact-label">Email</span>
-                <span class="contact-detail">tedenadane@gmail.com</span>
-              </div>
-            </div>
-            <div class="contact-actions">
-              <button class="copy-btn" type="button" data-copy="tedenadane@gmail.com" aria-label="Copy email">${getIcon('copy')}</button>
-              ${getIcon('external')}
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/temesgen-adane/" target="_blank" rel="noopener" class="contact-item">
-            <div class="contact-left">
-              <div class="icon-badge">${getIcon('linkedin')}</div>
-              <div class="contact-info">
-                <span class="contact-label">LinkedIn</span>
-                <span class="contact-detail">linkedin.com/in/temesgen-adane</span>
-              </div>
-            </div>
-            <div class="contact-actions">
-              ${getIcon('external')}
-            </div>
-          </a>
-          <div class="contact-item">
-            <div class="contact-left">
-              <div class="icon-badge">${getIcon('location')}</div>
-              <div class="contact-info">
-                <span class="contact-label">Location</span>
-                <span class="contact-detail">Hawassa, Ethiopia</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        ${contactForm()}
-      </div>
-    </div>
-  </section>
-  <script>
-    document.querySelectorAll('.copy-btn').forEach(btn => {
-      btn.addEventListener('click', async e => {
-        e.preventDefault();
-        e.stopPropagation();
-        try {
-          await navigator.clipboard.writeText(btn.dataset.copy);
-          btn.classList.add('copied');
-          btn.setAttribute('aria-label', 'Copied!');
-          setTimeout(() => {
-            btn.classList.remove('copied');
-            btn.setAttribute('aria-label', 'Copy email');
-          }, 1500);
-        } catch { /* clipboard unavailable */ }
-      });
-    });
-  </script>`;
+  ${contactSection()}`;
 
   return MainLayout({
     title: 'Home',

@@ -8,12 +8,15 @@ export function contactForm() {
   return html`
       <form id="contact-form" class="contact-form">
         <div>
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
+          <label class="sr-only" for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="Name" required>
+          <label class="sr-only" for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="Email" required>
         </div>
         <!-- honeypot: hidden from real users via CSS, bots often fill it -->
         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <label class="sr-only" for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Message" rows="5" required></textarea>
         <div class="cf-turnstile" data-sitekey="${TURNSTILE_SITE_KEY}"></div>
         <button type="submit" class="submit-btn">${sendIcon} Send Message</button>
       </form>

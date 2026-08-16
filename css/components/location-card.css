@@ -6,12 +6,39 @@
   gap: var(--space-4);
 }
 
+.now-updated {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--color-text-faint);
+}
+
+.now-list {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0;
+  list-style-type: "- ";
+}
+
+.now-list li {
+  color: var(--color-text-main);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.now-list li + li {
+  margin-top: var(--space-3);
+}
+
 .location-card {
+  position: relative;
+  overflow: hidden;
   flex: 1 1 260px;
   min-width: 0;
   width: 100%;
   background:
-    radial-gradient(circle at top right, rgba(77, 240, 147, .08), transparent 60%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 60%),
     var(--color-bg-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
@@ -22,6 +49,17 @@
   font-size: var(--fs-small);
   color: var(--color-text-muted);
   padding: var(--space-3) var(--space-4);
+}
+
+.location-card__map {
+  position: absolute;
+  right: -10px;
+  bottom: -8px;
+  width: 150px;
+  height: auto;
+  opacity: 0.09;
+  fill: var(--color-accent);
+  pointer-events: none;
 }
 
 .location-card__title {
@@ -63,6 +101,7 @@
 }
 
 .location-card__clock {
+  margin-left: auto;
   font-size: var(--fs-h3);
   font-weight: 700;
   line-height: var(--lh-tight);

@@ -29,7 +29,7 @@ export function BlogPostPage({ post }) {
     <div class="container flow">
       <a href="/blog/" class="back-link">&larr; back to blog</a>
       <time class="post-date">${formatDate(post.date)}</time>
-      <h1>${post.title}</h1>
+      <h1 style="view-transition-name: blog-title-${post.slug}">${post.title}</h1>
       <div class="post-content">
         ${post.html}
       </div>

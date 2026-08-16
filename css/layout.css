@@ -1,5 +1,5 @@
 .container {
-  width: min(64rem, calc(100% - 2rem));
+  width: min(72rem, calc(100% - 2rem));
   margin-inline: auto;
 }
 

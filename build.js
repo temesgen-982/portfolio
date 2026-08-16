@@ -97,6 +97,7 @@ const assetsDir = path.join(__dirname, 'assets');
 const assetsToCopy = [
   'Temesgen-Adane-CV.pdf',
   'portrait.webp',
+  'favicon.svg',
 ];
 
 for (const file of assetsToCopy) {

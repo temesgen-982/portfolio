@@ -6,7 +6,7 @@ export function BlogIndexPage({ posts }) {
   const content = html`
   <section class="projects section">
     <div class="container stack">
-      <h2>Blog</h2>
+      <h1>Blog</h1>
       <p class="blog-intro">I usually write most of the blogs to clarify things for myself.</p>
       <div class="blog-cards">
         ${posts.map(blogCard()).join('')}

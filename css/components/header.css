@@ -2,28 +2,28 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 1.5rem 0;
-  background: color-mix(in srgb, var(--color-bg-main) 82%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--color-bg-main);
+  border-bottom: 1px solid var(--color-border);
 }
 
 header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: var(--header-height);
 }
 
 .brand {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
   color: var(--color-text-main);
+  letter-spacing: -0.01em;
 }
 
 header nav ul {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 22px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -32,7 +32,9 @@ header nav ul {
 
 header nav a {
   color: var(--color-text-muted);
-  transition: color 0.15s ease;
+  padding: 2px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 header nav a:hover {
@@ -40,6 +42,61 @@ header nav a:hover {
 }
 
 header nav a.active {
-  color: var(--color-accent);
+  color: var(--color-text-main);
+  border-bottom-color: var(--color-accent);
   font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-bg-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-toggle .theme-toggle-moon {
+  display: none;
+}
+
+.dark .theme-toggle .theme-toggle-sun {
+  display: none;
+}
+
+.dark .theme-toggle .theme-toggle-moon {
+  display: block;
+}
+
+@media (max-width: 560px) {
+  header nav ul {
+    gap: 14px;
+    font-size: 13px;
+  }
 }

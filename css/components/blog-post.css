@@ -19,7 +19,9 @@
 }
 
 .post-content {
-  --flow-space: var(--space-5);
+  --flow-space: var(--space-6);
+  max-width: 60rem;
+  line-height: 1.75;
 }
 
 .post-content h2 {
@@ -32,7 +34,6 @@
 
 .post-content p {
   color: var(--color-text-muted);
-  line-height: var(--lh-body);
 }
 
 .post-content a {

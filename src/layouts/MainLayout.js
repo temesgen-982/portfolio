@@ -19,7 +19,7 @@ export function MainLayout({
   type = 'website',
   jsonLd,
 }) {
-  const pageTitle = title === 'Home' ? `${SITE_NAME} — Full Stack Developer` : `${title} | ${SITE_NAME}`;
+  const pageTitle = title === 'Home' ? `${SITE_NAME}` : `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
   const metaDescription = description;
 
@@ -30,6 +30,7 @@ export function MainLayout({
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(pageTitle)}</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <meta name="description" content="${escapeHtml(metaDescription)}">
   <link rel="canonical" href="${url}">
 
@@ -46,12 +47,20 @@ export function MainLayout({
   <meta name="twitter:image" content="${image}">
 
   <link rel="stylesheet" href="/css/main.css">
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', dark);
+    })();
+  </script>
   ${jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : ''}
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   ${header({ active })}
-  <main>
+  <main id="main">
     ${content}
   </main>
   ${footer()}

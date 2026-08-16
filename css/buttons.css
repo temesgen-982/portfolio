@@ -3,24 +3,35 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: filter 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .btn-primary {
-  background: transparent;
+  background: var(--color-bg-surface);
   color: var(--color-text-main);
   border: 1px solid var(--color-border-strong);
 }
 
 .btn-primary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn-outline:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
