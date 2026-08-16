@@ -7,6 +7,7 @@ Plain Node.js composes template strings at build time — no frameworks, no bund
 ```bash
 npm run dev      # dev server with live reload on http://localhost:8080
 npm run build    # output to dist/
+npm run refresh  # refresh scraped GitHub data (commit graphs + heatmap)
 ```
 
 ## How It Works
@@ -34,10 +35,16 @@ Pages output as `dist/<name>/index.html`, so URLs are `/work/`, `/about/`, etc. 
 
 ## Deployment & Automation
 
-Two GitHub Actions workflows live in `.github/workflows/`:
+GitHub Actions workflows live in `.github/workflows/`:
 
 - **`deploy.yml`** — builds the site and deploys to GitHub Pages on every push to `main`. It runs `node build.js`, adds a `CNAME` file, and uploads `dist/` as the deployment artifact.
-- **`scrape-heatmap.yml`** — runs daily (and on demand) to refresh the GitHub contribution data used by the heatmap on the homepage. It runs `scripts/scrape-heatmap.js`, which writes `data/github-heatmap.json` and commits it. If the scrape fails, it opens a GitHub issue.
+- **`refresh-data.yml`** — runs weekly (Mondays 06:00 UTC, and on demand) to refresh the scraped GitHub data. It runs `scripts/refresh.js`, which:
+  - scrapes recent commits for each project in `data/projects.json` and writes lane graphs to `data/commits/<slug>.json` (also bumping each project's `updated` date),
+  - scrapes the GitHub contribution graph into `data/github-heatmap.json`.
+  
+  Changes are committed only if the data actually changed; if any scrape fails, it opens a GitHub issue.
+
+Run the same refresh locally with `npm run refresh`, or individually with `npm run refresh:commits` and `npm run refresh:heatmap`.
 
 ## Blog
 
