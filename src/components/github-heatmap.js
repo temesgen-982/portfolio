@@ -53,7 +53,7 @@ export function githubHeatmap(maxWeeks = 53) {
     function fit() {
       const visible = Math.min(weeks.length, Math.max(6, Math.floor((grid.clientWidth + GAP) / (CELL + GAP))));
       weeks.forEach((week, i) => {
-        week.style.display = i < visible ? '' : 'none';
+        week.style.display = i >= weeks.length - visible ? '' : 'none';
       });
       countEl.textContent = 'Last ' + visible + ' weeks';
     }
