@@ -37,15 +37,18 @@ export function contactSection() {
               ${getIcon('external')}
             </div>
           </a>
-          <div class="contact-item">
+        <a href="https://t.me/beshow" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-left">
-              <div class="icon-badge">${getIcon('location')}</div>
+              <div class="icon-badge">${getIcon('telegram')}</div>
               <div class="contact-info">
-                <span class="contact-label">Location</span>
-                <span class="contact-detail">Hawassa, Ethiopia</span>
+                <span class="contact-label">Telegram</span>
+                <span class="contact-detail">t.me/beshow</span>
               </div>
             </div>
-          </div>
+            <div class="contact-actions">
+              ${getIcon('external')}
+            </div>
+          </a>
         </div>
         ${contactForm()}
       </div>

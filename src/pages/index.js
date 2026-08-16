@@ -23,11 +23,6 @@ export default function IndexPage() {
     image: `${SITE_URL}/assets/portrait.webp`,
     jobTitle: 'Full Stack Developer',
     email: 'mailto:tedenadane@gmail.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Hawassa',
-      addressCountry: 'ET',
-    },
     sameAs: socialLinks.map(l => l.url).filter(u => u.startsWith('http')),
   }).replace(/</g, '\\u003c');
 
