@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node dev-server.js",
-    "build": "node build.js"
+    "build": "node build.js",
+    "refresh": "node scripts/refresh.js",
+    "refresh:commits": "node scripts/scrape-commits.js",
+    "refresh:heatmap": "node scripts/scrape-heatmap.js"
   },
   "imports": {
     "#data/*": "./data/*"

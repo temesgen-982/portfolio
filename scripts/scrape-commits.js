@@ -4,8 +4,6 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/projects.json'), 'utf-8'));
 
 const LANE_COLORS = ['#4183c4', '#4A7A56', '#E6B280', '#B53A3A', '#969aa1', '#a86cd8'];
 const ROW_HEIGHT = 32;
@@ -17,9 +15,9 @@ function extractRepo(url) {
   return match ? { owner: match[1], repo: match[2].replace(/\.git$/, '') } : null;
 }
 
-async function fetchCommits(owner, repo) {
+async function fetchCommits(owner, repo, token) {
   const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/commits?per_page=8`, {
-    headers: GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {},
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
   if (!res.ok) throw new Error(`GitHub API ${res.status} for ${owner}/${repo}`);
   return res.json();
@@ -80,35 +78,47 @@ function buildGraph(commits) {
   return { rows, width, rowHeight: ROW_HEIGHT, laneWidth: LANE_WIDTH, pad: PAD };
 }
 
-fs.mkdirSync(path.join(ROOT, 'data/commits'), { recursive: true });
+export async function scrapeCommits() {
+  const token = process.env.GITHUB_TOKEN;
+  const projects = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/projects.json'), 'utf-8'));
+  let graphCount = 0;
 
-for (const project of projects) {
-  const repoInfo = extractRepo(project.projectUrl);
-  if (!repoInfo) continue;
+  fs.mkdirSync(path.join(ROOT, 'data/commits'), { recursive: true });
 
-  try {
-    const raw = await fetchCommits(repoInfo.owner, repoInfo.repo);
-    const commits = raw.map(c => ({
-      sha: c.sha,
-      commit: c.commit,
-      html_url: c.html_url,
-      parents: c.parents,
-    }));
+  for (const project of projects) {
+    const repoInfo = extractRepo(project.projectUrl);
+    if (!repoInfo) continue;
 
-    const graph = buildGraph(commits);
-    fs.writeFileSync(path.join(ROOT, `data/commits/${project.slug}.json`), JSON.stringify(graph, null, 2));
+    try {
+      const raw = await fetchCommits(repoInfo.owner, repoInfo.repo, token);
+      const commits = raw.map(c => ({
+        sha: c.sha,
+        commit: c.commit,
+        html_url: c.html_url,
+        parents: c.parents,
+      }));
 
-    const latest = graph.rows.find(r => !r.isMerge) || graph.rows[0];
-    if (latest) {
-      project.updated = new Date(latest.date).toLocaleDateString('en-US', {
-        month: 'short', day: 'numeric', year: 'numeric',
-      });
+      const graph = buildGraph(commits);
+      fs.writeFileSync(path.join(ROOT, `data/commits/${project.slug}.json`), JSON.stringify(graph, null, 2));
+      graphCount++;
+
+      const latest = graph.rows.find(r => !r.isMerge) || graph.rows[0];
+      if (latest) {
+        project.updated = new Date(latest.date).toLocaleDateString('en-US', {
+          month: 'short', day: 'numeric', year: 'numeric',
+        });
+      }
+      console.log(`✓ ${project.slug}: ${graph.rows.length} commits`);
+    } catch (err) {
+      console.error(`✗ ${project.slug}: ${err.message}`);
     }
-    console.log(`✓ ${project.slug}: ${graph.rows.length} commits`);
-  } catch (err) {
-    console.error(`✗ ${project.slug}: ${err.message}`);
   }
+
+  fs.writeFileSync(path.join(ROOT, 'data/projects.json'), JSON.stringify(projects, null, 2));
+  console.log(`Wrote ${graphCount} graphs to data/commits/ and updated data/projects.json`);
+  return graphCount;
 }
 
-fs.writeFileSync(path.join(ROOT, 'data/projects.json'), JSON.stringify(projects, null, 2));
-console.log('Written data/commits/*.json and updated data/projects.json');
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await scrapeCommits();
+}

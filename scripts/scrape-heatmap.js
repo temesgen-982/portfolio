@@ -51,8 +51,15 @@ function validateGrid(grid) {
   }
 }
 
-const grid = await scrapeContributions();
-validateGrid(grid);
-const out = path.join(__dirname, '../data/github-heatmap.json');
-fs.writeFileSync(out, JSON.stringify(grid));
-console.log(`Scraped ${grid.length} weeks of contribution data.`);
+export async function scrapeHeatmap() {
+  const grid = await scrapeContributions();
+  validateGrid(grid);
+  const out = path.join(__dirname, '../data/github-heatmap.json');
+  fs.writeFileSync(out, JSON.stringify(grid));
+  console.log(`Scraped ${grid.length} weeks of contribution data.`);
+  return grid;
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await scrapeHeatmap();
+}

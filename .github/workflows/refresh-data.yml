@@ -1,8 +1,8 @@
-name: Refresh Project Commit History
+name: Refresh GitHub Data
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -17,15 +17,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/scrape-commits.js
+      - run: node scripts/refresh.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/commits/ data/projects.json
-          git diff --staged --quiet || git commit -m "chore: refresh project commit history"
+          git add data/
+          git diff --staged --quiet || git commit -m "chore: refresh github data"
           git push
       - name: Notify on failure
         if: failure()
@@ -35,7 +35,7 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Commit history scraper failed',
-              body: `Failed on ${new Date().toISOString()}. Check the [run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}).`,
+              title: 'GitHub data scraper failed',
+              body: `The weekly data refresh failed on ${new Date().toISOString()}. Check the [run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}).`,
               labels: ['bug', 'automation'],
             });
