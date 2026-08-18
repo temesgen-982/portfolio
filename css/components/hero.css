@@ -46,6 +46,16 @@
   margin: 0 0 1rem;
 }
 
+.hero-bio a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-bio a:hover {
+  text-decoration: underline;
+}
+
 .hero-location {
   display: inline-flex;
   align-items: center;

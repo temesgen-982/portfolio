@@ -41,7 +41,7 @@ export default function IndexPage() {
       <div class="hero-main">
         <h1>Temesgen Adane</h1>
         <p class="hero-title">Full Stack Developer</p>
-        <p class="hero-bio">I'm a full-stack developer who enjoys turning ideas into clean, useful and scalable software. I love learning, shipping and improving every day.</p>
+        <p class="hero-bio">I like making things from scratch, figuring out how they work, and sometimes making them far more complicated than they need to be.<br>Read my <a href="/blog/">blog</a>.</p>
         <p class="hero-location">${getIcon('location')} Ethiopia (UTC+3)</p>
         <div class="hero-actions">
           <div class="hero-socials">
