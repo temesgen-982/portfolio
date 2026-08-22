@@ -1,5 +1,5 @@
 .hero {
-  padding: clamp(3rem, 8vw, 5rem) 0;
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(3rem, 8vw, 5rem) 0;
 }
 
 .hero-inner {

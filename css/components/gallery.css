@@ -47,10 +47,10 @@
   border: 1px solid var(--color-border-strong);
   font-size: 11px;
   letter-spacing: .04em;
-  color: var(--color-text-muted);
+  color: hsl(220, 10%, 70%);
 }
 
 .gallery__caption {
-  color: var(--color-text-main);
+  color:  hsl(0, 0%, 97%);
   font-weight: 600;
 }

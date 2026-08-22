@@ -9,11 +9,11 @@ export function formatDate(iso) {
 
 export function blogCard() {
   return ({ title, desc, date, slug }) => html`
-<article class="blog-card">
+ <a href="/blog/${slug}/" class="blog-card">
   <time class="blog-card-date">${formatDate(date)}</time>
   <div class="blog-card-body">
-    <h3 style="view-transition-name: blog-title-${slug}"><a href="/blog/${slug}/">${title}</a></h3>
+    <h3 style="view-transition-name: blog-title-${slug}">${title}</h3>
     <p>${desc}</p>
   </div>
-</article>`;
+</a>`;
 }

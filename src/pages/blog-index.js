@@ -7,7 +7,7 @@ export function BlogIndexPage({ posts }) {
   <section class="projects section">
     <div class="container stack">
       <h1>Blog</h1>
-      <p class="blog-intro">I usually write most of the blogs to clarify things for myself.</p>
+      <p class="blog-intro">Notes on things I've been building or learning as a full stack developer.</p>
       <div class="blog-cards">
         ${posts.map(blogCard()).join('')}
       </div>
