@@ -6,22 +6,41 @@ const TURNSTILE_SITE_KEY = '0x4AAAAAAD5OFAcmiQ2Cudbd';
 
 export function contactForm() {
   return html`
-      <form id="contact-form" class="contact-form">
-        <div>
-          <label class="sr-only" for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" placeholder="Name" required>
-          <label class="sr-only" for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="Email" required>
-        </div>
-        <!-- honeypot: hidden from real users via CSS, bots often fill it -->
-        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-        <label class="sr-only" for="contact-message">Message</label>
-        <textarea id="contact-message" name="message" placeholder="Message" rows="5" required></textarea>
-        <div class="cf-turnstile" data-sitekey="${TURNSTILE_SITE_KEY}"></div>
-        <button type="submit" class="submit-btn">${sendIcon} Send Message</button>
-      </form>
-      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-      <script>
+  <form id="contact-form" class="contact-form">
+    <div>
+      <label class="sr-only" for="contact-name">Name</label>
+      <input type="text" id="contact-name" name="name" placeholder="Name" required>
+      <label class="sr-only" for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="email" placeholder="Email" required>
+    </div>
+    <!-- honeypot: hidden from real users via CSS, bots often fill it -->
+    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+    <label class="sr-only" for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" placeholder="Message" rows="5" required>
+      
+      
+      
+      
+    
+    
+    
+    </textarea>
+    <div class="cf-turnstile" data-sitekey="${TURNSTILE_SITE_KEY}">
+    </div>
+    <button type="submit" class="submit-btn">
+      ${sendIcon} Send Message
+    </button>
+  </form>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer>
+    
+    
+    
+    
+  
+  
+  
+  </script>
+  <script>
         const sendIcon = ${JSON.stringify(sendIcon)};
         function setBtnLabel(btn, label) {
           btn.innerHTML = sendIcon + ' ' + label;
@@ -60,5 +79,6 @@ export function contactForm() {
           if (window.turnstile) window.turnstile.reset();
         }
     });
-  </script>`;
+  </script>
+`;
 }

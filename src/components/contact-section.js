@@ -24,7 +24,9 @@ export function contactSection() {
               </div>
             </div>
             <div class="contact-actions">
-              <button class="copy-btn" type="button" data-copy="tedenadane@gmail.com" aria-label="Copy email">${getIcon('copy')}</button>
+              <button class="copy-btn" type="button" data-copy="tedenadane@gmail.com" aria-label="Copy email">
+                ${getIcon('copy')}
+              </button>
               ${getIcon('external')}
             </div>
           </a>
@@ -33,14 +35,14 @@ export function contactSection() {
               <div class="icon-badge">${getIcon('linkedin')}</div>
               <div class="contact-info">
                 <span class="contact-label">LinkedIn</span>
-                <span class="contact-detail">linkedin.com/in/temesgen-adane</span>
+                <span class="contact-detail">
+                  linkedin.com/in/temesgen-adane
+                </span>
               </div>
             </div>
-            <div class="contact-actions">
-              ${getIcon('external')}
-            </div>
+            <div class="contact-actions">${getIcon('external')}</div>
           </a>
-        <a href="https://t.me/beshow" target="_blank" rel="noopener" class="contact-item">
+          <a href="https://t.me/beshow" target="_blank" rel="noopener" class="contact-item">
             <div class="contact-left">
               <div class="icon-badge">${getIcon('telegram')}</div>
               <div class="contact-info">
@@ -48,16 +50,13 @@ export function contactSection() {
                 <span class="contact-detail">t.me/beshow</span>
               </div>
             </div>
-            <div class="contact-actions">
-              ${getIcon('external')}
-            </div>
+            <div class="contact-actions">${getIcon('external')}</div>
           </a>
         </div>
         ${contactForm()}
       </div>
     </div>
   </section>
-
   <script>
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', async e => {
@@ -74,5 +73,6 @@ export function contactSection() {
         } catch { /* clipboard unavailable */ }
       });
     });
-  </script>`;
+  </script>
+`;
 }
