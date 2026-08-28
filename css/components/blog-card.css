@@ -1,3 +1,7 @@
+.writing .section-header {
+  margin-bottom: 0;
+}
+
 .blog-intro,
 .blog-sub {
   color: var(--color-text-muted);
