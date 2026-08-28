@@ -34,13 +34,13 @@ export function githubHeatmap(maxWeeks = 53) {
     .join('');
 
   return html`
-<div class="github-heatmap" role="img" aria-label="GitHub contribution activity">
-  <span class="heatmap-label"><span class="heatmap-count">Last 0 weeks</span></span>
-  <div class="heatmap-grid">
-    ${grid}
+  <div class="github-heatmap" role="img" aria-label="GitHub contribution activity">
+    <span class="heatmap-label">
+      <span class="heatmap-count">Last 0 weeks</span>
+    </span>
+    <div class="heatmap-grid">${grid}</div>
   </div>
-</div>
-<script>
+  <script>
   (function () {
     const heatmap = document.querySelector('.github-heatmap');
     if (!heatmap) return;
@@ -62,5 +62,6 @@ export function githubHeatmap(maxWeeks = 53) {
     window.addEventListener('resize', fit);
     requestAnimationFrame(fit);
   })();
-</script>`;
+</script>
+`;
 }

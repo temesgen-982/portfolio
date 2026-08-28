@@ -116,27 +116,25 @@ export function ProjectPage({ project }) {
   const content = html`
   <div class="project-layout section">
     <aside class="project-sticky">
-      <a href="/work/" class="back-link" onclick="event.preventDefault(); if (window.history.length > 1) { history.back(); } else { location.href = '/work/'; }">&larr; Back</a>
+      <a href="/work/" class="back-link" onclick="event.preventDefault(); if (window.history.length >
+        1) { history.back(); } else { location.href = '/work/'; }">&larr; Back
+      </a>
       <h1 class="project-title-lg">${project.title}</h1>
       <p class="project-desc-lg">${summary}</p>
       <div class="project-meta">
         ${year ? `<span class="project-year">${year}</span>` : ''}
         <span>${(project.skills ?? []).length} skills</span>
       </div>
-      <div class="project-tags">
-        ${(project.skills ?? []).map(t => html`<span class="tag">${t}</span>`).join('')}
-      </div>
+      <div class="project-tags">${(project.skills ?? []).map(t => html`<span class="tag">${t}</span>`).join('')}</div>
       ${(href || repo) ? html`
-      <div class="project-links">
-        ${href ? `<a href="${href}" target="_blank" rel="noopener" class="btn btn-primary">${getIcon('external')} Visit live site</a>` : ''}
-        ${repo ? `<a href="${repo}" target="_blank" rel="noopener" class="btn btn-primary">${getIcon('github')} Source</a>` : ''}
-      </div>` : ''}
+      <div class="project-links">${href ? `<a href="${href}" target="_blank" rel="noopener" class="btn btn-primary">${getIcon('external')} Visit live site</a>` : ''}
+        ${repo ? `<a href="${repo}" target="_blank" rel="noopener" class="btn btn-primary">${getIcon('github')} Source</a>` : ''}</div>
+      ` : ''}
     </aside>
     <main class="project-media">
       ${stats.length ? html`
-      <div class="project-stats">
-        ${stats.map(s => html`<div class="stat"><span class="stat-value">${s.value}</span><span class="stat-label">${s.label}</span></div>`).join('')}
-      </div>` : ''}
+      <div class="project-stats">${stats.map(s => html`<div class="stat"><span class="stat-value">${s.value}</span><span class="stat-label">${s.label}</span></div>`).join('')}</div>
+      ` : ''}
       ${gallery.length ? html`
       <div class="media-card">
         <img src="${gallery[0]}" alt="${project.title}" loading="lazy" data-lightbox style="view-transition-name: pt-${project.slug}">
@@ -154,10 +152,9 @@ export function ProjectPage({ project }) {
       ${highlights.length ? html`
       <div class="project-highlights">
         <h2>Highlights</h2>
-        <ul>
-          ${highlights.map(h => html`<li>${h}</li>`).join('')}
-        </ul>
-      </div>` : ''}
+        <ul>${highlights.map(h => html`<li>${h}</li>`).join('')}</ul>
+      </div>
+      ` : ''}
       ${graph ? html`
       <div class="commit-history">
         <h2>Commit history</h2>
@@ -165,17 +162,22 @@ export function ProjectPage({ project }) {
       </div>` : ''}
     </main>
   </div>
-
   <div class="lightbox" id="project-lightbox" hidden>
-    <button type="button" class="lightbox-close" aria-label="Close lightbox">${closeIcon}</button>
-    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image">${getIcon('arrowRight')}</button>
+    <button type="button" class="lightbox-close" aria-label="Close lightbox">
+      ${closeIcon}
+    </button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+      ${getIcon('arrowRight')}
+    </button>
     <figure class="lightbox-figure">
       <img class="lightbox-img" src="" alt="">
-      <figcaption class="lightbox-count"></figcaption>
+      <figcaption class="lightbox-count">
+      </figcaption>
     </figure>
-    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image">${getIcon('arrowRight')}</button>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image">
+      ${getIcon('arrowRight')}
+    </button>
   </div>
-
   ${(prev || next) ? html`
   <div class="container">
     <nav class="project-pager" aria-label="Project navigation">
@@ -190,7 +192,8 @@ export function ProjectPage({ project }) {
         <span class="pager-title">${next.title}</span>
       </a>` : '<span class="pager-empty" aria-hidden="true"></span>'}
     </nav>
-  </div>` : ''}
+  </div>
+  ` : ''}
 
   ${related.length ? html`
   <section class="project-related section">
@@ -203,7 +206,6 @@ export function ProjectPage({ project }) {
   </section>` : ''}
 
   ${contactSection()}
-
   <script>
     const lbImages = Array.from(document.querySelectorAll('.project-media img[data-lightbox]'));
     const lightbox = document.getElementById('project-lightbox');
@@ -239,7 +241,8 @@ export function ProjectPage({ project }) {
       if (e.key === 'ArrowLeft') openLightbox(lbIndex - 1);
       if (e.key === 'ArrowRight') openLightbox(lbIndex + 1);
     });
-  </script>`;
+  </script>
+`;
 
   return MainLayout({
     title: project.title,

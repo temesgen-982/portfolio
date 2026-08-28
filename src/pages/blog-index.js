@@ -7,18 +7,19 @@ export function BlogIndexPage({ posts }) {
   <section class="projects section">
     <div class="container stack">
       <h1>Blog</h1>
-      <p class="blog-intro">Notes on things I've been building or learning as a full stack developer.</p>
-      <div class="blog-cards">
-        ${posts.map(blogCard()).join('')}
-      </div>
+      <p class="blog-intro">
+        Notes on things I've been building or learning as a full stack developer.
+      </p>
+      <div class="blog-cards">${posts.map(blogCard()).join('')}</div>
     </div>
-  </section>`;
+  </section>
+`;
 
   return MainLayout({
     title: 'Blog',
     active: 'blog',
     content,
-    description: 'Notes on things I\'ve been building or learning as a full stack developer.',
+    description: 'A few notes on things I\'ve been building or learning as a full stack developer.',
     path: '/blog/',
   });
 }

@@ -14,12 +14,17 @@ export default function NowPage() {
   <section class="section">
     <div class="container stack">
       <h1>Now</h1>
-      <p>This is what I'm focused on right now. Inspired by <a href="https://nownownow.com/about" target="_blank" rel="noopener" style="text-decoration: underline">nownownow.com</a>.</p>
-      <p class="now-updated"><em>Last updated ${current.date}</em></p>
-      <ul class="now-list">
-        ${current.items.map(item => html`<li>${item}</li>`).join('')}
-      </ul>
-
+      <p>
+        This is what I'm focused on right now. Inspired by
+        <a href="https://nownownow.com/about" target="_blank" rel="noopener" style="text-decoration: underline">
+          nownownow.com
+        </a>
+        .
+      </p>
+      <p class="now-updated">
+        <em>Last updated ${current.date}</em>
+      </p>
+      <ul class="now-list">${current.items.map(item => html`<li>${item}</li>`).join('')}</ul>
       <div class="now-cards">
         ${nowPlaying()}
         <div class="location-card">
@@ -29,7 +34,9 @@ export default function NowPage() {
           <div class="location-card__title">
             <span class="location-card__icon">${locationIcon}</span>
             <span>Location</span>
-            <span class="location-card__clock" id="local-clock" aria-label="Local time in Ethiopia">--:--</span>
+            <span class="location-card__clock" id="local-clock" aria-label="Local time in Ethiopia">
+              --:--
+            </span>
           </div>
           <div class="location-card__body">
             <div class="location-card__details">
@@ -39,26 +46,25 @@ export default function NowPage() {
           </div>
         </div>
       </div>
-
       <h3 class="gallery-heading">From the gallery...</h3>
       <p>Photos from 2026.</p>
       <div class="gallery">
         ${gallery.map(photo => `
-          <figure class="gallery__item">
-            <img
+        <figure class="gallery__item">
+          <img
               src="/assets/gallery/${photo.src}"
               alt="${photo.caption || (photo.date ? `Photo from ${photo.date}` : 'Photo')}"
               loading="lazy"
               decoding="async">
-            <figcaption class="gallery__meta">
-              ${photo.date ? `<span class="gallery__date">${photo.date}</span>` : ''}
+          <figcaption class="gallery__meta">
+            ${photo.date ? `<span class="gallery__date">${photo.date}</span>` : ''}
               ${photo.caption ? `<span class="gallery__caption">${photo.caption}</span>` : ''}
-            </figcaption>
-          </figure>`).join('')}
+          </figcaption>
+        </figure>
+        `).join('')}
       </div>
     </div>
   </section>
-
   <script>
     const clockEl = document.getElementById('local-clock');
     const fmt = new Intl.DateTimeFormat('en-US', {
@@ -72,7 +78,8 @@ export default function NowPage() {
     }
     tick();
     setInterval(tick, 10000);
-  </script>`;
+  </script>
+`;
 
   return MainLayout({
     title: 'Now',

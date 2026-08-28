@@ -29,36 +29,37 @@ export default function WorkPage() {
   <section class="projects section">
     <div class="container stack">
       <h1>Work</h1>
-      <p>A selection of projects I've built. Filterable by skill.</p>
-
+      <p>
+        A selection of projects I've built. Filterable by skill.
+      </p>
       <div class="work-filter">
         <div class="filter-chips" role="group" aria-label="Filter by skill">
-    ${usedSkills.map(s => html`
+          ${usedSkills.map(s => html`
           <button type="button" class="filter-chip" data-skill="${s.name}" data-icon="${s.icon}" aria-pressed="false">
             ${s.icon ? `<img class="filter-chip-icon" src="${s.icon}" alt="" loading="lazy">` : ''}
             <span class="filter-chip-name">${s.name}</span>
             <span class="filter-chip-count">${countFor(s.name)}</span>
-          </button>`).join('')}
+          </button>
+          `).join('')}
         </div>
       </div>
-
       <div class="filter-active" id="filter-active" hidden>
         <span class="filter-active-label">Filtering by</span>
-        <div class="filter-active-chips" id="filter-active-chips"></div>
-        <button type="button" class="filter-clear" id="filter-clear">Clear all</button>
-        <span class="filter-result-count" id="filter-result-count"></span>
+        <div class="filter-active-chips" id="filter-active-chips">
+        </div>
+        <button type="button" class="filter-clear" id="filter-clear">
+          Clear all
+        </button>
+        <span class="filter-result-count" id="filter-result-count">
+        </span>
       </div>
-
-      <div class="project-cards" id="project-grid">
-        ${projects.map(p => projectCard()(p).replace('<article', `<article data-skills="${p.skills.join(',')}"`)).join('')}
-      </div>
-
-      <p class="filter-empty" id="filter-empty" hidden>No projects match those filters.</p>
+      <div class="project-cards" id="project-grid">${projects.map(p => projectCard()(p).replace('<article', `<article data-skills="${p.skills.join(',')}"`)).join('')}</div>
+      <p class="filter-empty" id="filter-empty" hidden>
+        No projects match those filters.
+      </p>
     </div>
   </section>
-
   ${contactSection()}
-
   <script>
     const headerEl = document.querySelector('header');
     const filterBar = document.querySelector('.work-filter');
@@ -168,7 +169,8 @@ export default function WorkPage() {
     });
 
     render();
-  </script>`;
+  </script>
+`;
 
   return MainLayout({
     title: 'Work',

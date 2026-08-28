@@ -2,7 +2,7 @@ import { html } from '../utils/html.js';
 
 export function prefetch() {
   return html`
-<script>
+  <script>
 window.addEventListener('load', () => {
   document.querySelectorAll('nav a[href^="/"]').forEach(link => {
     const el = document.createElement('link');
@@ -11,5 +11,6 @@ window.addEventListener('load', () => {
     document.head.appendChild(el);
   });
 });
-</script>`;
+</script>
+`;
 }

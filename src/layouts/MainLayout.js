@@ -23,49 +23,43 @@ export function MainLayout({
   const url = `${SITE_URL}${path}`;
   const metaDescription = description;
 
-  return html`<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(pageTitle)}</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <meta name="description" content="${escapeHtml(metaDescription)}">
-  <link rel="canonical" href="${url}">
-
-  <meta property="og:type" content="${type}">
-  <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}">
-  <meta property="og:title" content="${escapeHtml(pageTitle)}">
-  <meta property="og:description" content="${escapeHtml(metaDescription)}">
-  <meta property="og:url" content="${url}">
-  <meta property="og:image" content="${image}">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
-  <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
-  <meta name="twitter:image" content="${image}">
-
-  <link rel="stylesheet" href="/css/main.css">
-  <script>
+  return html`
+  <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${escapeHtml(pageTitle)}</title>
+        <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+        <meta name="description" content="${escapeHtml(metaDescription)}">
+        <link rel="canonical" href="${url}">
+        <meta property="og:type" content="${type}">
+        <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}">
+        <meta property="og:title" content="${escapeHtml(pageTitle)}">
+        <meta property="og:description" content="${escapeHtml(metaDescription)}">
+        <meta property="og:url" content="${url}">
+        <meta property="og:image" content="${image}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
+        <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
+        <meta name="twitter:image" content="${image}">
+        <link rel="stylesheet" href="/css/main.css">
+        <script>
     (function () {
       const stored = localStorage.getItem('theme');
       const dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.classList.toggle('dark', dark);
     })();
   </script>
-  ${jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : ''}
-</head>
-
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  ${header({ active })}
-  <main id="main">
-    ${content}
-  </main>
-  ${footer()}
+        ${jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : ''}
+      </head>
+      <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+        ${header({ active })}
+        <main id="main">${content}</main>
+        ${footer()}
   ${prefetch()}
-</body>
-
-</html>`;
+      </body>
+    </html>
+  `;
 }

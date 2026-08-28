@@ -30,11 +30,10 @@ export function BlogPostPage({ post }) {
       <a href="/blog/" class="back-link">&larr; back to blog</a>
       <time class="post-date">${formatDate(post.date)}</time>
       <h1 style="view-transition-name: blog-title-${post.slug}">${post.title}</h1>
-      <div class="post-content">
-        ${post.html}
-      </div>
+      <div class="post-content">${post.html}</div>
     </div>
-  </section>`;
+  </section>
+`;
 
   return MainLayout({
     title: post.title,

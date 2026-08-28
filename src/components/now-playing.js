@@ -8,9 +8,12 @@ export function nowPlaying() {
   return html`
   <div class="now-playing">
     <div class="now-playing__status">
-      <span class="now-playing__dot" id="now-playing-dot"></span>
+      <span class="now-playing__dot" id="now-playing-dot">
+      </span>
       <span id="status-text">Loading…</span>
-      <a class="now-playing__link" href="https://www.last.fm/user/${LASTFM_USER}" target="_blank" rel="noopener">Last.fm</a>
+      <a class="now-playing__link" href="https://www.last.fm/user/${LASTFM_USER}" target="_blank" rel="noopener">
+        Last.fm
+      </a>
     </div>
     <div class="now-playing__body">
       <img id="track-art" class="now-playing__art" alt="Album art" style="display:none">
@@ -18,13 +21,16 @@ export function nowPlaying() {
         <p class="now-playing__title" id="track-title">—</p>
         <p class="now-playing__artist" id="track-artist">—</p>
         <div class="now-playing__links" id="now-playing-links" hidden>
-          <a id="youtube-link" href="#" target="_blank" rel="noopener" aria-label="Search on YouTube">${youtubeIcon}</a>
-          <a id="spotify-link" href="#" target="_blank" rel="noopener" aria-label="Search on Spotify">${spotifyIcon}</a>
+          <a id="youtube-link" href="#" target="_blank" rel="noopener" aria-label="Search on YouTube">
+            ${youtubeIcon}
+          </a>
+          <a id="spotify-link" href="#" target="_blank" rel="noopener" aria-label="Search on Spotify">
+            ${spotifyIcon}
+          </a>
         </div>
       </div>
     </div>
   </div>
-
   <script>
     const NOW_PLAYING_URL = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${LASTFM_USER}&api_key=${API_KEY}&format=json&limit=1';
 
@@ -100,5 +106,6 @@ export function nowPlaying() {
     });
 
     if (!document.hidden) startPolling();
-  </script>`;
+  </script>
+`;
 }
