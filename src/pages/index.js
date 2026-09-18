@@ -63,26 +63,6 @@ export default function IndexPage() {
       </div>
     </div>
   </section>
-  <section class="writing section">
-    <div class="container stack">
-      <div class="section-header">
-        <div class="header-badge">${getIcon('pen')}</div>
-        <h2 class="section-title">Blog</h2>
-      </div>
-      <p class="blog-sub">
-        A few notes on things I've been building or learning as a full-stack developer.
-      </p>
-      <div class="blog-list">${posts.map(post => html`
-      <a href="/blog/${post.slug}/" class="blog-row">
-        <div>
-          <p class="blog-title">${post.title}</p>
-          <p class="blog-excerpt">${post.desc}</p>
-        </div>
-        <span class="blog-date">${formatDate(post.date)}</span>
-      </a>`).join('')}</div>
-      <a href="/blog/" class="blog-all">All posts &rarr;</a>
-    </div>
-  </section>
   <section class="experience section">
     <div class="container">
       <div class="section-header">
